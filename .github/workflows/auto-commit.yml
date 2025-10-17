@@ -1,30 +1,31 @@
-name: Auto Sync and Build
-
+name: Auto Commit
 on:
-  push:
-    branches: [ main ]
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
-  auto-sync:
+  commit:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  
-    
     steps:
-    - name: Checkout código
-      uses: actions/checkout@v4
-        
-    - name: Configurar Git  
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git remote set-url origin https://github.com/Mizume25/BlogPersonal.git
-        
-    - name: Auto Commit cambios
-      run: |
-        git add .
-        git diff --staged --quiet || git commit -m "🤖 Auto-sync: $(date +'%Y-%m-%d %H:%M:%S')"
-        git push
+      - uses: actions/checkout@v4
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A
+          git status
+          if ! git diff --staged --quiet; then
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Commit and Push
+        if: steps.changes.outputs.changes_detected == 'true'
+        run: |
+          git commit -m "Auto-commit: $(date)"
+          git push
