@@ -11,15 +11,17 @@ jobs:
   auto-sync:
     runs-on: ubuntu-latest
     permissions:
-  contents: write
+      contents: write  
+    
     steps:
     - name: Checkout código
       uses: actions/checkout@v4
         
-    - name: https://github.com/Mizume25/BlogPersonal.git
+    - name: Configurar Git  
       run: |
-        git config --local user.email "gabrielnivicela649@gmail.com"
-        git config --local user.name "Mizume25"
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git remote set-url origin https://github.com/Mizume25/BlogPersonal.git
         
     - name: Auto Commit cambios
       run: |
