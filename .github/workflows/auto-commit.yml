@@ -19,8 +19,8 @@ jobs:
         
     - name: Configurar Git
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "gabrielnivicela649@gmail.com"
+        git config --local user.name "Mizume25"
         
     - name: Auto Commit cambios
       run: |
