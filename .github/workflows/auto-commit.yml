@@ -1,0 +1,29 @@
+name: Auto Sync and Build
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  auto-sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Configurar Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+    - name: Auto Commit cambios
+      run: |
+        git add .
+        git diff --staged --quiet || git commit -m "🤖 Auto-sync: $(date +'%Y-%m-%d %H:%M:%S')"
+        git push
