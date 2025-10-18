@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 body {
@@ -12,6 +12,14 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     padding: 20px;
+    font-family: 'Lexend', sans-serif;
+}
+
+.lexend_font {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .container {
