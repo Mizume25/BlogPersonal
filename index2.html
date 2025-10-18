@@ -7,29 +7,115 @@
     <link rel="stylesheet" href="indexestilo.css">
 </head>
 <body>
-    <header>
-        <h1>Mi Blog Personal</h1>
-        <p>Un espacio para mis pensamientos y experiencias</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Mi Blog Personal</h1>
+            <p>Un espacio para compartir mis pensamientos y experiencias</p>
+        </header>
 
-    <main>
-        <section class="entradas">
-            <article class="entrada">
-                <h2>Primera Entrada</h2>
-                <p>Bienvenido a mi blog. Aquí compartiré mis reflexiones y momentos especiales.</p>
-                <span class="fecha">17 Oct 2024</span>
+        <aside class="sidebar left-sidebar">
+            <div class="widget">
+                <h3>Sobre Mí</h3>
+                <div class="profile">
+                    <img src="https://via.placeholder.com/150" alt="Foto de perfil">
+                    <p>Hola, soy un apasionado de la tecnología y el diseño. Me encanta compartir mis conocimientos a través de este blog.</p>
+                </div>
+            </div>
+            
+            <div class="widget">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="#">Tecnología</a></li>
+                    <li><a href="#">Diseño Web</a></li>
+                    <li><a href="#">Programación</a></li>
+                    <li><a href="#">Viajes</a></li>
+                    <li><a href="#">Personal</a></li>
+                </ul>
+            </div>
+            
+            <div class="widget">
+                <h3>Archivo</h3>
+                <ul>
+                    <li><a href="#">Enero 2024</a></li>
+                    <li><a href="#">Diciembre 2023</a></li>
+                    <li><a href="#">Noviembre 2023</a></li>
+                    <li><a href="#">Octubre 2023</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content">
+            <article class="blog-post">
+                <h2>Mi Primer Día Como Desarrollador Web</h2>
+                <div class="post-meta">
+                    <span class="date">Publicado el 15 de Enero, 2024</span>
+                    <span class="category">Tecnología</span>
+                </div>
+                <img src="https://via.placeholder.com/800x400" alt="Imagen del post">
+                <p>Hoy quiero compartir con ustedes mi experiencia en mi primer día como desarrollador web profesional. Fue una mezcla de emociones: nervios, emoción y un poco de miedo...</p>
+                <p>El equipo me recibió con los brazos abiertos y me asignaron mi primera tarea: crear un componente responsive para el nuevo sitio web de la empresa. Aunque al principio me sentí abrumado, pronto descubrí que mis conocimientos eran suficientes para el desafío.</p>
+                <a href="#" class="read-more">Leer más</a>
             </article>
 
-            <article class="entrada">
-                <h2>Un día cualquiera</h2>
-                <p>Hoy encontré un lugar tranquilo para leer. A veces las pequeñas cosas son las más importantes.</p>
-                <span class="fecha">15 Oct 2024</span>
+            <article class="blog-post">
+                <h2>Los Mejores Lugares para Trabajar Remotamente</h2>
+                <div class="post-meta">
+                    <span class="date">Publicado el 10 de Enero, 2024</span>
+                    <span class="category">Viajes</span>
+                </div>
+                <img src="https://via.placeholder.com/800x400" alt="Imagen del post">
+                <p>Como nómada digital, he tenido la oportunidad de trabajar desde muchos lugares alrededor del mundo. En este post, compartiré mis favoritos y por qué los recomiendo...</p>
+                <p>Desde cafeterías acogedoras en Europa hasta espacios de coworking en Asia, cada lugar ofrece una experiencia única que puede mejorar tu productividad y bienestar.</p>
+                <a href="#" class="read-more">Leer más</a>
             </article>
-        </section>
-    </main>
 
-    <footer>
-        <p>Hecho con ❤️ - mizumeblog.rf.gd</p>
-    </footer>
+            <article class="blog-post">
+                <h2>Introducción a CSS Grid</h2>
+                <div class="post-meta">
+                    <span class="date">Publicado el 5 de Enero, 2024</span>
+                    <span class="category">Diseño Web</span>
+                </div>
+                <img src="https://via.placeholder.com/800x400" alt="Imagen del post">
+                <p>CSS Grid es una de las tecnologías más poderosas que han llegado al desarrollo web frontend en los últimos años. En este tutorial básico, te mostraré cómo empezar...</p>
+                <p>Aprenderemos los conceptos fundamentales de Grid, cómo crear layouts complejos con pocas líneas de código y algunos ejemplos prácticos que puedes implementar en tus proyectos.</p>
+                <a href="#" class="read-more">Leer más</a>
+            </article>
+        </main>
+
+        <aside class="sidebar right-sidebar">
+            <div class="widget">
+                <h3>Posts Populares</h3>
+                <ul>
+                    <li><a href="#">Cómo Aprender JavaScript en 2024</a></li>
+                    <li><a href="#">10 Herramientas Esenciales para Desarrolladores</a></li>
+                    <li><a href="#">Mi Transición de Diseñador a Desarrollador</a></li>
+                    <li><a href="#">Consejos para Mantener la Productividad</a></li>
+                </ul>
+            </div>
+            
+            <div class="widget">
+                <h3>Suscríbete</h3>
+                <p>Recibe las últimas actualizaciones directamente en tu correo.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+            
+            <div class="widget">
+                <h3>Sígueme</h3>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </aside>
+
+        <footer>
+            <p>&copy; 2024 Mi Blog Personal. Todos los derechos reservados.</p>
+        </footer>
+    </div>
 </body>
 </html>
