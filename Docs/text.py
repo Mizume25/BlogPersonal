@@ -1,0 +1,1 @@
+print("¡Python funciona en VSCode!")
