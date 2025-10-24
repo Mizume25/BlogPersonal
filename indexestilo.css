@@ -1,8 +1,9 @@
 /* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/*Division de los elemntos de mi pàgina web*/
+
+/*ELEMNTOS BASE: FUENTES, BODY, BOXSIZING*/
+* {               /*Centramos contenido*/
+    box-sizing: border-box;  /*Contenido a nuestra medida*/
 }
 
 body {
@@ -10,8 +11,8 @@ body {
     color: black;
     line-height: 1.6;
     min-height: 100vh;
-    padding: 20px;
     font-family: 'Lexend', sans-serif;
+    background-image: url('textura-papel-sutil.jpg');
 }
 
 .lexend_font {
@@ -20,77 +21,133 @@ body {
   font-weight: 300;
   font-style: normal;
 }
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;          /*Columnas para la estructura del Indice */
-    grid-template-columns: 1fr 3fr 1fr;
-    gap: 30px;               /*Espacio entre las brechas */
-}
-
-/* Encabezado */
-header {
-    grid-column: 1 / 4;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-header h1 {
+/*REDEFINICION DE ETIQUETAS HTMl*/
+h1 {                             /*ESTILO H1*/
     color: black;
     margin-bottom: 10px;
     font-size: 2.5rem;
 }
 
-header p {
+p {                          /*ESTILO P*/
     color: #666;
     font-size: 1.1rem;
 }
 
-/* Barras laterales */
-.sidebar {
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.widget {
-    margin-bottom: 30px;
-}
-
-.widget h3 {
+h3 {
     color: black;
-    margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid #eee;
 }
+/*ELEMENTOS DE REDEFINICION DE ETIQUETAS COMPARTIDAS*/
+/* ESTOS 4 COMPARTEN LOS MISMOS ESTILOS */
+header, .sidebar, .content, footer {
+    background-color: rgba(255, 255, 255, 0.9); /* Mismo fondo */
+    border-radius: 10px; /* Mismo radio */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Misma sombra */
+}
 
-.profile {
+
+/*CONTAINER PRINCIAPL DE EL INDICE DE LA PAGINA WEB*/
+
+.container {
+    max-width: 1300px;      /*Ancho de la pàgina web*/
+    margin: 0 auto;      /*Centrado general del contenido*/
+    display: grid;              /*Columnas para la estructura del Indice */
+    grid-template-columns: 1fr 3fr 1fr;     /*· Columnas con diferentes midas*/
+    gap: 28px;                  /*Espacio entre las brechas */
+}
+
+
+
+/* ENCABEZADO DE LA PÀGINA WEB */
+header {
+    grid-column: 1 / 4;     /*Mida equivalente a las columnas creadas*/
+    padding: 10px 15px 10px 15px;     /*espacio entre el propio encabezado*/
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
     text-align: center;
 }
 
+
+/* BARRAS LATERALES*/
+.sidebar {
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /*Sombreado con efecto de profundidad*/
+}
+
+.widget + .widget {         /*Espacios entre los widget*/
+    margin-bottom: 30px;
+}
+
+/*CONTENIDO DE LAS COLUMNAS*/
+/* Centrado de texto*/
+.profile {
+    text-align: center;
+}
+/*Estilo Imagen*/
 .profile img {
     width: 180px;
     height: 196px;
     border-radius: 50%;
     margin-bottom: 15px;
     border: 3px solid #2575fc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
 }
+/*ANIMACION IMAGEN*/
+.profile img:hover {
+    transform: scale(1.1); /* Agranda 10% */
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.3); /* Sombra azul suave */
+}
+
+
+
+/*ESTILOS DE LAS LISTAS*/
 
 .widget ul {
+    padding-left: 0; /* ← Elimina el padding por defecto */
+    text-align: center; /* ← Centra el texto */
+
+}
+.widget li {
+    border-radius: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px dashed #eee;
     list-style-type: none;
+    transition: all 0.3s ease; /* ← Transición suave para todos los cambios */
+    cursor: pointer;
+    display: inline-block; /* ← Convierte a bloque en línea */
+    text-align: left; /* ← Alinea el texto a la izquierda dentro del bloque */
+    width: 100%;
 }
 
-.widget ul li {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed #eee;
+li + li {
+    margin-top: 10px;
 }
+
+.widget li:hover {
+    background-color: #2575fc; /* ← Fondo azul muy claro */
+    transform: scale(1.02); /* ← Leve agrandamiento */
+    
+}
+
+/* Efecto de selección ACTIVA (nuevo) */
+.widget li.active {
+    background-color: #2575fc; /* ← Fondo azul sólido */
+    transform: scale(1.05); /* ← Un poco más de agrandamiento */
+    box-shadow: 0 4px 12px rgba(37, 117, 252, 0.3); /* ← Sombra azul */
+}
+
+
+.widget li:hover a {
+    color: white; /* ← Texto blanco en hover */
+}
+
+.widget a {
+    color: #666;;
+    text-decoration: none;
+}
+
 
 .widget ul li:last-child {
     margin-bottom: 0;
@@ -98,16 +155,96 @@ header p {
     border-bottom: none;
 }
 
-.widget a {
+/*ESTILOS DE LOS ARTICULOSs*/
+
+
+
+/* Apuntes css */
+
+/* Artículo con imagen de fondo */
+
+.blog-post.featured-post {
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+   url("Imagenes Blog/FotoArticle1.jpg");
+    background-size: cover;        /* ← AGREGA ESTO */
+    background-position: center;   /* ← Y ESTO */
+    background-repeat: no-repeat;  /* ← Y ESTO */
+    color: white;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    margin: 0 !important; /* ← Sin margen externo */
+    border-radius: 0 !important; /* ← Sin bordes redondeados */
+ 
+} 
+
+.content{
+    padding: 20px; 
+    margin: 0;
+
+}
+
+.content .blog-post:not(.featured-post) h2,
+.content .blog-post:not(.featured-post) .post-meta,
+.content .blog-post:not(.featured-post) p,
+.content .blog-post:not(.featured-post) .read-more {
+    padding: 0 20px; /* ← Padding solo izquierda/derecha para texto */
+}
+/* Contenedor para título y etiquetas */
+.post-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 10px 10px 0 0; /* ← top right bottom left */
+}
+
+/* Título abajo izquierda */
+.post-title {
+    align-self: flex-start;
+    margin-bottom: 0;
+    margin-top: auto;
+    margin-left: 0px;
+}
+
+.post-title h2 {
+    color: #FFD700; /* Amarillo */
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 20px 0 0 20px
+}
+
+/* Etiquetas arriba derecha */
+.post-tags {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.post-tags .date,
+.post-tags .category {
+    background: rgba(255,255,255,0.9);
     color: #333;
-    text-decoration: none;
-    transition: color 0.3s;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 5px;
 }
 
-.widget a:hover {
-    color: #2575fc;
+/* Contenido del post */
+.post-content {
+    margin-top: 20px;
 }
 
+.post-content p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-bottom: 0;
+}
 .subscribe-form input {
     width: 100%;
     padding: 10px;
@@ -152,17 +289,13 @@ header p {
 }
 
 /* Contenido principal */
-.content {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
 
 .blog-post {
     margin-bottom: 40px;
     padding-bottom: 30px;
     border-bottom: 1px solid #eee;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .blog-post:last-child {
@@ -171,11 +304,6 @@ header p {
     border-bottom: none;
 }
 
-.blog-post h2 {
-    color: black;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-}
 
 .post-meta {
     display: flex;
@@ -227,10 +355,7 @@ header p {
 /* Pie de página */
 footer {
     grid-column: 1 / 4;
-    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     text-align: center;
     color: #666;
@@ -268,7 +393,5 @@ footer {
         padding: 20px;
     }
     
-    .blog-post h2 {
-        font-size: 1.5rem;
-    }
 }
+

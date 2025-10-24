@@ -10,32 +10,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <header>
             <h1>MiZumeBlog</h1>
         </header>
 
         <aside class="sidebar left-sidebar">
-            <div class="widget">
+            <section class="widget">
                 <h3>Sobre Mí</h3>
                 <div class="profile">
-                    <img src="Imagenes Blog/Perfil.jpg">
+                    <img src="Imagenes Blog/FotoPerfil.jpg">
                     <p>Blog de Lecturas</p>
                 </div>
-            </div>
-            
-            <div class="widget">
+            </section>
+            <section class="widget">
                 <h3>Categorías</h3>
                 <ul>
-                    <li><a href="#">Tecnología</a></li>
-                    <li><a href="#">Diseño Web</a></li>
-                    <li><a href="#">Programación</a></li>
-                    <li><a href="#">Viajes</a></li>
-                    <li><a href="#">Personal</a></li>
+                    <li><a href="#">Sobre Autores</a></li>
+                    <li><a href="#">Analisis</a></li>
+                    <li><a href="#">Intereses</a></li>
+                    <li><a href="#">Sobre mi</a></li>
+
                 </ul>
-            </div>
+            </section>
             
-            <div class="widget">
+            <section class="widget">
                 <h3>Archivo</h3>
                 <ul>
                     <li><a href="#">Enero 2024</a></li>
@@ -43,20 +42,21 @@
                     <li><a href="#">Noviembre 2023</a></li>
                     <li><a href="#">Octubre 2023</a></li>
                 </ul>
-            </div>
+            </section>
         </aside>
 
-        <main class="content">
-            <article class="blog-post">
-                <h2>Mi Primer Día Como Desarrollador Web</h2>
-                <div class="post-meta">
-                    <span class="date">Publicado el 15 de Enero, 2024</span>
-                    <span class="category">Tecnología</span>
-                </div>
-                <img src="https://via.placeholder.com/800x400" alt="Imagen del post">
-                <p>Hoy quiero compartir con ustedes mi experiencia en mi primer día como desarrollador web profesional. Fue una mezcla de emociones: nervios, emoción y un poco de miedo...</p>
-                <p>El equipo me recibió con los brazos abiertos y me asignaron mi primera tarea: crear un componente responsive para el nuevo sitio web de la empresa. Aunque al principio me sentí abrumado, pronto descubrí que mis conocimientos eran suficientes para el desafío.</p>
-                <a href="#" class="read-more">Leer más</a>
+        <div class="content">
+            <article class="blog-post featured-post">
+                    <div class="post-header">
+                        <div class="post-tags">
+                            <span class="date">Publicado el 15 de Enero, 2024</span>
+                             <span class="category">Tecnología</span>
+                        </div>
+                     </div>
+    
+                    <div class="post-title">
+                         <h2>SHIKI - Fuyumi Ono</h2>
+                    </div>
             </article>
 
             <article class="blog-post">
@@ -82,10 +82,10 @@
                 <p>Aprenderemos los conceptos fundamentales de Grid, cómo crear layouts complejos con pocas líneas de código y algunos ejemplos prácticos que puedes implementar en tus proyectos.</p>
                 <a href="#" class="read-more">Leer más</a>
             </article>
-        </main>
+        </div>
 
         <aside class="sidebar right-sidebar">
-            <div class="widget">
+            <section class="widget">
                 <h3>Posts Populares</h3>
                 <ul>
                     <li><a href="#">Cómo Aprender JavaScript en 2024</a></li>
@@ -93,31 +93,31 @@
                     <li><a href="#">Mi Transición de Diseñador a Desarrollador</a></li>
                     <li><a href="#">Consejos para Mantener la Productividad</a></li>
                 </ul>
-            </div>
+            </section>
             
-            <div class="widget">
+            <section class="widget">
                 <h3>Suscríbete</h3>
                 <p>Recibe las últimas actualizaciones directamente en tu correo.</p>
                 <form class="subscribe-form">
                     <input type="email" placeholder="Tu correo electrónico" required>
                     <button type="submit">Suscribirse</button>
                 </form>
-            </div>
+            </section>
             
-            <div class="widget">
+            <section class="widget">
                 <h3>Sígueme</h3>
-                <div class="social-links">
+                <section class="social-links">
                     <a href="#">Twitter</a>
                     <a href="#">Instagram</a>
                     <a href="#">LinkedIn</a>
                     <a href="#">GitHub</a>
-                </div>
-            </div>
+                </section>
+            </section>
         </aside>
 
         <footer>
             <p>&copy; 2024 Mi Blog Personal. Todos los derechos reservados.</p>
         </footer>
-    </div>
+    </main>
 </body>
 </html>
