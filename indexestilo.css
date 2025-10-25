@@ -161,38 +161,100 @@ li + li {
 
 /* Apuntes css */
 
-/* Artículo con imagen de fondo */
+/* ELEMENTOS DE LOS ARTICULOS PRINCIPALES COMO DESTACADOS */
+/*ARTICULO DESTACADO */
 
-.blog-post.featured-post {
-    position: relative;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-   url("Imagenes Blog/FotoArticle1.jpg");
-    background-size: cover;        /* ← AGREGA ESTO */
-    background-position: center;   /* ← Y ESTO */
-    background-repeat: no-repeat;  /* ← Y ESTO */
-    color: white;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px;
-    margin: 0 !important; /* ← Sin margen externo */
-    border-radius: 0 !important; /* ← Sin bordes redondeados */
- 
+
+
+/* 
+PSEUDO-ELEMENTO ::before EXPLICADO:
+Este crea una capa invisible que funciona como "fondo inteligente". 
+En lugar de aplicar la imagen directamente al artículo, la colocamos 
+en este pseudo-elemento para poder animarla independientemente.
+
+¿POR QUÉ HACERLO ASÍ?
+- Podemos usar transform: scale() para un zoom suave y profesional
+- El contenido (texto) permanece siempre visible y nítido
+- Evita el efecto "tosco" de animar background-size directamente
+- z-index: -1 coloca la imagen DETRÁS del contenido, como un verdadero fondo
+
+¡Elimina la necesidad de divs extras en el HTML y mantiene tu código limpio!
+*/
+article h2 {
+    padding: 0 20px;
+}
+
+article p {
+    padding: 0 20px;
+}
+/*REDEFINICIONES DE CLASSES*/
+
+/*ARTICULO 1 - CSS*/
+/*--------------------------------------------------------------------------------------------*/
+.blog-post.featured-post{
+    position: relative;                    /* Posicionamiento para elementos hijos absolutos */            
+    color: white;                       /* Color del texto blanco para contraste */
+    min-height: 360px;                    /* Altura mínima del contenedor */
+    display: flex;                        /* Flexbox para organizar el contenido */
+    flex-direction: column;               /* Organizar elementos en columna */
+    justify-content: space-between;       /* Espacio entre elementos (header y título) */
+    padding: 30px;                        /* Espaciado interno */
+    margin: 0 !important;                 /* Eliminar márgenes externos */
+    border-radius: 0 !important;          /* Eliminar bordes redondeados */
+    overflow: hidden;                     /* Oculta cualquier contenido que se salga */
+   
 } 
 
+/*PSEUDO ELEMENTO */
+.blog-post.featured-post::before {
+    content: "";                          /* Contenido vacío para el pseudo-elemento */
+    position: absolute;                   /* Posicionamiento absoluto respecto al contenedor */
+    top: 0;                               /* Posición desde arriba */
+    left: 0;                              /* Posición desde la izquierda */
+    width: 100%;                          /* Ancho completo del contenedor */
+    height: 100%;                         /* Alto completo del contenedor */
+    background-size: cover;               /* La imagen cubre todo el espacio */
+    background-position: center;          /* Centra la imagen */
+    background-repeat: no-repeat;         /* Evita que la imagen se repita */
+    z-index: -1;                          /* Coloca detrás del contenido */
+    transition: transform 1s ease-in-out; /* Transición suave de 1 segundo para transform */
+}
+
+.blog-post.featured-post:hover::before {
+    transform: scale(1.05);               /* Agranda la imagen 5% al hacer hover */
+}
+
+.blog-post.featured-post .post-content {
+    position: relative;                   /* Posicionamiento para estar sobre la imagen */
+    z-index: 1;                          /* Asegura que esté por encima del ::before */
+}
+
+/*--------------------------------------------------------------------------------------------*/
+/*Cambio de imaagenes de los otros articulos*/
+/*--------------------------------------------------------------------------------------------*/
+.blog-post.featured-post.fondo-articulo1::before {
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                url("Imagenes Blog/FotoArticle1.jpg");
+                  background-size: cover;               /* La imagen cubre todo el espacio */
+    background-position: center;          /* Centra la imagen */
+    background-repeat: no-repeat;         /* Evita que la imagen se repita */
+}
+
+.blog-post.featured-post.fondo-articulo2::before {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url("Imagenes Blog/FotoArticle2.jpg");
+                  background-size: cover;               /* La imagen cubre todo el espacio */
+    background-position: center;          /* Centra la imagen */
+    background-repeat: no-repeat;         /* Evita que la imagen se repita */
+}
+/*--------------------------------------------------------------------------------------------*/
 .content{
-    padding: 20px; 
+    padding: 0px; 
     margin: 0;
+    background: transparent; 
 
 }
 
-.content .blog-post:not(.featured-post) h2,
-.content .blog-post:not(.featured-post) .post-meta,
-.content .blog-post:not(.featured-post) p,
-.content .blog-post:not(.featured-post) .read-more {
-    padding: 0 20px; /* ← Padding solo izquierda/derecha para texto */
-}
 /* Contenedor para título y etiquetas */
 .post-header {
     display: flex;
@@ -201,7 +263,7 @@ li + li {
     margin: 10px 10px 0 0; /* ← top right bottom left */
 }
 
-/* Título abajo izquierda */
+/* ESTILO DE LOS TITULOS DE LOS ARTICULOS*/
 .post-title {
     align-self: flex-start;
     margin-bottom: 0;
@@ -210,11 +272,45 @@ li + li {
 }
 
 .post-title h2 {
-    color: #FFD700; /* Amarillo */
+    color: #ffffff; /* Amarillo */
     font-size: 2.2rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    margin: 20px 0 0 20px
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),  /* Sombra negra para contraste */
+        0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 20px 0 0 20px;
+    font-weight: bold;
 }
+
+.post-title.articulo2{
+     align-self: flex-end;
+}
+
+
+
+.leyenda {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    font-weight: small;
+    color: white;
+    text-shadow:   2px 2px 4px rgba(0, 0, 0, 0.16),  /* Sombra negra para contraste */
+        0 0 10px rgba(0, 0, 0, 0.10);
+    font-style: italic;
+    margin-left: 20px;
+
+}
+
+.leyenda.articulo2{
+      /* RESET de posición izquierda */
+    left: auto;
+    margin-left: 0;
+    
+    /* NUEVA posición derecha */
+    right: 0;
+    margin-right: 20px;
+    text-align: right;
+}
+
 
 /* Etiquetas arriba derecha */
 .post-tags {
@@ -223,6 +319,11 @@ li + li {
     flex-wrap: wrap;
     justify-content: flex-end;
 }
+
+.post-tags.articulo2 {
+    justify-content: flex-start;
+}
+
 
 .post-tags .date,
 .post-tags .category {
@@ -346,6 +447,7 @@ li + li {
     border-radius: 5px;
     transition: background-color 0.3s;
     margin-top: 10px;
+    margin-left: 10px;
 }
 
 .read-more:hover {
