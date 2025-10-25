@@ -157,14 +157,7 @@ li + li {
 
 /*ESTILOS DE LOS ARTICULOSs*/
 
-
-
 /* Apuntes css */
-
-/* ELEMENTOS DE LOS ARTICULOS PRINCIPALES COMO DESTACADOS */
-/*ARTICULO DESTACADO */
-
-
 
 /* 
 PSEUDO-ELEMENTO ::before EXPLICADO:
@@ -178,8 +171,9 @@ en este pseudo-elemento para poder animarla independientemente.
 - Evita el efecto "tosco" de animar background-size directamente
 - z-index: -1 coloca la imagen DETRÁS del contenido, como un verdadero fondo
 
-¡Elimina la necesidad de divs extras en el HTML y mantiene tu código limpio!
-*/
+¡Elimina la necesidad de divs extras en el HTML y mantiene tu código limpio!*/
+
+/*REDEFINICIONES DE ETIQUETAS--ARTICLE*/
 article h2 {
     padding: 0 20px;
 }
@@ -187,9 +181,9 @@ article h2 {
 article p {
     padding: 0 20px;
 }
-/*REDEFINICIONES DE CLASSES*/
+/*REDEFINICIONES DE CLASSES ARTICLE*/
 
-/*ARTICULO 1 - CSS*/
+/*ARTICULO DESTACADO 1 - CSS*/
 /*--------------------------------------------------------------------------------------------*/
 .blog-post.featured-post{
     position: relative;                    /* Posicionamiento para elementos hijos absolutos */            
@@ -205,7 +199,9 @@ article p {
    
 } 
 
+/*--------------------------------------------------------------------------------------------*/
 /*PSEUDO ELEMENTO */
+/*--------------------------------------------------------------------------------------------*/
 .blog-post.featured-post::before {
     content: "";                          /* Contenido vacío para el pseudo-elemento */
     position: absolute;                   /* Posicionamiento absoluto respecto al contenedor */
@@ -219,7 +215,8 @@ article p {
     z-index: -1;                          /* Coloca detrás del contenido */
     transition: transform 1s ease-in-out; /* Transición suave de 1 segundo para transform */
 }
-
+/*--------------------------------------------------------------------------------------------*/
+/*VELOCIDAD TRANSICIONES*/
 .blog-post.featured-post:hover::before {
     transform: scale(1.05);               /* Agranda la imagen 5% al hacer hover */
 }
@@ -228,10 +225,10 @@ article p {
     position: relative;                   /* Posicionamiento para estar sobre la imagen */
     z-index: 1;                          /* Asegura que esté por encima del ::before */
 }
-
 /*--------------------------------------------------------------------------------------------*/
-/*Cambio de imaagenes de los otros articulos*/
+/*MODIFICACION DE LAS CLASSES*/
 /*--------------------------------------------------------------------------------------------*/
+/*IMAGEN DE ARTICULO DESTACADO 1*/
 .blog-post.featured-post.fondo-articulo1::before {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
                 url("Imagenes Blog/FotoArticle1.jpg");
@@ -240,6 +237,7 @@ article p {
     background-repeat: no-repeat;         /* Evita que la imagen se repita */
 }
 
+/*IMAGEN DE ARTICULO DESTACADO 2*/
 .blog-post.featured-post.fondo-articulo2::before {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url("Imagenes Blog/FotoArticle2.jpg");
@@ -247,7 +245,19 @@ article p {
     background-position: center;          /* Centra la imagen */
     background-repeat: no-repeat;         /* Evita que la imagen se repita */
 }
+
+/*IMAGEN DE ARTICULO DESTACADO 3*/
+.blog-post.featured-post.fondo-articulo3::before {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url("Imagenes Blog/FotoArticle3.jpg");
+                  background-size: cover;               /* La imagen cubre todo el espacio */
+    background-position: center;          /* Centra la imagen */
+    background-repeat: no-repeat;         /* Evita que la imagen se repita */
+    background-position: center 20%;
+}
 /*--------------------------------------------------------------------------------------------*/
+
+/*ESTRUCTURA DE DEL CONTENIDOR DE ARTICULOS*/
 .content{
     padding: 0px; 
     margin: 0;
@@ -255,7 +265,7 @@ article p {
 
 }
 
-/* Contenedor para título y etiquetas */
+/* CONTENEDORES PARA ETIQUETAS Y SUS CONTENIDOS */
 .post-header {
     display: flex;
     justify-content: flex-end;
@@ -264,6 +274,9 @@ article p {
 }
 
 /* ESTILO DE LOS TITULOS DE LOS ARTICULOS*/
+
+/*ESTILO 1 - IZQUIERDA*/
+/*--------------------------------------------------------------------------------------------*/
 .post-title {
     align-self: flex-start;
     margin-bottom: 0;
@@ -280,13 +293,23 @@ article p {
     margin: 20px 0 0 20px;
     font-weight: bold;
 }
+/*--------------------------------------------------------------------------------------------*/
 
+
+
+/*ESTILO 2 - DERECHA*/
+/*--------------------------------------------------------------------------------------------*/
 .post-title.articulo2{
      align-self: flex-end;
 }
+/*--------------------------------------------------------------------------------------------*/
 
 
 
+
+
+/*ESTILO 1 DE LEYENDA - IZQUIERDA*/
+/*--------------------------------------------------------------------------------------------*/
 .leyenda {
     position: absolute;
     bottom: 50px;
@@ -299,7 +322,12 @@ article p {
     margin-left: 20px;
 
 }
+/*--------------------------------------------------------------------------------------------*/
 
+
+
+/*ESTILO 2 DE LEYENDA - DERECHA*/
+/*--------------------------------------------------------------------------------------------*/
 .leyenda.articulo2{
       /* RESET de posición izquierda */
     left: auto;
@@ -310,9 +338,16 @@ article p {
     margin-right: 20px;
     text-align: right;
 }
+/*--------------------------------------------------------------------------------------------*/
 
 
-/* Etiquetas arriba derecha */
+
+/* ESTILOS DE LAS ETIQUIETAS */
+/*--------------------------------------------------------------------------------------------*/
+.post-header.articulo2 {
+    justify-content: flex-start !important;
+    margin: 10px 10px 0 20px !important; /* ← Márgen izquierdo */
+}
 .post-tags {
     display: flex;
     gap: 30px;
@@ -320,8 +355,9 @@ article p {
     justify-content: flex-end;
 }
 
-.post-tags.articulo2 {
-    justify-content: flex-start;
+.post-tags.articulo2{
+      justify-content: flex-start !important;
+      margin: 10px;
 }
 
 
@@ -335,7 +371,7 @@ article p {
     font-weight: bold;
     margin: 5px;
 }
-
+/*--------------------------------------------------------------------------------------------*/
 /* Contenido del post */
 .post-content {
     margin-top: 20px;
