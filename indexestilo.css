@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     font-family: 'Lexend', sans-serif;
-    background-image: url('textura-papel-sutil.jpg');
+    background-image: url("Imagenes Blog/Fondo.jpg");
 }
 
 .lexend_font {
