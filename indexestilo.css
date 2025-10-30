@@ -14,7 +14,7 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     font-family: 'Lexend', sans-serif;
-    background-image: url("Imagenes Blog/Fondo.jpg");
+    background-image: url("Imagenes Blog/Fondo2.jpg");
 }
 
 /*Font*/
@@ -33,15 +33,24 @@ h1 {                             /*ESTILO H1*/
     color: black;
     margin-bottom: 10px;
     font-size: 2.5rem;
+    color: #ffffff; 
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),  
+        0 0 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
 }
 
 p {                          /*ESTILO P*/
-    color: #666;
+    color: white;
     font-size: 1.1rem;
 }
 
 h3 {                         /*ESTILO h3*/
-    color: black;
+    color: #ffffff; 
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),  
+        0 0 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
     padding-bottom: 10px;
     border-bottom: 2px solid #eee;
 }
@@ -49,8 +58,8 @@ h3 {                         /*ESTILO h3*/
 
 /* ESTOS 4 COMPARTEN LOS MISMOS ESTILOS */
 header, .sidebar, .content, footer {
-    background-color: rgba(255, 255, 255, 0.9); /* Mismo fondo */
-    border-radius: 10px; /* Mismo radio */
+    background-color: rgba(77, 50, 23, 1);  /*Mismo fondo */
+    border-radius: 5px; /* Mismo radio */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Misma sombra */
 }
 
@@ -61,7 +70,7 @@ header, .sidebar, .content, footer {
     margin: 0 auto;      /*Centrado general del contenido*/
     display: grid;              /*Columnas para la estructura del Indice */
     grid-template-columns: 1fr 3fr 1fr;     /*· Columnas con diferentes midas*/
-    gap: 28px;                  /*Espacio entre las brechas */
+    gap: 22px;                  /*Espacio entre las brechas */
     
 }
 
@@ -98,7 +107,7 @@ header {
     height: 196px;
     border-radius: 50%;
     margin-bottom: 15px;
-    border: 3px solid #2575fc;
+    border: 3px solid #C4A484;
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     cursor: pointer; 
 }
@@ -120,7 +129,6 @@ header {
 .widget li {
     border-radius: 8px;
     padding: 10px 12px;
-    border-bottom: 1px dashed #eee;
     list-style-type: none;
     transition: all 0.3s ease; /* ← Transición suave para todos los cambios */
     cursor: pointer;
@@ -134,14 +142,14 @@ li + li {
 }
 
 .widget li:hover {
-    background-color: #2575fc; /* ← Fondo azul muy claro */
-    transform: scale(1.02); /* ← Leve agrandamiento */
+    background-color: #624a2e; /* ← Fondo azul muy claro */
+    transform: scale(1.04); /* ← Leve agrandamiento */
     
 }
 
 /* Efecto de selección ACTIVA (nuevo) */
 .widget li.active {
-    background-color: #2575fc; /* ← Fondo azul sólido */
+    background-color: #624a2e; /* ← Fondo azul sólido */
     transform: scale(1.05); /* ← Un poco más de agrandamiento */
     box-shadow: 0 4px 12px rgba(37, 117, 252, 0.3); /* ← Sombra azul */
 }
@@ -152,7 +160,7 @@ li + li {
 }
 
 .widget a {
-    color: #666;;
+    color: #ffffff;;
     text-decoration: none;
 }
 
@@ -455,7 +463,7 @@ article p {
     gap: 15px;
     margin-bottom: 15px;
     font-size: 0.9rem;
-    color: #666;
+    color: #ffffff;
 }
 
 .post-meta .date {
@@ -504,7 +512,7 @@ footer {
     padding: 20px;
     margin-top: 20px;
     text-align: center;
-    color: #666;
+    color: #ffffff;
 }
 
 /* Diseño responsive */
