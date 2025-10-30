@@ -58,7 +58,7 @@ h3 {                         /*ESTILO h3*/
 
 /* ESTOS 4 COMPARTEN LOS MISMOS ESTILOS */
 header, .sidebar, .content, footer {
-    background-color: rgba(77, 50, 23, 1);  /*Mismo fondo */
+    background-color: rgb(45, 29, 13);  /*Mismo fondo */
     border-radius: 5px; /* Mismo radio */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Misma sombra */
 }
