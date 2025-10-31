@@ -30,7 +30,6 @@ body {
 /*REDEFINICION DE ETIQUETAS HTMl*/
 
 h1 {                             /*ESTILO H1*/
-    color: black;
     margin-bottom: 10px;
     font-size: 2.5rem;
     color: #ffffff; 
