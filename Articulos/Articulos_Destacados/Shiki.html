@@ -15,9 +15,10 @@
         .imagenheader{
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
                 url("../ImagenesArticulos/ImagenesShiki/Portada.jpg");
-            background-position: center;          /* Centra la imagen */
+                     /* Centra la imagen */
             background-repeat: no-repeat;
-            background-position: center 15%;
+            background-position: center 22%;
+            background-size: cover; 
         }
 
         .subrayo {
@@ -573,61 +574,6 @@ Shiki es una buena obra, sin embargo no lo he leído por completo y falta ver pr
             });
         });
     </script>
-<script>
-    // Funcionalidad para el menú móvil y botones especiales
-    document.addEventListener('DOMContentLoaded', function() {
-        // Botón menú hamburguesa
-        const menuBtn = document.createElement('button');
-        menuBtn.className = 'mobile-only mobile-menu-btn';
-        menuBtn.textContent = '☰ Mostrar Índice';
-        document.querySelector('.container').insertBefore(menuBtn, document.querySelector('.sidebar-left'));
-        
-        // Botón volver arriba
-        const backToTopBtn = document.createElement('button');
-        backToTopBtn.className = 'mobile-only back-to-top';
-        backToTopBtn.textContent = '↑';
-        backToTopBtn.style.display = 'none';
-        document.body.appendChild(backToTopBtn);
-        
-        // Toggle del menú lateral
-        menuBtn.addEventListener('click', function() {
-            const sidebar = document.querySelector('.sidebar-left');
-            sidebar.classList.toggle('active');
-            menuBtn.textContent = sidebar.classList.contains('active') ? '✕ Ocultar Índice' : '☰ Mostrar Índice';
-        });
-        
-        // Mostrar/ocultar botón "volver arriba"
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.style.display = 'flex';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        });
-        
-        // Función volver arriba
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Smooth scroll mejorado para móvil
-        document.querySelectorAll('.index-list a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                // Cerrar menú móvil después de hacer click
-                document.querySelector('.sidebar-left').classList.remove('active');
-                menuBtn.textContent = '☰ Mostrar Índice';
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    });
-</script>
+
 </body>
 </html>
