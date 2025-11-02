@@ -288,6 +288,7 @@ article p {
 .article-link,
 .article-link article {
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* Asegurar que los enlaces no tengan estilos por defecto */
@@ -302,6 +303,10 @@ article p {
 /* Mantener las transiciones originales de las imágenes */
 .blog-post.featured-post:hover::before {
     transform: scale(1.05);
+}
+
+a:-webkit-any-link{
+    text-decoration: none;
 }
 /*--------------------------------------------------------------------------------------------*/
 
