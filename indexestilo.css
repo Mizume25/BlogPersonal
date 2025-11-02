@@ -196,6 +196,8 @@ article h2 {
 article p {
     padding: 0 20px;
 }
+
+
 /*REDEFINICIONES DE CLASSES ARTICLE*/
 
 /*ARTICULO DESTACADO 1 - CSS*/
@@ -279,7 +281,7 @@ article p {
 .article-link {
     text-decoration: none;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 /* Mantener el cursor de pointer para indicar que es clickeable */
@@ -310,6 +312,8 @@ article p {
     background: transparent; 
 
 }
+
+
 
 /* CONTENEDORES PARA ETIQUETAS Y SUS CONTENIDOS */
 .post-header {
