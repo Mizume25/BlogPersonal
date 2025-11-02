@@ -271,6 +271,37 @@ article p {
     background-position: center 20%;
 }
 /*--------------------------------------------------------------------------------------------*/
+/*Estructura imagenes articulos como links*/
+
+
+/* Estilos para los enlaces de artículos */
+
+.article-link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Mantener el cursor de pointer para indicar que es clickeable */
+.article-link,
+.article-link article {
+    cursor: pointer;
+}
+
+/* Asegurar que los enlaces no tengan estilos por defecto */
+.article-link:link,
+.article-link:visited,
+.article-link:hover,
+.article-link:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Mantener las transiciones originales de las imágenes */
+.blog-post.featured-post:hover::before {
+    transform: scale(1.05);
+}
+/*--------------------------------------------------------------------------------------------*/
 
 /*ESTRUCTURA DE DEL CONTENIDOR DE ARTICULOS*/
 .content{
