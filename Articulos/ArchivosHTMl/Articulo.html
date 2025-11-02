@@ -11,30 +11,120 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<main>
+
 <header class="imagenheader ">
+
  <div class="post-tags">
+
      <span class="category ">Categoria</span>
      <span class="category">Categoria</span>
      <span class="category">Categoria</span>
-    </div>   
+
+ </div>   
+
 </header>
+
 <header class="headertitulo">
     <h1>Titulo</h1>
 </header>
+ <div class="container">
+        <!-- Barra lateral izquierda - Índice -->
+        <aside class="sidebar-left">
+            <h3>Índice de Contenido</h3>
+            <ul class="index-list">
+                <li><a href="#section1">Seccion1</a></li>
+                <li><a href="#section2">Seccion2</a></li>
+                <li><a href="#section3">Seccion3</a></li>
+                <li><a href="#section4">Seccion4</a></li>
+                <li><a href="#section5">Seccion5</a></li>
+                <li><a href="#section6">Seccion6</a></li>
+            </ul>
+        </aside>
 
-<aside>
+        <!-- Artículo principal -->
+        <article class="main-article">
+            <div class="categories">
+                <span class="category">Categoria</span>
+                <span class="category">Categoria</span>
+                <span class="category">categoria</span>
+            </div>
 
-</aside>
+            <header class="article-header">
+                <h1>Titulo del Libro por Autor - Titulo Articulo o palabra clave</h1>
+                <p class="meta">Publicado el X de X, 20__ • _ min de lectura</p>
+            </header>
 
-<section>
+            <section id="section1" class="article-section">
+                <h2>Titulo</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                
+                <img src="../ArchivosHTMl/ImagenesArticulos/imagenejemplo.png" class="article-image">
+            </section>
 
-</section>
+            <section id="section2" class="article-section">
+                <h2>Titulo</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <img src="../ArchivosHTMl/ImagenesArticulos/imagenejemplo.png" alt="Código en pantalla" class="article-image">
+            </section>
+
+            <section id="section3" class="article-section">
+                <h2>Titulo</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </section>
+        </article>
+
+        <!-- Barra lateral derecha - Información personal -->
+        <aside class="sidebar-right">
+            <div class="profile">
+                <img src="../../Imagenes Blog/FotoPerfil.jpg" class="profile-img">
+                <h3>Gabriel</h3>
+                <p>Blog de Lecturas</p>
+                <div class="social-links">
+                    <a href="#">in</a>
+                    <a href="#">tw</a>
+                    <a href="#">gh</a>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Sobre Mí</h4>
+                <p>Desarrollador web con más de 5 años de experiencia especializado en frontend. Apasionado por crear interfaces intuitivas y experiencias de usuario excepcionales.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Artículos Populares</h4>
+                <ul class="index-list">
+                    <li><a href="#">CSS Grid vs Flexbox</a></li>
+                    <li><a href="#">Introducción a React Hooks</a></li>
+                    <a href="#">Optimización de Imágenes Web</a></li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>Suscríbete</h4>
+                <p>Recibe las últimas actualizaciones y artículos directamente en tu correo.</p>
+                <input type="email" placeholder="Tu email" style="width: 100%; padding: 8px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px;">
+                <button style="width: 100%; padding: 10px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer;">Suscribirse</button>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Smooth scroll para los enlaces del índice
+        document.querySelectorAll('.index-list a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 
-</main>
-    
-
-</main>
 </body>
 </html>
