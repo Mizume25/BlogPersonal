@@ -53,6 +53,66 @@ h3 {                         /*ESTILO h3*/
     padding-bottom: 10px;
     border-bottom: 2px solid #eee;
 }
+
+/*Responsive de las etiquetas h1, h2, p*/
+
+/* Tablets */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+    }
+    
+    p {
+        font-size: 1.05rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+        padding-bottom: 8px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        text-shadow: 
+            1px 1px 3px rgba(0, 0, 0, 0.8),  
+            0 0 8px rgba(0, 0, 0, 0.5);
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        padding-bottom: 6px;
+        text-shadow: 
+            1px 1px 3px rgba(0, 0, 0, 0.8),  
+            0 0 8px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 5px;
+    }
+    
+    p {
+        font-size: 0.95rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+        padding-bottom: 5px;
+    }
+}
+
 /*ELEMENTOS DE REDEFINICION DE ETIQUETAS COMPARTIDAS*/
 
 /* ESTOS 4 COMPARTEN LOS MISMOS ESTILOS */
@@ -62,6 +122,34 @@ header, .sidebar, .content, footer {
     box-shadow: 10px 4px 15px rgba(255, 255, 255, 0.1); /* Misma sombra */
 }
 
+/* Tablets */
+@media (max-width: 1024px) {
+    header, .sidebar, .content, footer {
+        border-radius: 4px;
+        box-shadow: 8px 3px 12px rgba(255, 255, 255, 0.08);
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    header, .sidebar, .content, footer {
+        border-radius: 3px;
+        box-shadow: 5px 2px 8px rgba(255, 255, 255, 0.05);
+    }
+    
+    .content {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    header, .sidebar, .content, footer {
+        border-radius: 2px;
+        box-shadow: 3px 1px 6px rgba(255, 255, 255, 0.03);
+    }
+}
 
 /*CONTAINER PRINCIAPL DE EL INDICE DE LA PAGINA WEB*/
 .container {
@@ -72,9 +160,50 @@ header, .sidebar, .content, footer {
     gap: 22px;                  /*Espacio entre las brechas */
     
 }
+/* ========== RESPONSIVE MEJORADO - CONTAINER ========== */
 
+/* Tablets */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+            "header header"
+            "left-sidebar content"
+            "right-sidebar right-sidebar"
+            "footer footer";
+        gap: 18px;
+        max-width: 95%;
+        padding: 0 15px;
+    }
+}
 
+/* Móviles */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "content"
+            "left-sidebar"
+            "right-sidebar"
+            "footer";
+        gap: 15px;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
 
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .container {
+        gap: 12px;
+        padding: 0 8px;
+    }
+}
+
+/*---------------------------------------------------------------*/
+
+/*---------------------------------------------------------------*/
 /* ENCABEZADO DE LA PÀGINA WEB */
 header {
     grid-column: 1 / 4;     /*Mida equivalente a las columnas creadas*/
@@ -84,12 +213,39 @@ header {
     text-align: center;
 }
 
+/* Tablets */
+@media (max-width: 1024px) {
+    header {
+        padding: 12px 20px;
+        margin-bottom: 6px;
+    }
+}
 
+/* Móviles */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 10px;
+        margin-bottom: 5px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    header {
+        padding: 12px 8px;
+        margin-bottom: 4px;
+    }
+}
+
+
+/*---------------------------------------------------------------*/
 /* BARRAS LATERALES*/
 .sidebar {
     padding: 35px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /*Sombreado con efecto de profundidad*/
 }
+
 
 .widget + .widget {         /*Espacios entre los widget*/
     margin-bottom: 30px;
@@ -170,6 +326,126 @@ li + li {
     border-bottom: none;
 }
 
+/* ========== RESPONSIVE MEJORADO - BARRAS LATERALES ========== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .sidebar {
+        padding: 25px;
+    }
+    
+    .widget + .widget {
+        margin-bottom: 25px;
+    }
+    
+    .profile img {
+        width: 150px;
+        height: 163px;
+    }
+}
+
+.mobile-menu-toggle {
+        display: none;
+        width: 100%;
+        background: #624a2e;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+/* Móviles */
+@media (max-width: 768px) {
+    /* Botón hamburguesa visible en móvil */
+    .mobile-menu-toggle {
+        display: block;
+        width: 100%;
+        background: #624a2e;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .sidebar {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .widget + .widget {
+        margin-bottom: 20px;
+    }
+    
+    .profile img {
+        width: 120px;
+        height: 130px;
+        margin-bottom: 12px;
+        transition: none;
+    }
+    
+    .profile img:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .widget li {
+        padding: 12px 15px;
+        text-align: center;
+        transition: background-color 0.2s ease;
+    }
+    
+    .widget li:hover {
+        transform: none;
+    }
+    
+    .widget li.active {
+        transform: none;
+    }
+    
+    li + li {
+        margin-top: 8px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 15px;
+        margin: 0 5px;
+    }
+    
+    .widget + .widget {
+        margin-bottom: 15px;
+    }
+    
+    .profile img {
+        width: 100px;
+        height: 109px;
+        margin-bottom: 10px;
+    }
+    
+    .widget li {
+        padding: 10px 12px;
+    }
+    
+    .mobile-menu-toggle {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* 🔽 AÑADE ESTO AL FINAL - OCULTAR BOTÓN EN DESKTOP 🔽 */
+.mobile-menu-toggle {
+    display: none;
+}
 /*ESTILOS DE LOS ARTICULOSs*/
 
 /* Apuntes css */
@@ -553,6 +829,7 @@ footer {
     text-align: center;
     color: #ffffff;
 }
+
 
 /* Diseño responsive */
 
