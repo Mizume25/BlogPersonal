@@ -18,9 +18,6 @@
         </header>
         
         <aside class="sidebar left-sidebar">
-            <button class="mobile-menu-toggle" onclick="toggleSidebar(this)">
-        ☰ Menú Widgets
-    </button>
             <section class="widget">
                 <h3>Sobre Mí</h3>
                 <div class="profile">
@@ -129,18 +126,6 @@
             <p>&copy; 2024 Mi Blog Personal. Todos los derechos reservados.</p>
         </footer>
     </main>
-    <script>
-    function toggleSidebar(button) {
-    const sidebar = button.parentElement;
-    const widgets = sidebar.querySelectorAll('.widget');
     
-    widgets.forEach(widget => {
-        widget.style.display = widget.style.display === 'none' ? 'block' : 'none';
-    });
-    
-    button.textContent = button.textContent === '☰ Menú Widgets' ? '✕ Cerrar' : '☰ Menú Widgets';
-   
-}
- </script>
 </body>
 </html>
