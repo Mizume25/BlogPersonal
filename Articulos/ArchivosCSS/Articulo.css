@@ -9,6 +9,8 @@ body {
     font-family: 'Lexend', sans-serif;
     margin: 0px;
 }
+
+
 .lexend_font {
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
@@ -28,8 +30,10 @@ body {
             margin-bottom: 0px;
             margin-top: 0px;
             background-size: cover;
-
 }
+
+
+
 /*ESTILOS DE H1 HEADER*/
 
 .headertitulo {
