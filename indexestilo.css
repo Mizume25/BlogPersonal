@@ -559,8 +559,37 @@ footer {
     color: #ffffff;
 }
 /*DISEÑO DEL RESPONSIVE*/
-
+/*Escritorios pequeños*/
 @media(max-width:1024px){
+.container {
+    margin: 0 auto;      /*Centrado general del contenido*/
+    display: grid;              /*Columnas para la estructura del Indice */
+    grid-template-columns: 1fr 3fr 1fr;     /*· Columnas con diferentes midas*/
+    gap: 11px;                  /*Espacio entre las brechas */
+}
+
+header {
+    grid-column: 1 / 4;     /*Mida equivalente a las columnas creadas*/
+    padding: 5px 10px 5px 10px;     /*espacio entre el propio encabezado*/
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+    text-align: center;
+}
+.sidebar {
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /*Sombreado con efecto de profundidad*/
+}
+}
+.profile img {
+    width: 100px;
+    height: 116px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #C4A484;
+    transition: none;
+}
+/*Tablets*/
+@media(max-width:768px){
 .container {
     margin: 0 auto;      /*Centrado general del contenido*/
     display: grid;              /*Columnas para la estructura del Indice */
@@ -588,6 +617,8 @@ header {
     border: 3px solid #C4A484;
     transition: none;
 }
+
+
 }
 
 
