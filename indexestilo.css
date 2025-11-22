@@ -623,7 +623,7 @@ header {
 
 }
 /* ========== MÓVILES (480px) ========== */
-@media (max-width: 480px) {
+@media (max-width: 512px) {
     .container {
         grid-template-columns: 1fr;
         gap: 10px;
