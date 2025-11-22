@@ -352,3 +352,38 @@ h4 {
             flex-wrap: wrap;
         }
 
+/*==RESPONSIVE DE ARTICULOS HTML==*/
+/*RESPONSIVE TABLET*/
+@media (max-width:768px){
+.imagenheader {
+display: none;    
+}
+.headertitulo {
+display: none;
+}
+
+.sidebar-left {
+    display: none;
+}
+
+.sidebar-right{
+    display: none;
+}
+
+.container {
+ margin: 0 auto;
+ padding: 20px;
+ display: block;
+        }
+
+img {
+max-width: 400px;
+}
+
+.article-image {
+ max-width: 400px;
+ border-radius: 8px;
+ margin: auto 0;
+ display:block
+        }
+}
