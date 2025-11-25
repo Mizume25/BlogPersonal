@@ -220,7 +220,6 @@ h4 {
 
         /* Estilos para el artículo principal */
         .main-article {
-           
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -355,26 +354,16 @@ h4 {
 /*==RESPONSIVE DE ARTICULOS HTML==*/
 /*RESPONSIVE TABLET*/
 @media (max-width:1024px){
-.imagenheader {
-display: none;    
-}
-.headertitulo {
+.imagenheader,.headertitulo,.sidebar-left,.sidebar-right{
 display: none;
 }
-
-.sidebar-left {
-    display: none;
-}
-
-.sidebar-right{
-    display: none;
-}
-
 .container {
  margin-right: auto;
  margin-left: auto;
- padding: 20px;
+ padding: 5px;
  display: block;
+ max-width: 100%;
+
         }
 
 img {
@@ -418,26 +407,26 @@ h1 {
 
 
 @media (max-width:512px){
-.imagenheader {
-display: none;    
-}
-.headertitulo {
+
+.main-article {
+ border-radius: 10px;
+ padding: 20px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        max-width: 100%; /* ← AÑADIR ESTO */
+        margin: 0 auto; /* ← AÑADIR ESTO */
+        padding: 20px;        
+        }
+.imagenheader,.headertitulo,.sidebar-left,.sidebar-right{
 display: none;
 }
 
-.sidebar-left {
-    display: none;
-}
-
-.sidebar-right{
-    display: none;
-}
-
 .container {
- margin-right: auto;
- margin-left: auto;
  padding: 20px;
  display: block;
+ width: 400px;
+ max-width: 100%;
+ margin-left: 60px;
+ margin-right: 0px;
         }
 
 img {
@@ -445,7 +434,7 @@ max-width: 200px;
 }
 
 .article-image {
- max-width: 200px;
+ max-width: 100%;
  border-radius: 8px;
  margin: auto 0;
  display:block
