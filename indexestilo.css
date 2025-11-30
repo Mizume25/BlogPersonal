@@ -97,32 +97,49 @@ header {
 .widget + .widget {         /*Espacios entre los widget*/
     margin-bottom: 30px;
 }
+section #footer_profile{
+margin-top: 0px;
+}
+/*Propiedad de el Widget Autobiografico*/
+#footer_profile h3{
+text-align: left;
+border-bottom: none;
+margin-left: 35px;
+font-size: 20px;
+padding-bottom: 0px;
+text-decoration: underline;
+}
 
-/*CONTENIDO DE LAS COLUMNAS*/
-/* Centrado de texto*/
 .profile {
     text-align: center;
+    display: flex;
+    align-content: center;
+    
 }
-/*Estilo Imagen*/
 .profile img {
+    display: flex;
+    align-content: center;
+    justify-content: center;
     width: 180px;
     height: 196px;
     border-radius: 50%;
     margin-bottom: 15px;
     border: 3px solid #C4A484;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    cursor: pointer; 
+    padding-top: 0px;
 }
-/*ANIMACION IMAGEN*/
-.profile img:hover {
-    transform: scale(1.1); /* Agranda 10% */
-    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.3); /* Sombra azul suave */
+/*PARRAFO DE TEXTO AUTOBIOGRAFICO*/
+.text_me {
+margin-top: 0px;
+padding-top: 0px;
+margin-left: 50px;
+background-color: burlywood;
+border-radius: 8px;
+border: solid 1px black;
+height: 300px;
+width: 1000px;
 }
-
-
-
 /*ESTILOS DE LAS LISTAS*/
-
+/*Widget de los sidebars*/
 .widget ul {
     padding-left: 0; /* ← Elimina el padding por defecto */
     text-align: center; /* ← Centra el texto */
@@ -442,28 +459,6 @@ a:-webkit-any-link{
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     margin-bottom: 0;
 }
-.subscribe-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.subscribe-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #2575fc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.subscribe-form button:hover {
-    background-color: #1a5fd8;
-}
 
 .social-links {
     display: flex;
@@ -554,9 +549,11 @@ a:-webkit-any-link{
 footer {
     grid-column: 1 / 4;
     padding: 20px;
-    margin-top: 20px;
+    padding-top: 0px;
     text-align: center;
     color: #ffffff;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
 
@@ -622,48 +619,17 @@ header {
 
 
 }
-
+/*Responsive de Moviles*/
 @media (max-width: 512px) {
     .container {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 15px;
+        width: 100%;
     }
     
     header {
         grid-column: 1 / 2;
     }
-    
-    .sidebar {
-        position: relative;
-        cursor: pointer;
-        padding: 12px;
-        margin-bottom: 8px;
-        display: none;
-    }
-    
-    .sidebar::after {
-        content: "☰";
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        font-size: 1.2rem;
-        color: white;
-        
-    }
-    
-    .sidebar.active::after {
-        content: "✕";
-    }
-    
-    .widget {
-        display: none;
-    }
-    
-    .sidebar.active .widget {
-        display: block;
-        animation: fadeIn 0.3s ease;
-    }
-    
     .profile img {
         width: 70px;
         height: 86px;
@@ -697,50 +663,22 @@ header {
     margin: 2px 0 0 2px;
     font-weight: bold;
 }
-.post-tags {
+/*Desactivamos todos los elementos de pantallas pequñas*/
+.post-tags,.leyenda,footer,.sidebar,.widget {
     display: none;
 }
 
-.leyenda {
-    display:none;
+.profile img:hover {
+    transform: none; 
+    box-shadow: none; 
 }
 
-footer{
-    display: none;
+.blog-post.featured-post:hover::before {
+    transform: none;               
 }
-  .sidebar-summary {
-    display: block; /* Mostrar solo en móvil */
-  }
-  
-  .sidebar-content {
-    display: none;
-    padding: 15px;
-    background: rgb(45, 29, 13);
-    border-radius: 0 0 5px 5px;
-    margin-top: -10px;
-  }
-  
-  .sidebar-details[open] .sidebar-content {
-    display: block;
-    animation: fadeIn 0.3s ease;
-  }
-  
-  /* Ocultar los sidebars originales y mostrar solo los details */
-  .sidebar:not(.sidebar-content) {
-    display: none;
-  }
-  
-  .container {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
 
-}
 
 
 
