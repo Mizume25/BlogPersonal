@@ -383,7 +383,7 @@ display: none;
     z-index: 1000;
     left: 0;
     top: 0;
-    margin-right: 150px;
+    margin-left: 20px;
     margin-top: 100px;
     background-color: rgb(45, 29, 13);
     box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1); 
@@ -398,7 +398,7 @@ i{
     position: fixed;
     top: 0;
     right: 0;
-    width: 35%;
+    width: 30%;
     height: 100%;
     z-index: 1200;
     transform: translateX(100%);
@@ -416,6 +416,7 @@ i{
 #ozakiPhoto{
     max-width: 600px
 }
+
 .article-image {
  max-width: 600px;
  border-radius: 8px;
@@ -466,7 +467,7 @@ display: none;
     z-index: 1000;
     left: 0;
     top: 0;
-    margin-right: 150px;
+    margin-left: 20px;
     margin-top: 100px;
     background-color: rgb(45, 29, 13);
     box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1); 
@@ -534,21 +535,60 @@ h1 {
 }
 
 @media (max-width:512px){
-
-.imagenheader,.headertitulo,.sidebar-left,.sidebar-right{
+.main-article{
+    width: 400px;
+}
+.imagenheader,.headertitulo,.sidebar-right{
 display: none;
 }
 
 #ozakiPhoto{
-    max-width: 400px
+    max-width: 300px
 }
-.main-article{
-    margin-right: 30px;
+ #Foto11{
+        max-width: 300px; 
+        display:block; 
+        margin: 0 auto;
 }
+
+
+#btnIndex{
+    display: block;
+    width: 50px;
+    height: 50px;
+    position:fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    margin-left: 20px;
+    margin-top: 100px;
+    background-color: rgb(45, 29, 13);
+    box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1); 
+}
+i{
+    color: rgb(205, 205, 205);
+    font-size: 1.9em;
+}
+
+.sidebar-left {
+    /* Estado por defecto: oculto */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1200;
+    transform: translateX(100%);
+}
+
+    /* Esta clase se añade/remueve con JavaScript */
+.sidebar-left.abierto {
+    transform: translateX(0);
+ }
 
 
 .article-image {
- max-width: 400px;
+ max-width: 300px;
  border-radius: 8px;
  margin: auto 0;
  display:block
