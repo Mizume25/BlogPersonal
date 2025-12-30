@@ -10,3 +10,8 @@
 
 # SFTP configuration
 sftp.json
+
+# CARPETAS 
+Docs/*
+!Docs/README.md
+!Docs/LICENSE
