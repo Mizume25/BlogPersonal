@@ -558,6 +558,14 @@ footer {
     padding-top: 0px;
 }
 
+/*Borramos boton del escritorio*/
+#buttonMenu {
+    display: none;
+    
+}
+
+
+
 
 /*Escritorios pequeños*/
 @media(max-width:1024px){
@@ -623,14 +631,30 @@ header {
 }
 /*Responsive de Moviles*/
 @media (max-width: 512px) {
+    #buttonMenu{
+        display: block;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        position:fixed;
+        z-index: 1000;
+        margin-top: 10px;
+        margin-left: 5px;
+        background-color: rgb(45, 29, 13);
+         box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1); /* Misma sombra */
+    }
+    i {
+        color: rgb(152, 152, 152);
+    }
     .container {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        
+        gap: 100px;
         width: 100%;
+        display: block;
     }
     
     header {
-        grid-column: 1 / 2;
+        grid-column: none;
     }
     .profile img {
         width: 70px;
