@@ -537,6 +537,8 @@ h1 {
 @media (max-width:512px){
 .main-article{
     width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .imagenheader,.headertitulo,.sidebar-right{
 display: none;
