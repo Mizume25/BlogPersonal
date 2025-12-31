@@ -7,7 +7,7 @@
 body {
     background-image: url("../../Imagenes Blog/Fondo2.jpg");
     font-family: 'Lexend', sans-serif;
-    margin: -20px;
+    margin: -18px 0px 0px 0px ;
 }
 
 
@@ -157,7 +157,6 @@ h4 {
             height: fit-content;
             position: sticky;
             top: 20px;
-            margin-left: 30px;
         }
 
         .sidebar-left h3 {
@@ -169,7 +168,7 @@ h4 {
 
         /*Index de la izquierda*/
         .index-list {
-            list-style-type: none;
+            list-style-type: "🐢";
         }
 
         .index-list li {
@@ -279,7 +278,7 @@ h4 {
 
         /* Estilos para la barra lateral derecha (información personal) */
         .sidebar-right {
-           
+            width: 350px;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
