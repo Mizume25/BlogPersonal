@@ -866,7 +866,8 @@ h4 {
         margin: auto 0;
         display: block
     }
-
+    
+    /*Estilos de h1 dentro del contenidor header*/
     .article-header h1 {
         color: #ffffff;
         font-size: 1.1rem;
@@ -874,7 +875,7 @@ h4 {
     }
 
     h1 {
-        /*Estilos de h1 dentro del contenidor header*/
+        
         border-radius: 6px;
         border: solid 1px rgb(210, 180, 140);
         background-color: rgb(210, 180, 140);
@@ -901,7 +902,7 @@ h4 {
         background-color: rgb(85, 72, 58);
 }
 
-   /* Contenedor principal horizontal */
+/* Contenedor principal horizontal */
 #NetWorks .profile {
     display: flex;
     flex-direction: row;
@@ -910,7 +911,7 @@ h4 {
     width: 100%;
 }
 
-/* Sección del perfil (izquierda) - Más grande */
+/* Sección del perfil (izquierda)*/
 #NetWorks .profile-img {
     display: none;
 }
@@ -940,7 +941,7 @@ h4 {
     width: 36px;
     height: 36px;
     background-color: #3498db;
-    color: black; /* Color original del sidebar */
+    color: black; 
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s;
@@ -953,12 +954,12 @@ h4 {
     transform: translateY(-3px);
 }
 
-/* Sección de artículos destacados (derecha) - Reducido */
+/* Sección de artículos destacados (derecha)*/
 #NetWorks .info-box {
     flex: 1;
     background-color: rgb(179, 176, 172);
     border-radius: 8px;
-    padding: 15px; /* Reducido */
+    padding: 15px; 
     margin-top: 0;
     color: black;
     border: 1px solid #e0e0e0;
@@ -966,9 +967,9 @@ h4 {
 
 #NetWorks .info-box h4 {
     color: #ffffff;
-    margin-bottom: 12px; /* Reducido */
+    margin-bottom: 12px; 
     text-shadow: 6px 2px 6px rgba(0, 0, 0, 0.4), 0 0 8px rgba(0, 0, 0, 0.3);
-    font-size: 1.1rem; /* Un poco más pequeño */
+    font-size: 1.1rem; 
 }
 
 #NetWorks .index-list2 {
@@ -978,8 +979,8 @@ h4 {
 }
 
 #NetWorks .index-list2 li {
-    margin-bottom: 8px; /* Reducido */
-    padding-bottom: 8px; /* Reducido */
+    margin-bottom: 8px; 
+    padding-bottom: 8px; 
     border-bottom: 1px solid #ddd;
 }
 
@@ -992,7 +993,7 @@ h4 {
 #NetWorks .index-list2 a {
     color: #000000;
     text-decoration: none;
-    font-size: 0.9rem; /* Un poco más pequeño */
+    font-size: 0.9rem; 
     display: block;
     transition: color 0.2s;
 }
