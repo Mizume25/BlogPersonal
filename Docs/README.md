@@ -33,7 +33,7 @@ Respositorio donde se almacenara todos los archivos que desarollen en relacion a
         - Sin Imagen header, ni titulo general solo titulo de articulo
         - Implementacion de seccion de redes sociales y borrado del side bar derecho
 # Diseño Desktop + Responsive - Post
-    Post: Contendra todos los elementos desktop y responsive (sin imagen titulo ni titulo principal) solo titulo general
+    Post: Contendra todos los elementos desktop y responsive de un Articulo (sin imagen titulo ni titulo principal) solo titulo general
 
 
 
