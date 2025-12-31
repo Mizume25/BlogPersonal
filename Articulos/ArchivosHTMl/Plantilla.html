@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shiki</title>
+  <title>Plantilla</title>
   <link rel="icon" type="image/x-icon" href="../../Imagenes Blog/Icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../ArchivosCSS/Articulo.css">b
@@ -12,13 +12,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
+  <!--Estructuras Personales de cada Pagian
+    - Cada Arituclo estara vinculado a Articulo.css pero dentro de cada Articulo hbara una personalizacion de contenido-->
   <style>
-    /*Modificaciones y Detalles del codigo CSS*/
-    /*Modificar classe para la imagen principal*/
     .imagenheader {
       background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("../ImagenesArticulos/ImagenesShiki/Portada.jpg");
-      /* Centra la imagen */
+        url("../ArchivosHTMl/ImagenesArticulos/imagenejemplo.png");
       background-repeat: no-repeat;
       background-position: center 18%;
       background-size: cover;
@@ -59,7 +58,8 @@
     /*Centrado de imagenes*/
     img {
       display: block;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -67,42 +67,93 @@
 <body>
   <!---Header con una imagen de fondo con propiedades-->
   <header class="imagenheader"> </header>
+  <!----------------------FORMULAS BASE DE EJEMPLO---------------------------->
+  <!--
+  Section: Seccion especifica de un articulo(puede haber varias estableci 6 como ejemplo)
+  h2: Titulo de un seccion especifica(1 por seccion)
+  h3: Titulo de un tema a tratar dentro de una seccion (puede haber varias)
+  article-image: Propiedades especficas de las secciones (agregar)
+  article-image: Propiedades espeficias de las imagenes y adaptaciones a responsive (agregar)
+
+  NUEVAS SECCIONES:
+  N: secciones que quieres agregar
+
+  - ESTRUCTURA BASE: Num.Secciones > Num h2 < Num h3 > num paragrafos
+  - (section#section$@4.article-section>h2+h3+p)* N
+  ----------------------------------------------------------------------
+
+  MULTIPLES SUBSECCIONES + NUEVA SECCION:
+  ESTRUCTURA BASE: SECCION > TITULO SECCION > SUBSECCIONES + PARAGRAFOS
+  SE : Secciones existentes
+
+  - section$@SE*1.article-section>h2+(h3+p)*numero de sub secciones
+
+  ----------------------------------------------------------------------
+  SECCION INDIVIDUAL + 1 SUBSECCION
+  ESTRUCTURA BASE > 1 H2 > 1 H3 > p> IMG
+  - section$@SE*1.article-section>h2+h3+p+img.article-image
+
+  ----------------------------------------------------------------------
+  1 SUBSECCION
+  (h3 > p) * cantidad sub secciones
+
+  1 SUBSECCION + IMAGEN
+  
+  h3 + p + img.article-image
+
+  1 SUBSECCION  + TABLA
+
+  h3+p+table>tr*filas>td*columnas
+
+  AVISO: DEBEN AGREGARSE LAS CLASSES E IDS CORRESPONDIENTES PARA NO COMRPOMETER EL RESPONSIVE
+
+                                                                            -->
+  <!--------------------------------------------------------------------------->
+  <!---TITULO PRINCIPAL--->
+
+
+  <!---TITULO PRINCIPAL--->
   <header class="headertitulo">
-    <h1>Shiki</h1>
+    <h1>TITULO</h1>
   </header>
   <!--------------------->
   <div class="container">
     <aside class="sidebar-left"> <!-- Barra lateral izquierda - Índice -->
       <h3>Índice de Contenido</h3> <!-- INDICE CONTENIDO -->
       <ul class="index-list">
-        <li><a href="#section1">Puntos Capitales</a></li>
-        <li><a href="#section2">Notas de Abril</a></li>
-        <li><a href="#section3">Notas de Mayo</a></li>
-        <li><a href="#section4">Alegorias y dramaturgia</a></li>
-        <li><a href="#section5">Conclusiones Generales</a></li>
-        <li><a href="#section6">Notas Finales</a></li>
+        <li><a href="#section1">SECCION I</a></li>
+        <li><a href="#section2">SECCION II</a></li>
+        <li><a href="#section3">SECCION III</a></li>
+        <li><a href="#">EJEMPLO</a></li>
+        <li><a href="#">EJEMPLO</a></li>
+        <li><a href="#">EJEMPLO</a></li>
       </ul>
     </aside>
 
 
     <article class="main-article"> <!-- Cuerpo del articulo -->
+
       <div class="categories"><!-- Categorias iniciales -->
-        <span class="category">Terror</span>
-        <span class="category">Misterio</span>
-        <span class="category">Sobrenatural</span>
+        <span class="category">Ejemplo</span>
+        <span class="category">Ejemplo</span>
+        <span class="category">Ejemplo</span>
       </div>
+
       <!-- Contenido del Articulo-->
       <header class="article-header">
-        <h1>Shiki: Fuyumi Ono <br>El vitalismo de Sotoba</h1>
-        <p class="meta">Publicado el 9 de Abril, 2025</p>
+        <h1>TITULO EJEMPLO <br>ARTICULO</h1>
+        <p class="meta">Publicado el X de ¿?, 20XX</p>
+
+        <!-- Boton del responsive-->
         <button id="btnIndex">
           <i class="fas fa-bars"></i>
         </button>
+
       </header>
 
-      <!--SECCION I-->
+      <!--SECCION DE EJEMPLO-->
       <section id="section1" class="article-section">
-        <h2>Notas Conjuntas - Marzo</h2>
+        <h2>EJEMPLO</h2>
 
         <p>En Sniki (me remito por entero a la novela) se puede identificar al
           menos 3 puntos fundamentales de la obra que clarifican la dirección de
@@ -121,7 +172,7 @@
           poco o mucho el pueblo de Sotoba pone entre dicha a la casa de Kanemasa
           como principal sospecha de ese desencadenamiento de acontecimientos completamentesorprendentes.</p>
         <!--IMAGEN 1-->
-        <img src="../ImagenesArticulos/ImagenesShiki/foto1.jpg" class="article-image">
+        <img src="ImagenesArticulos/imagenejemplo.png" class="article-image">
 
         <p>Ensayo de Seishin & Concepto de Sotoba <br>
 
@@ -195,7 +246,7 @@
 
         </ul>
         <!--IMAGEN 2-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto2.jpg" alt="Código en pantalla" class="article-image">
+        <img src="ImagenesArticulos/imagenejemplo.png" alt="Código en pantalla" class="article-image">
         <p>Los ejes están en el orden en el que irónicamente revelan su posición en la toma de decisión política, sin
           embargo la actual
           vigencia de Sotoba nos dice de la vaga decisión que supone los apellidos Ozaki y Muroi, y la aldea actualmente
@@ -248,7 +299,7 @@
           mismas un reflejo de lo que se construyó con anterioridad.
         </p>
         <!--IMAGEN 3-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto3.png" alt="Código en pantalla" class="article-image">
+        <img src="ImagenesArticulos/imagenejemplo.png" alt="Código en pantalla" class="article-image">
         <p>"La muerte iguala todo" en un sentido lo que la niña de los Kirishiki declara ante Seishin es la
           malversada configuración del Ego rural que comporta la reacción de los aldeanos y su distal recibimiento en
           relación a una muerte y otra.
@@ -270,6 +321,7 @@
         </p>
       </section>
 
+      <!-- SECCION III-->
       <section id="section3" class="article-section">
         <h2>Notas de Mayo</h2>
         <h3>La psicología de Seishin </h3>
@@ -298,7 +350,7 @@
             class="subrayo">- Volumen 02 - Capitulo 7 </span>
         </p>
         <!--IMAGEN 4-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto 4.jpg" alt="Seishin Foto" class="article-image">
+        <img src="ImagenesArticulos/imagenejemplo.png" alt="Seishin Foto" class="article-image">
 
         <h3>El sentido de trascendencia de Ozaki/Seishin</h3>
         <p>Tras lo acontecido con la previsión de la posibilidad de una enfermedad epidémica, Muroi junto a Ozaki se
@@ -339,7 +391,7 @@
         <p>Siente que en este vacío trascendente solo una nada transformada en religión abandonada como un Dios sin
           luminosidad puede darle algún tipo de aliento.</p>
         <!--IMAGEN 5-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto5.jpg" alt="Seishin y Ozaki Foto" class="article-image">
+        <img src="ImagenesArticulos/imagenejemplo.png" alt="Seishin y Ozaki Foto" class="article-image">
 
         <h3>La muerte epidémica y el sentido de la unidad de Sotoba </h3>
         <p>Ozaki a diferencia de Seishin tiene problemas, en concreto se ve atrapado en compromisos familiares que
@@ -371,7 +423,7 @@
           trascendencia distinta la Ética de Ozaki y la Ética y Estética de Seishin.
         </p>
         <!--IMAGEN 6-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto6.jpg" alt="Natsuo Foto" class="article-image">
+        <img src="ImagenesArticulos/imagenejemplo.png" alt="Natsuo Foto" class="article-image">
 
         <p>Él sentido de unidad de Sotoba evidenciado en esta epidemia se deja ver en las discontinuas muertes y
           diferentes reacciones supeditadas a la región en las que se encuentran, los rumores como era de esperar se
@@ -425,7 +477,7 @@
           idealismo del Seishin
         </p>
         <!--IMAGEN 7-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto7.jpg" alt="Seishin Foto Anime" class="article-image">
+        <img src="ImagenesArticulos/imagenejemplo.png" alt="Seishin Foto Anime" class="article-image">
 
         <h3>Estructura metafórica</h3>
 
@@ -446,20 +498,20 @@
         <!--1º TABLA DE INTERPRETACION-->
         <table>
           <tr>
-            <td>Estructura Metaforica</td>
-            <td>Exterior/Interior</td>
+            <td>ENCABEZADO</td>
+            <td>ENCABEZADO</td>
           </tr>
           <tr>
-            <td>Eje Trascendente </td>
-            <td>Seishin Muroi</td>
+            <td>1º Cela</td>
+            <td>2º Cela</td>
           </tr>
           <tr>
-            <td>Eje Trasc/Inmanente </td>
-            <td>Kanemasa</td>
+            <td>1º Cela </td>
+            <td>2º Cela</td>
           </tr>
           <tr>
-            <td>Eje Inmanente </td>
-            <td>Toshio Ozaki</td>
+            <td>1º Cela </td>
+            <td>2º Cela</td>
           </tr>
         </table>
 
@@ -513,330 +565,11 @@
           las masas que dicen ser el centro. Por lo tanto, quedan atrapados en la situación y se niegan a ser relegados
           a un papel menor"</p>
         <!--IMAGEN 8-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto8.jpg" alt="Foto Sunako,Seishin,Ozaki,Natsuo"
+        <img src="ImagenesArticulos/imagenejemplo.png" alt="Foto Sunako,Seishin,Ozaki,Natsuo"
           class="article-image">
       </section>
+      
 
-      <section id="section4" class="article-section">
-        <h3>Alegorías y dramaturgia</h3>
-        <h4>Caín y Abel - Interpretación de Sunako Notas - Shiki </h4>
-        <p>
-          La obra comienza con la cita del Genesis 4 aludiendo a las figura del exilió de Caín tras el asesinato de su
-          hermano Abel. En el comienzo de la obra la cita escenifica lo que vendría a<br>
-          ser la presentación de los conceptos que a posteriori tomarían un sentido en un poema, pero también
-          introducirían la psicología de Sheishin desarrollada hasta ahora en relación a su nihilismo posmoderno y su
-          arraigada culpa nacida de la injusticia arremetida contra la moral trascendente a la que busca de forma
-          inconsciente bajo sus escritos racionales objetivados en sus obras literarias. Obras literarias re
-          interpretadas bajo Sunako como un nódulo de contradicciones sobre lo que verdaderamente siente Sheishin a como
-          se muestra en su vida real.<br>
-          <br>
-          Ahora todo toma un rumbo mucho más sustancial cuando vemos varios puntos entretejerse bajo los nuevo
-          descubrimientos de Toshio que llevan a Seishin a tener que poner a prueba su fe misma y enfrentar sus propias
-          contradicciones. Su moral representada por Cain bajo la figura del exilió se rompe y se retuerce bajo la
-          interpretación de Sunako Adán y Eva cuando cometieron el pecado de la humanidad y fueron expulsados del
-          paraíso y desamparados por Dios fueron exiliados del jardín de Edén. Sin embargo Caín nacido ya con culpa
-          (pues todo humano nace con pecado, el pecado original) mata a su hermano y es "condenado" al "exilio" →
-          tierras de Nod. Tierras de Nod puede denotar más una condición que un lugar, primeramente porque el
-          pensamiento cristiano discierne solo 2 lugares cielo (paraíso) y tierra (infierno) no hay un infierno, la
-          tierra es el infierno mismo, entonces...<br>
-          <br>
-          ¿Donde fue exiliado Cain si ya estaba en tierra de pecado?<br>
-          <br>
-          Se interpreta lógicamente que Adam y Eva fueron exiliados bajo las dificultades de poder ellos mismos cultivar
-          sus esfuerzos y recoger sus cosechas, pero Caín fue exiliado bajo las tierras de Nod las tierras estériles e
-          infértiles condenado a un camino errante.<br>
-          <br>
-          Y él le dijo: ¿Qué has hecho? La voz de la sangre de tu hermano clama a mí desde la tierra.<br>
-          <br>
-          <span class="cursiva">Ahora, pues, maldito seas tú de la tierra, que abrió su boca para recibir de tu mano la
-            sangre de tu hermano. Cuando labres la tierra, no te volverá a dar su fuerza; errante y extranjero serás en
-            la tierra. Génesis 4:10-12<br>
-            <br>
-        </p></span>
-
-        <h4>La interpretacion de Seishin:</h4>
-        <!-- 2º - TABLA DE INTERPRETACION-->
-        <table>
-          <tr>
-            <td>Paraíso</td>
-            <td>Tierra Comun</td>
-            <td>Tierras de Nod</td>
-          </tr>
-          <tr>
-            <td>Dios</td>
-            <td>Adam y Eva</td>
-            <td>Cain</td>
-          </tr>
-        </table>
-
-        <p>Bajo la óptica en la que Caín bajo en la de un exiliado más grande el abandono de Dios de todo amparo divino
-          incluso de los frutos comunes de los cuales Adan y Eva aún tenían (labrar tierras y recoger sus frutos)</p>
-        <p>
-        <p>
-          Bajo la óptica en la que Caín fue exiliado a un paraíso porque después de todo no hay más lugares que los
-          edificados es decir el paraíso construido por Dios y la tierra si alguien es exiliado de la tierra no puede ir
-          a otro lugar que no sea el paraíso, aquí la interpretación siniestra de Sunako pues ve en la figura de Caín un
-          consuelo de haber sido exiliada al Paraíso junto con Dios pues ya no necesita cosechar, labrar y sembrar para
-          vivir, solo necesita matar y hacer permanente la inmortalidad y vivir en su comunidad de Shikis asesinos. (Un
-          paraíso de la inmortalidad).<br>
-          <br>
-          Notas de Traductor Japonés - Inglés<br>
-          <br>
-          Takasago<br>
-          Teatro musical japonés antiguo, que se centra en gran medida en la danza y los movimientos precisos que
-          (idealmente) no han cambiado a lo largo de la décadas. Los bailes como obras de teatro se realizan sobre la
-          base de seguir movimientos precisos en lugar de la expresión individualista como es común en otros tipos de
-          teatro, especialmente en los más modernos.<br>
-          <br>
-          Muchas obras de Noh tampoco tienen los arcos de la historia tradicionales con un climax y desenlace, aunque
-          hay un ritmo requerido tomado de los festivales de Kagura que los anteceden. Así como la danza Kagura tiene la
-          bienvenida, el entretenimiento y la despedida animada, aunque quizás violenta, el Noh tiene un comienzo lento,
-          una acción ascendente y luego una aceleración con un final rápido.<br>
-          <br>
-          Tradicionalmente interpretado por hombres, el sexo, la edad e incluso emociones se expresan con máscaras de
-          madera cuyas expresiones pueden cambiar en función de las sombras y el ángulo. Imagen de ejemplo de una
-          máscara que muestra muchos ángulos y emociones de Wikimedia commons (dominio público).<br>
-          <br>
-          La mayoría de las historias involucran elementos divinos como Onis o Dioses, y muchas de las máscaras pueden
-          tener un papel distintivo al igual que ciertos nombres de personajes representan un cierto tipo de personaje,
-          incluso si no es necesariamente el mismo personaje en cualquier continuidad canónica, al igual que el
-          personaje de Hachigoro antes mencionado en Rakugo. (NTE: el rakugo se explicó antes, en resumen, vendría a ser
-          una especie de monologo, hachigoro seria quien hace el monologo, generalmente de tono comico y con el fin de
-          actuar como bufón)<br>
-          <br>
-          Las obras de Noh se dividen en cinco categorías.<br>
-          Waki-noh / Shura-mono / Katsura-mono/Kichiku-mono/ Kyojo-mono<br>
-          Waki - noh es la obra que representa la divinidad disfrazada como humana y revelada finalmente a un humano
-          como la obra "Takasago".<br>
-          <br>
-          Shiki en el volumen uno hizo especial énfasis en la existencia de Mudanzas Takasago, no solo por su
-          extravagancia horaria si no también por la representación simbólica y actualmente mordaz que subsumida entre
-          la existencia de Mudanzas Takasago y el ritual Mushokuri la primera vez al encuentro de Sotoba y los
-          Kirishiki, este entrelazamiento simbólico no solo atribuye más peso a los acontecimientos pasados y la
-          especial focalización centrada en los detalles infimos que al principio que no les dimos mucha importancia, si
-          no también una retrospección más profunda en relación a la carga dramatúrgica que la autora ya en varias
-          ocasiones demuestra tener en sus diálogos.<br>
-          <br>
-          Sanemori<br>
-          Esta obra toma como fuente principal la "Historia del clan Heike" (Heike Monogatari), la crónica militar más
-          famosa del japón que se refiere a los días de hegemonía de los Taira (Heike) durante cerca de veinte años y
-          los cinco años de guerra con los Minamoto (Genji), esto es a partir de 1160.<br>
-          <br>
-          Saito Betto Sanemori fue un famoso guerrero que luchó en el bando de los Taira (Heike) en contra de los
-          Minamoto (Genji), aunque tiempo atrás había pertenecido al bando contrario. No se sabe con certeza el año de
-          su nacimiento pero se dice que murió en 1183 cuando tenía cerca de 60 años. Ya siendo maduro y con cabello
-          blanco, cambia el color de su pelo para parecer más joven y así poder combatir contra los guerreros jóvenes
-          aparentando juventud. Es muerto en batalla y se dice que cuando su cabeza es llevada como trofeo ante el bando
-          contrario, casi no lo reconocen por causa de su cambio de apariencia.<br>
-          <br>
-          Sanemori en la historia de Sotoba se menciona bajo los orígenes del ritual de la túnica utilizada en el
-          Mushokuri Llevado acabo al principio de la novela, Yuuki pregunta sobre sus origines, y no es otra que la
-          historia del teatro Noh (Sanemori) la cual la autora utiliza por vez primera vez 2 repertorios del teatro
-          japonés para dotar al encuentro entre Sotoba y los Kirishiki de forma mucho más rica que lo fue en una primera
-          lectura, una vez resuelto la naturaleza de los Kirishiki, la ironía de los detalles anteriores solo hacen de
-          esta obra un manjar de introspecciones interesantes.
-        </p>
-        </p>
-      </section>
-
-      <section id="section5" class="article-section">
-        <h2>Concatenación y conclusiones generales </h2>
-        <p>Concatenare todas las ideas esbozadas con anterioridad: <br>
-          <br>
-          Ten en cuenta que la novela abarca los acontecimientos del anime hasta el capitulo 16, lógicamente no tiene un
-          final traducido hasta ahora, asique me limitare hablar bajo ese limite que es hasta donde he leído.
-        </p>
-        <h3>La Etica de Ozaki</h3>
-        <!--IMAGEN 9-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto9.jpg" alt="Foto de Ozaki" id="ozakiPhoto">
-        <p>Artículo una metafísica especial para entender los esquemas y las ideas presentadas en Toshio Ozaki, se
-          presenta una ética "yoeista" en orientación y culminación del yo.
-        </p>
-        <!--3º - TABLA DE INTERPRETACION-->
-        <table>
-          <tr>
-            <td>Yo</td>
-            <td>Mundo</td>
-            <td>Dios</td>
-          </tr>
-        </table>
-
-        <p>
-          Ozaki se muestra profundamente egoísta en relación a su ética principalmente por el primer rotulo el "Yo". El
-          yo de Ozaki es un Yo narcisistas, un yo que cree ser un pilar universal y quiere asumir el control bajo sus
-          propios términos y directrices, este yo vela por los otros (Mundo), pero siempre en orientación y en vistas
-          del un yo. Ozaki por ejemplo no ve en su esposa más allá que una simple herramienta para poder atestar un
-          golpe a su apellido, utiliza su "libre albedrío" si bien no ignora a los otros, pues acepta la necesidad de
-          ser Doctor en un pueblo que lo necesitaba, en el momento de la verdad Toshio cuando acaeció lo de los Shikis,
-          no ha hecho más que revelar su verdaderas naturaleza, haciendo cosas a espaladas de Seishin, manteniendo a
-          oscuras la situación a ojos públicos las circunstancias en Sotoba, se pretendía pilar e empieza a ignorar su
-          entorno, es desconsiderado con sus empleadas, familiares, amigos y finalmente culmina con su ética.<br>
-          <br>
-          El Dios de Ozaki revela el "YO" el Ideal Ético que le permite arrebatar la vida a su esposa en su estado de
-          Shiki, cuando se encuentra con Seishin re recalca esta cita:<br>
-          <br>
-          <span class="cursiva">...Hice una elección, actúe en consecuencia........Está es mi justicia, a menos que
-            tengas algo que decir, largate …-V.03 - CAP:12</span>
-        </p>
-        <!--4º - TABLA DE INTERPRETACION-->
-        <table>
-          <tr>
-            <td>Yo</td>
-            <td>Mundo</td>
-            <td>Dios</td>
-          </tr>
-          <tr>
-            <td>Ética egoista de Ozaki</td>
-            <td>actuar en vistas a al Yo</td>
-            <td>Culminación que revela el "Yo" de Ozaki</td>
-          </tr>
-        </table>
-
-        <p>
-          Esto no desacredita o desatiende que Ozaki hace una "buena acción" pero bajo cierta medida hay que separar
-          cosas, lo que hizo tuvo un uso y una utilidad practica bajo el bien de Sotoba, pero el no se considera
-          altruista o un héroe, porqué en esencia es egoísta, es importante trazar esta línea y demarcarlo porque las
-          acciones de Ozaki no están bien bajo cualquier criterio, porque lo único que han demostrado sus acciones es
-          mostrar lo idiota que puede llegar a ser y ser un completo desconsiderado con su entorno.
-        </p>
-        <h3>Ética de Seishin </h3>
-        <!--IMAGEN 10-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto10.jpg" alt="Retrato de Seishin" class="article-image">
-        <p>Seishin és completamente al revés, el yo de Seishin es devaluado y desestimado, se abre al mundo frente a la
-          vanidad y culmina con el abandono de Dios. </p>
-        <!--5º - TABLA DE INTERPRETACION-->
-        <table>
-          <tr>
-            <td>Yo</td>
-            <td>Mundo</td>
-            <td>Dios</td>
-          </tr>
-          <tr>
-            <td>Vacuidad ilusoria</td>
-            <td>Vanidad e indiferencia</td>
-            <td>Abandono de la trascendencia</td>
-          </tr>
-        </table>
-        <p>
-          Este esquema obedece en un "no ensuciarse las manos" pues ningún instancia o disposición humana se presta
-          (según la lógica de Seishin) para ejercer justicia alguna, porqué toda ética o justicia ejercida bajo los
-          rótulos humanos no es lo suficientemente divino. Muroi mismo admite convertirse en hereje al básicamente
-          limpiarse las manos y encerrarse en sus pensamientos.<br>
-          <br>
-          En la discusión con Toshio, lo que cabrea a Ozaki no es tanto el hecho de que se límpe las manos, si no su
-          crítica que encierra en si misma una idea hipócrita de intentar determinar<br>
-          que actuar o que justicia es lo suficientemente "divina" para poderse ejercer, porque Seishin no se inmiscuye,
-          se sumerge en su completo idealismo.<br>
-          <br>
-          No hay una disposición moral suficiente para el señorito, aun así las acciones de Toshio son criticables en
-          otras nociones, pero las resaltadas específicamente por Seishin no.<br>
-          <br>
-          Toshio tomo la vía más eficiente, la erradicación de los Shikis, para le es mas eficiente saber defenderse de
-          esos seres que curarlos y para hacerlo necesito realizar las acciones que realizo para obtener
-          conocimiento.<br>
-          <br>
-          Enredado en su duelo poético y mitológico Seishin es victima de el mundo de sus pensamientos.
-        </p>
-
-        <h3>Las 3 nociones primordiales </h3>
-        <p>Estos 2 esquemas y catalizadores se Articulan en las nociones metafísicas de Sotoba antes esbozadas</p>
-        <!--6º - TABLA DE INTERPRETACION-->
-        <table>
-          <tr>
-            <td>Estructuras Metafísicas</td>
-            <td>Sotoba</td>
-          </tr>
-          <tr>
-            <td>Autosuficiencia</td>
-            <td>El trato de Sotoba el pueblo como un concepto estructural que se autoabastece a si mismo y se
-              autorregula a lo largo de los acontecimientos históricos. (Ej: La cita de Sunako que establece a termino
-              explicito la "autosuficiencia" del ente llamado "Sotoba")</td>
-          </tr>
-          <tr>
-            <td>Unidad</td>
-            <td>El sentido unitario que perciben las personas dentro de Sotoba y exluyen todo lo foraneó y lo relativo a
-              el, pero siempre en rigor no tanto del pueblo en si, si no algo relación a las estructuras antropológicas
-              de las familias (Ej: Su señalamiento constante a lo extravagante que resulta la Mansion Kanemasa)</td>
-          </tr>
-          <tr>
-            <td>Binomio Dicotomico </td>
-            <td>y finalmente la separación dicotómicas de interior o exterior (Uchi/Soto), que vendría a representar lo
-              que pertenece y no al pueblo, ya no en tanto relación a las personas si no en relación a conceptos más
-              abstractos (Ej: Ensayo de Seishin, "El pueblo esta rodeado de muerte" o tambié lo que menciono Hasegawa en
-              relación a los "limites" grises que presenta algo que se dice "interior" o "exterior" )
-
-            </td>
-          </tr>
-        </table>
-
-        <p>Este Nodulo de figuras metafísicas (Unidad, autosuficiencia, binomio) se articulan bajo una idea vigente en
-          la obra, el conatus, el ser persevera en el ser etc...El rotulo metafísico de la persistencia del ser para con
-          el ser (pues todo ser vivo busca "seguir siendo") es donde se
-          adscribe estas 3 nociones pues básicamente se extiende esta idea bajo cualquier parámetro existente, en el
-          concepto de Sotoba, en la naturaleza de lo Shikis focalizada en la ética de Sunako como culimen de las 3
-          éticas presentadas en la obras.
-        </p>
-
-        <h3>Etica de Sunako</h3>
-        <!--IMAGEN 11-->
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto11.png" alt="Foto anime Sunako" id="Foto11">
-        <p>
-          La Ética de Sunako se adscribe a esta idea como fundamento ultimo de toda la obra, vela por cualquier acción
-          que predique al organismo sobrevivir y seguir siendo, les despoja a los humanos el privilegio del único ser
-          que puede articular o expresar su negación a morir, y lo extiende a todo ente habido y por haber en la faz del
-          mundo. Una acción es buena según la<br>
-          ética de Sunako bajo el rotulo de que el organismo del Shiki come, se alimenta y sobrevive y ve esa acción
-          buena inversamente porque entiende que todo ser persiste y para persistir hay que matar.<br>
-          <br>
-          Esto se vincula a la re-interpretación grotesca de Sunako del Genesis antes mostrada: Re-interpretación de
-          Sunako<br>
-          <br>
-          Básicamente Sunako estaría articulando su Ética bajo el Nodulo de Dios, pues se siente desterrada al paraíso
-          límite donde su entorno se basa en básicamente matar, comer y vivir.
-        </p>
-        <!--7º - TABLA DE INTERPRETACION-->
-        <table>
-          <tr>
-            <td>Yo</td>
-            <td>Mundo</td>
-            <td>Dios</td>
-          </tr>
-          <tr>
-            <td>Enaltecido en vistas a un Dios</td>
-            <td>Indiferencia y orden de Dios</td>
-            <td>Dictatum Ético:Ser persevera en el ser</td>
-          </tr>
-        </table>
-        <p>Según su ética entonces la solución para no llorar por seres queridos seria matar a tus propios seres
-          queridos, ya que si estos están supeditados al mandato universal de muerdes o te muerden, alguien (homicida,
-          accidente, catástrofe poco importa) o algo (Enfermedad) se lo llevara tarde o temprano asique la única manera
-          de preservarlos es matarlos tu mismo.
-          De ahí su juego lingüístico espeluznante de equipar adorable y lamentable (Kawaii/Kawaisou, Oshii/Ito-oshii ->
-          2.Notas del Traductor )
-        </p>
-      </section>
-      <section id="section6" class="article-section">
-        <h2>Apuntes Finales</h2>
-        <h3>Conlusion</h3>
-        <img src="../ImagenesArticulos/ImagenesShiki/Foto12.jpg" alt="Imagen de todos los personajes de Shiki"
-          class="article-image">
-        <p>
-          Fuyimi Ono tiene una destreza como Shiori Ota la cantidad de detalles que dan vueltas a posteriori me recordó
-          a un volumen de Sakurako, aunque son retrospectivas mucho menos sorprendentes no les quitan peso, tiene un
-          conocimiento muy basto en relación a los conceptos mitológicos, poéticos, literarios y religiosos un
-          repertorio de alegorías tan mordaz como Nomura en literatura o Hikaru en música, pero he de decir que la forma
-          de entablar los diálogos y sus formas de abordar sus respectivas problemáticas me recordó a atisbos de
-          Yamagata en el volumen 3 de Tatakau Shisho.<br>
-          <br>
-          El uso de su contenido no llega a ser tan doxografico como Satoshi Itoh, tiene un estilo que me recuerda más a
-          Ubukata, sencillo discreto y audaz, he de decir que quedé bastante sorprendido entre mi lista de autores
-          Fuyumi se ganó un puesto importante a tomar en consideración.<br>
-          <br>
-          Shiki es una buena obra, sin embargo no lo he leído por completo y falta ver próximas traducciones, el anime
-          esta muy mal adaptado asique lógicamente no tomare ningún elemento de ahí, quizás lo haga en el manga, pero de
-          momento me remito por completo a la novela.
-        </p>
-      </section>
 
     </article>
 
@@ -852,7 +585,7 @@
           <a href="https://github.com/">gh</a>
         </div>
       </div>
-      <!-- Articulos destacados --->
+
       <div class="info-box">
         <h4>Artículos Destacados</h4>
         <ul class="index-list2">
