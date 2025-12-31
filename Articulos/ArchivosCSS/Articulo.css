@@ -278,7 +278,7 @@ h4 {
 
         /* Estilos para la barra lateral derecha (información personal) */
         .sidebar-right {
-            width: 350px;
+            width: 310px;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
