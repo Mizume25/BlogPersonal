@@ -145,7 +145,7 @@ h4 {
 
 /*CONTENEDOR PRINCIPAL DE LA PAGINA*/
 .container {
-    max-width: 1600px;
+    max-width: 2000px;
     margin: 0 auto;
     padding: 20px;
     display: grid;
@@ -410,16 +410,20 @@ h4 {
 }
 
 /*==RESPONSIVE DE ARTICULOS HTML==*/
+#NetWorks{
+    display: none;
+}
 
-/*RESPOONSIVE DE ORDENADOR */
+/*RESPOONSIVE DE ORDENADOR PEQUEÑO*/
 @media (max-width:1024px) {
 
+    /*Ocultamos la imagen encabezado, titulo general y barra lateral derecha*/
     .imagenheader,
     .headertitulo,
     .sidebar-right {
         display: none;
     }
-
+    /*Estilos del boton del responsive*/
     #btnIndex {
         display: block;
         width: 50px;
@@ -434,11 +438,13 @@ h4 {
         box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1);
     }
 
+    /*Cambiamos color del icono de hamburguesa*/
     i {
         color: rgb(205, 205, 205);
         font-size: 1.9em;
     }
 
+    /*Propiedades nuevas para el side-bar*/
     .sidebar-left {
         /* Estado por defecto: oculto */
         position: fixed;
@@ -455,50 +461,44 @@ h4 {
         transform: translateX(0);
     }
 
+    /*Propiedades generales*/
     .main-article {
         width: 900px;
         margin-left: auto;
         margin-right: auto;
-
+        background-color: rgb(45, 29, 13);
     }
 
-
+    /*Adaptacion de imagenes*/
     .article-image {
         max-width: 600px;
         border-radius: 8px;
         margin-right: auto;
         margin-left: auto;
-        display: block
+        display: block;
     }
 
+    /*Estilos de h1 dentro del contenidor header*/
     .article-header h1 {
         color: #ffffff;
-        font-size: 1.1rem;
+        font-size: 1.7rem;
         margin-bottom: 10px;
     }
 
-    h1 {
-        /*Estilos de h1 dentro del contenidor header*/
-        border-radius: 6px;
-        border: solid 1px rgb(210, 180, 140);
-        background-color: rgb(210, 180, 140);
-        text-align: center;
-        padding-left: 60px;
-        padding-right: 60px;
-        padding-top: 1px;
-        padding-bottom: 1px;
-
-        /*Estilos de la fuente*/
-        margin-bottom: 10px;
-        margin-top: 0px;
-        font-size: 1.1rem;
-        color: #ffffff;
-        text-shadow:
-            2px 2px 4px rgba(0, 0, 0, 0.8),
-            0 0 10px rgba(0, 0, 0, 0.5);
-        font-weight: bold;
-
+    #NetWorks{
+        width: fit-content;
+        height: fit-content;
+        background-color: rgb(45, 29, 13);
+        margin-top: 15px;
+        display: block;
+        border-bottom: none;
     }
+
+
+
+
+
+    
 }
 
 /*RESPOONSIVE DE ORDENADOR */
