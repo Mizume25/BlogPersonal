@@ -3,7 +3,7 @@
 //DECLARAMOS VARIABLES
 const menuMobile = document.querySelector("#buttonMenu");           //BOTONES
 const sideBarMobile = document.querySelector(".left-sidebar");      //CLASSE
-const mediaQueryTablet = window.matchMedia('(max-width: 512px)');   //MEDI_QUERY
+const mediaQueryTablet = window.matchMedia('(max-width: 770px)');   //MEDI_QUERY
 
 // CSS inicial
 //ESTO MODIFICA EL CSS INCIAL
@@ -20,13 +20,17 @@ menuMobile.addEventListener("click", function () {
         // Si tiene la clase, está abierto
         if (sideBarMobile.classList.contains('abierto')) {
             sideBarMobile.style.cssText = `
+             
              transform: translateX(0);
-             transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+             transition: transform 0.9s cubic-bezier(0.9, 0, 0.1, 1);
+             
              `;
         } else {
             sideBarMobile.style.cssText = `
+             
              transform: translateX(100%);
              transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+             
              `;
         }
     }

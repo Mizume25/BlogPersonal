@@ -3,32 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Personal</title>
+    <title>Pagina Principal</title>
+    <!---Icono web & estilos css-->
     <link rel="icon" type="image/x-icon" href="Imagenes Blog/Icon.png">
     <link rel="stylesheet" href="indexestilo.css">
+    <!---Fuentes instaladas-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!---Icono Menu Mobil-->
     <link rel="stylesheet" href="css/all.min.css">
 </head>
-<body>
+<body> 
 
-    
-    
-    <main class="container">
-        
-        <header id="mainHeader">
-        <button id="buttonMenu">
-         <i class="fas fa-bars"></i>
+    <main class="container"> <!---Contenedor Principal-->
+        <header>
+            <button id="buttonMenu">
+             <i class="fas fa-bars"></i>
         </button>
-
             <h1>MiZumeBlog</h1>
         </header>
-  
-        
 
-        
-        <aside class="sidebar left-sidebar" >
+        <aside class="left-sidebar" >   <!---Barra Lateral Izquierda-->
             <section class="widget">
                 <h3>Categorías</h3>
                 <ul>
@@ -39,7 +35,7 @@
                 </ul>
             </section>
             
-            <section class="widget">
+            <section class="widget">    
                 <h3>Archivo</h3>
                 <ul>
                     <li><a href="#">2024</a></li>
@@ -48,8 +44,8 @@
             </section>
         </aside>
  
-        <div class="content">
-          <a href="https://mizumeblog.com/index/Articulos/Articulos_Destacados/Shiki.html" class="article-link">
+        <div class="content"><!---Contenedor Secundario-->
+          <a href="Articulos/Articulos_Destacados/Shiki.html" class="article-link">
             <article class="blog-post featured-post fondo-articulo1" >
                     <div class="post-header">
                         <div class="post-tags">
@@ -94,7 +90,7 @@
             </article>
         </div>
 
-        <aside class="sidebar right-sidebar"> 
+        <aside class="right-sidebar"> <!---Barra Lateral Derecha-->
               
             <section class="widget">
                 <h3>Posts Destacados</h3>
@@ -115,9 +111,7 @@
                 </section>
             </section>
         </aside>
-
-        
-    
+   
 <script src="indexScript.js"></script>   
 </body>
 </html>

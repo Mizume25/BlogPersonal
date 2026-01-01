@@ -55,7 +55,7 @@ h3 {                         /*ESTILO h3*/
 /*ELEMENTOS DE REDEFINICION DE ETIQUETAS COMPARTIDAS*/
 
 /* ESTOS 4 COMPARTEN LOS MISMOS ESTILOS */
-header, .sidebar, .content, footer {
+header, .content,.left-sidebar,.right-sidebar {
     background-color: rgb(45, 29, 13);  /*Mismo fondo */
     border-radius: 5px; /* Mismo radio */
     box-shadow: 10px 4px 15px rgba(255, 255, 255, 0.1); /* Misma sombra */
@@ -88,11 +88,18 @@ header {
 
 /*---------------------------------------------------------------*/
 /* BARRAS LATERALES*/
-.sidebar {
+
+
+.left-sidebar{
     padding: 35px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /*Sombreado con efecto de profundidad*/
 }
 
+.right-sidebar{
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /*Sombreado con efecto de profundidad*/
+    height: fit-content;
+}
 section + section {
     margin-top: 50px;
 }
@@ -592,21 +599,71 @@ a:-webkit-any-link{
 
 }
 
+/*RESPONSIVE DE TABLETS*/
+@media (max-width:770px){
 
-/*RESPONSIVE DE MOVILES*/
+    body{
+        margin: 0px 0px 0px 0px;
+    }
+    /*Quitamos el elemento grid*/
+    .container{
+        display: block;
+        position: relative;
+    }
 
-@media (max-width: 512px) {
+    /*Ajustamos contenido Principal*/
+    .content{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
 
-body{
-margin: 0;
-padding: 0;
+    header{
+    position: relative;
+    width: 100%;
+    padding: 7px 25px 7px 5px;     /*espacio entre el propio encabezado*/
+    margin: 0px 0px 25px 0px;
+    }
+
+/*Quitamos Tags, leyendas, animaciones y ajustamos imagenes de los backgrounds 
+y de los elementos contenedores y ajustamos titulos*/
+
+.blog-post.featured-post{
+min-height: 220px;                   
+margin: 0px;                        
+overflow: hidden;                     
+}
+.post-tags,.leyenda,footer {
+    display: none;
 }
 
-/*Propiedades del Botton*/
-#buttonMenu{
+
+.blog-post.featured-post:hover::before {
+    transform: none;               
+}
+
+.blog-post.featured-post.fondo-articulo1::before {
+    background-position: center 12%;         
+    background-repeat: no-repeat;         
+}
+
+.blog-post.featured-post.fondo-articulo3::before {
+    background-position: center 12%;         
+    background-repeat: no-repeat;         
+}
+
+.post-title h2 {
+    font-size: 1.8rem;
+    margin: 2px 0 0 2px;
+    font-weight: bold;
+}
+
+/*Propiedades del boton*/
+#buttonMenu {
 display: block;
-width: 40px;
-height: 40px;
+width: 50px;
+height: 50px;
 text-align: center;
 position:fixed;
 z-index: 1000;
@@ -618,22 +675,20 @@ box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1);
 
 i {
 font-size: 1.7em;
-color: rgb(152, 152, 152);
-}
+color: rgb(187, 187, 187);
+} 
 
-    /*Propiedades de un side-bar*/
+
 .left-sidebar{
-position: absolute;
+height: 100%;
+position: fixed;
 top: 0;
 right: 0;
-width: 50%;
-height: 100%;
+bottom: 0;
+width: 35%;
 z-index: 1200;
 }
 
-/*Clases para JavaScript*/
-
-/*Ocultar Side-bar*/
 .left-sidebar {
 transform: translateX(100%);
 }
@@ -642,46 +697,60 @@ transform: translateX(100%);
 transform: translateX(0);
 }
 
-/*Quitamos sidebar derecho*/
-.right-sidebar {
-display: none;
 }
 
-/*Container Principal*/
-.container {
-display: block;
-position: relative;
-}
+
+/*RESPONSIVE DE TABLETS*/
+@media (max-width:512px){
+
+    body{
+        margin: 0px;
+    }
+    /*Quitamos el elemento grid*/
+    .container{
+        display: block;
+        position: relative;
+    }
+
+    /*Ajustamos contenido Principal*/
+    .content{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
-/*Ajustamos Imagenes*/
+
+    header{
+    position: relative;
+    width: 100%;
+    padding: 7px 3px 7px 5px;     /*espacio entre el propio encabezado*/
+    margin: 0px 0px 25px 0px;
+    }
+
+/*Quitamos Tags, leyendas, animaciones y ajustamos imagenes de los backgrounds 
+y de los elementos contenedores y ajustamos titulos*/
+
 .blog-post.featured-post{
 min-height: 160px;                   
-margin: 0;                        
+margin: 0px;                        
 overflow: hidden;                     
 }
-
-/*Adaptamos titulos*/
-.post-title h2 {
-    font-size: 1.5rem;
-    margin: 2px 0 0 2px;
-    font-weight: bold;
-}
-
-
-
-/*DESACTIVAMOS TAGS, LEYENDAS Y POSTS*/
 .post-tags,.leyenda,footer {
     display: none;
 }
 
-/*QUITAMOS ANIMACION DE IMAGENES*/
+
 .blog-post.featured-post:hover::before {
     transform: none;               
 }
 
 
-/*Ajustamos posiciones de los backgrounds*/
 .blog-post.featured-post.fondo-articulo1::before {
+    background-position: center 12%;         
+    background-repeat: no-repeat;         
+}
+
+.blog-post.featured-post.fondo-articulo2::before {
     background-position: center 12%;         
     background-repeat: no-repeat;         
 }
@@ -690,20 +759,18 @@ overflow: hidden;
     background-position: center 12%;         
     background-repeat: no-repeat;         
 }
+
+.post-title h2 {
+    font-size: 1.3rem;
+    margin: 2px 0 0 2px;
+    font-weight: bold;
 }
 
-@media (max-width: 412px) {
-
-body{
-margin: 0;
-padding: 0;
-}
-
-/*Propiedades del Botton*/
-#buttonMenu{
+/*Propiedades del boton*/
+#buttonMenu {
 display: block;
-width: 40px;
-height: 40px;
+width: 50px;
+height: 50px;
 text-align: center;
 position:fixed;
 z-index: 1000;
@@ -715,22 +782,21 @@ box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1);
 
 i {
 font-size: 1.7em;
-color: rgb(152, 152, 152);
-}
+color: rgb(187, 187, 187);
+} 
 
-    /*Propiedades de un side-bar*/
+
 .left-sidebar{
-position: absolute;
+height: 100%;
+position: fixed;
 top: 0;
 right: 0;
-width: 50%;
-height: 100%;
+bottom: 0;
+width: 40%;
 z-index: 1200;
+padding: 15px;
 }
 
-/*Clases para JavaScript*/
-
-/*Ocultar Side-bar*/
 .left-sidebar {
 transform: translateX(100%);
 }
@@ -739,46 +805,59 @@ transform: translateX(100%);
 transform: translateX(0);
 }
 
-/*Quitamos sidebar derecho*/
-.right-sidebar {
-display: none;
 }
 
-/*Container Principal*/
-.container {
-display: block;
-position: relative;
-}
+/*RESPONSIVE DE TABLETS*/
+@media (max-width:412px){
+
+    body{
+        margin: 0px;
+    }
+    /*Quitamos el elemento grid*/
+    .container{
+        display: block;
+        position: relative;
+    }
+
+    /*Ajustamos contenido Principal*/
+    .content{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
-/*Ajustamos Imagenes*/
+
+    header{
+    position: relative;
+    width: 100%;
+    padding: 7px 10px 0px 5px;     /*espacio entre el propio encabezado*/
+    margin: 0px 0px 25px 0px;
+    }
+
+/*Quitamos Tags, leyendas, animaciones y ajustamos imagenes de los backgrounds 
+y de los elementos contenedores y ajustamos titulos*/
+
 .blog-post.featured-post{
-min-height: 160px;                   
-margin: 0;                        
+min-height: 120px;                   
+margin: 0px;                        
 overflow: hidden;                     
 }
-
-/*Adaptamos titulos*/
-.post-title h2 {
-    font-size: 1.5rem;
-    margin: 2px 0 0 2px;
-    font-weight: bold;
-}
-
-
-
-/*DESACTIVAMOS TAGS, LEYENDAS Y POSTS*/
 .post-tags,.leyenda,footer {
     display: none;
 }
 
-/*QUITAMOS ANIMACION DE IMAGENES*/
+
 .blog-post.featured-post:hover::before {
     transform: none;               
 }
 
 
-/*Ajustamos posiciones de los backgrounds*/
 .blog-post.featured-post.fondo-articulo1::before {
+    background-position: center 12%;         
+    background-repeat: no-repeat;         
+}
+
+.blog-post.featured-post.fondo-articulo2::before {
     background-position: center 12%;         
     background-repeat: no-repeat;         
 }
@@ -787,9 +866,53 @@ overflow: hidden;
     background-position: center 12%;         
     background-repeat: no-repeat;         
 }
+
+.post-title h2 {
+    font-size: 1.1rem;
+    margin: 2px 0 0 2px;
+    font-weight: bold;
 }
 
+/*Propiedades del boton*/
+#buttonMenu {
+display: block;
+width: 50px;
+height: 50px;
+text-align: center;
+position:fixed;
+z-index: 1000;
+margin-top: 10px;
+margin-left: 5px;
+background-color: rgb(45, 29, 13);
+box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1); 
+}
 
+i {
+font-size: 1.7em;
+color: rgb(187, 187, 187);
+} 
+
+
+.left-sidebar{
+height: 100%;
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+width: 55%;
+z-index: 1200;
+padding: 15px;
+}
+
+.left-sidebar {
+transform: translateX(100%);
+}
+
+.left-sidebar.abierto {
+transform: translateX(0);
+}
+
+}
 
 
 
