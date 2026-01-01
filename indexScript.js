@@ -3,7 +3,7 @@
 //DECLARAMOS VARIABLES
 const menuMobile = document.querySelector("#buttonMenu");           //BOTONES
 const sideBarMobile = document.querySelector(".left-sidebar");      //CLASSE
-const mediaQueryTablet = window.matchMedia('(max-width: 512px)');   //MEDI_QUERY
+const mediaQueryTablet = window.matchMedia('(max-width: 768px)');   //MEDI_QUERY
 
 // CSS inicial
 //ESTO MODIFICA EL CSS INCIAL

@@ -592,168 +592,200 @@ a:-webkit-any-link{
 
 }
 
-/*Tablets*/
-@media(max-width:768px){
-.container {
-    margin: 0 auto;      /*Centrado general del contenido*/
-    display: block;              /*Columnas para la estructura del Indice */
-    gap: 11px;                  /*Espacio entre las brechas */
-}
 
-.right-sidebar{
-    display: none;
-}
+/*RESPONSIVE DE MOVILES*/
 
-.left-sidebar{
-    display: none;
-}
-
-.main{
-        position: relative;
-}
-
-#buttonMenu{
-    display: block;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    position:fixed;
-    z-index: 1000;
-    margin-top: 10px;
-    margin-left: 5px;
-    background-color: rgb(45, 29, 13);
-    box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1); /* Misma sombra */
-}
-
-    
-.left-sidebar{
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100%;
-        z-index: 1200;
-}
-
-.left-sidebar {
-    /* Estado por defecto: oculto */
-    transform: translateX(100%);
-}
-
-/* Esta clase se añade/remueve con JavaScript */
-.left-sidebar.abierto {
-    transform: translateX(0);
-    }
-
-}
-i {
-        font-size: 1.7em;
-        color: rgb(152, 152, 152);
-        text-align: center;
-}
-/*Responsive de Moviles*/
 @media (max-width: 512px) {
-    .main{
-        position: relative;
-    }
-    #buttonMenu{
-        display: block;
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        position:fixed;
-        z-index: 1000;
-        margin-top: 10px;
-        margin-left: 5px;
-        background-color: rgb(45, 29, 13);
-        box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1); /* Misma sombra */
-    }
 
-    
-
-    .left-sidebar{
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100%;
-        z-index: 1200;
-        
-    }
-
-    .left-sidebar {
-    /* Estado por defecto: oculto */
-    transform: translateX(100%);
+body{
+margin: 0;
+padding: 0;
 }
 
-    /* Esta clase se añade/remueve con JavaScript */
-    .left-sidebar.abierto {
-    transform: translateX(0);
-    }
+/*Propiedades del Botton*/
+#buttonMenu{
+display: block;
+width: 40px;
+height: 40px;
+text-align: center;
+position:fixed;
+z-index: 1000;
+margin-top: 10px;
+margin-left: 5px;
+background-color: rgb(45, 29, 13);
+box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1); 
+}
 
-    /*Quitamos sidebar derecho*/
-    .right-sidebar {
-        display: none;
-    }
+i {
+font-size: 1.7em;
+color: rgb(152, 152, 152);
+}
 
-    i {
-        font-size: 1.7em;
-        color: rgb(152, 152, 152);
-    }
-    .container {
-        gap: 100px;
-        width: 100%;
-        display: block;
-    }
+    /*Propiedades de un side-bar*/
+.left-sidebar{
+position: absolute;
+top: 0;
+right: 0;
+width: 50%;
+height: 100%;
+z-index: 1200;
+}
+
+/*Clases para JavaScript*/
+
+/*Ocultar Side-bar*/
+.left-sidebar {
+transform: translateX(100%);
+}
+
+.left-sidebar.abierto {
+transform: translateX(0);
+}
+
+/*Quitamos sidebar derecho*/
+.right-sidebar {
+display: none;
+}
+
+/*Container Principal*/
+.container {
+display: block;
+position: relative;
+}
     
-    header {
-        grid-column: none;
-    }
-    .profile img {
-        width: 70px;
-        height: 86px;
-    }
-    
-    /* Asegurar que el contenido principal ocupe toda la columna */
-    .content {
-        grid-column: 1 / 2;
-    }
+/*Ajustamos Imagenes*/
+.blog-post.featured-post{
+min-height: 160px;                   
+margin: 0;                        
+overflow: hidden;                     
+}
 
-    .blog-post.featured-post{
-    position: relative;                    /* Posicionamiento para elementos hijos absolutos */            
-    color: white;                       /* Color del texto blanco para contraste */
-    min-height: 160px;                    /* Altura mínima del contenedor */
-    display: flex;                        /* Flexbox para organizar el contenido */
-    flex-direction: column;               /* Organizar elementos en columna */
-    justify-content: space-between;       /* Espacio entre elementos (header y título) */
-    padding: 15px;                        /* Espaciado interno */
-    margin: 0 !important;                 /* Eliminar márgenes externos */
-    border-radius: 0 !important;          /* Eliminar bordes redondeados */
-    overflow: hidden;                     /* Oculta cualquier contenido que se salga */
-   
-    }
-
+/*Adaptamos titulos*/
 .post-title h2 {
-    color: #ffffff; /* Amarillo */
     font-size: 1.5rem;
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.8),  /* Sombra negra para contraste */
-        0 0 10px rgba(0, 0, 0, 0.5);
     margin: 2px 0 0 2px;
     font-weight: bold;
 }
-/*Desactivamos todos los elementos de pantallas pequñas*/
+
+
+
+/*DESACTIVAMOS TAGS, LEYENDAS Y POSTS*/
 .post-tags,.leyenda,footer {
     display: none;
 }
 
-.profile img:hover {
-    transform: none; 
-    box-shadow: none; 
-}
-
+/*QUITAMOS ANIMACION DE IMAGENES*/
 .blog-post.featured-post:hover::before {
     transform: none;               
+}
+
+
+/*Ajustamos posiciones de los backgrounds*/
+.blog-post.featured-post.fondo-articulo1::before {
+    background-position: center 12%;         
+    background-repeat: no-repeat;         
+}
+
+.blog-post.featured-post.fondo-articulo3::before {
+    background-position: center 12%;         
+    background-repeat: no-repeat;         
+}
+}
+
+@media (max-width: 412px) {
+
+body{
+margin: 0;
+padding: 0;
+}
+
+/*Propiedades del Botton*/
+#buttonMenu{
+display: block;
+width: 40px;
+height: 40px;
+text-align: center;
+position:fixed;
+z-index: 1000;
+margin-top: 10px;
+margin-left: 5px;
+background-color: rgb(45, 29, 13);
+box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.1); 
+}
+
+i {
+font-size: 1.7em;
+color: rgb(152, 152, 152);
+}
+
+    /*Propiedades de un side-bar*/
+.left-sidebar{
+position: absolute;
+top: 0;
+right: 0;
+width: 50%;
+height: 100%;
+z-index: 1200;
+}
+
+/*Clases para JavaScript*/
+
+/*Ocultar Side-bar*/
+.left-sidebar {
+transform: translateX(100%);
+}
+
+.left-sidebar.abierto {
+transform: translateX(0);
+}
+
+/*Quitamos sidebar derecho*/
+.right-sidebar {
+display: none;
+}
+
+/*Container Principal*/
+.container {
+display: block;
+position: relative;
+}
+    
+/*Ajustamos Imagenes*/
+.blog-post.featured-post{
+min-height: 160px;                   
+margin: 0;                        
+overflow: hidden;                     
+}
+
+/*Adaptamos titulos*/
+.post-title h2 {
+    font-size: 1.5rem;
+    margin: 2px 0 0 2px;
+    font-weight: bold;
+}
+
+
+
+/*DESACTIVAMOS TAGS, LEYENDAS Y POSTS*/
+.post-tags,.leyenda,footer {
+    display: none;
+}
+
+/*QUITAMOS ANIMACION DE IMAGENES*/
+.blog-post.featured-post:hover::before {
+    transform: none;               
+}
+
+
+/*Ajustamos posiciones de los backgrounds*/
+.blog-post.featured-post.fondo-articulo1::before {
+    background-position: center 12%;         
+    background-repeat: no-repeat;         
+}
+
+.blog-post.featured-post.fondo-articulo3::before {
+    background-position: center 12%;         
+    background-repeat: no-repeat;         
 }
 }
 
