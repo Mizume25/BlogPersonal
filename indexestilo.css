@@ -719,6 +719,7 @@ transform: translateX(0);
     width: 100%;
     padding: 7px 3px 7px 5px;     /*espacio entre el propio encabezado*/
     margin: 0px 0px 25px 0px;
+    font-size: 1.3em;
     }
 
 /*Quitamos Tags, leyendas, animaciones y ajustamos imagenes de los backgrounds 
