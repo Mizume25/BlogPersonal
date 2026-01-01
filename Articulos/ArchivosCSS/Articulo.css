@@ -470,7 +470,7 @@ h4 {
 
     /*Propiedades generales*/
     .main-article {
-        width: 900px;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         background-color: rgb(45, 29, 13);
@@ -619,7 +619,7 @@ h4 {
     }
 
     .main-article {
-        width: 600px;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -813,7 +813,7 @@ h4 {
 
 @media (max-width:512px) {
     .main-article {
-        width: 400px;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
