@@ -579,21 +579,11 @@ a:-webkit-any-link{
 }
 
 .blog-post.featured-post{
-    position: relative;                    /* Posicionamiento para elementos hijos absolutos */            
-    color: white;                       /* Color del texto blanco para contraste */
-    min-height: 300px;                    /* Altura mínima del contenedor */
-    display: flex;                        /* Flexbox para organizar el contenido */
-    flex-direction: column;               /* Organizar elementos en columna */
-    justify-content: space-between;       /* Espacio entre elementos (header y título) */
-    padding: 15px;                        /* Espaciado interno */
-    margin: 0 !important;                 /* Eliminar márgenes externos */
-    border-radius: 0 !important;          /* Eliminar bordes redondeados */
-    overflow: hidden;                     /* Oculta cualquier contenido que se salga */
-   
-    }
+    min-height: 300px;               
+}
 
 
-.sidebar{
+.left-sidebar{
     padding: 15px;
 }
 
@@ -630,7 +620,7 @@ a:-webkit-any-link{
 y de los elementos contenedores y ajustamos titulos*/
 
 .blog-post.featured-post{
-min-height: 220px;                   
+min-height: 240px;                   
 margin: 0px;                        
 overflow: hidden;                     
 }
@@ -731,7 +721,7 @@ transform: translateX(0);
 y de los elementos contenedores y ajustamos titulos*/
 
 .blog-post.featured-post{
-min-height: 160px;                   
+min-height: 200px;                   
 margin: 0px;                        
 overflow: hidden;                     
 }
@@ -830,7 +820,7 @@ transform: translateX(0);
     header{
     position: relative;
     width: 100%;
-    padding: 7px 10px 0px 5px;     /*espacio entre el propio encabezado*/
+    padding: 7px 10px 10px 5px;     /*espacio entre el propio encabezado*/
     margin: 0px 0px 25px 0px;
     }
 
@@ -838,7 +828,7 @@ transform: translateX(0);
 y de los elementos contenedores y ajustamos titulos*/
 
 .blog-post.featured-post{
-min-height: 120px;                   
+min-height: 180px;                   
 margin: 0px;                        
 overflow: hidden;                     
 }
