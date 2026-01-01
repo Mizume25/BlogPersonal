@@ -469,8 +469,11 @@ h4 {
     }
 
     /*Propiedades generales*/
+     .container{
+        padding: 0px;
+    }
     .main-article {
-        width: 924px;
+        width: 1024px;
         margin-left: auto;
         margin-right: auto;
         background-color: rgb(45, 29, 13);
@@ -618,8 +621,12 @@ h4 {
         display: none;
     }
 
+    .container{
+        padding: 0px;
+    }
+
     .main-article {
-        width: 670px;
+        width: 770px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -812,8 +819,11 @@ h4 {
 }
 
 @media (max-width:512px) {
+    .container{
+        padding: 0px;
+    }
     .main-article {
-        width: 412px;
+        width: 512px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -863,7 +873,8 @@ h4 {
     .article-image {
         max-width: 300px;
         border-radius: 8px;
-        margin: auto 0;
+        margin-left: auto;
+        margin-right: auto;
         display: block
     }
     
@@ -1007,9 +1018,13 @@ h4 {
 
 @media (max-width:412px) {
     .main-article {
-        width: 400px;
+        width: 412px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .container{
+        padding: 0px;
     }
 
     .imagenheader,
@@ -1055,9 +1070,10 @@ h4 {
 
 
     .article-image {
-        max-width: 300px;
+        max-width: 250px;
         border-radius: 8px;
-        margin: auto 0;
+        margin-left: auto;
+        margin-right: auto;
         display: block
     }
     
