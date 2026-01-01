@@ -824,7 +824,8 @@ transform: translateX(0);
     header{
     position: relative;
     width: 100%;
-    padding: 14px 10px 10px 5px;     /*espacio entre el propio encabezado*/
+    font-size: 1.3em;
+    padding: 4px 10px 10px 5px;     /*espacio entre el propio encabezado*/
     margin: 0px 0px 25px 0px;
     }
 
