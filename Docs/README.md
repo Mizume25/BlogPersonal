@@ -21,6 +21,9 @@ Respositorio donde se almacenara todos los archivos que desarollen en relacion a
     Index: El Layout de los elemntos se compone unicamente del cuerpo
         -Menu Desplegable: Side bar derecho desplegable
 
+# Wireframe Disponible en:
+https://www.figma.com/design/5uXMY6rJbF9OqUG0j12IFw/MIBlogPersonal?node-id=0-1&t=j9fP8RxcJGhvnOlH-1
+
 # Diseño Desktop - Articulos   
     Articulos: El Layout de los elemntos se estructuran en 4 secciones
         -Titulo General + Imagen Header
