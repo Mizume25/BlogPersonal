@@ -367,7 +367,7 @@ h4 {
 /*Material para destacar*/
 .subrayo {
     background-color: yellow;
-    color: black;
+    color: black!important;
     border-radius: 8px;
     padding: 2px;
 }
@@ -377,7 +377,13 @@ h4 {
     font-style: italic;
 }
 
+a {
+color: rgb(187, 120, 49);
+}
 
+.main-article li + li{
+margin-top: 25px;
+}
 
 
 /*BOTON DEL RESPONSIVE*/
