@@ -283,8 +283,7 @@ a div:hover {
     }
 
     .container{
-        height: 100%;
-        width: 100%;
+        min-height: 100dvh;
     }
 
     .navMenu a {
@@ -298,12 +297,13 @@ a div:hover {
         margin-right: 50px;
         height: 50px;
         width: 240px;
+        min-height: calc(100dvh - 50px);
     }
 
     #screen {
         margin-right: 30px;
         width: 650px;
-        height: 100px;
+        min-height: calc(100dvh - 50px);
     }
 }
 
