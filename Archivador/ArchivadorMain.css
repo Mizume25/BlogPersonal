@@ -1,6 +1,7 @@
 /*Elementos Principales*/
 * {
     box-sizing: border-box;
+
 }
 
 body {
@@ -22,7 +23,7 @@ body {
 .imagenheader {
     height: 250px;
     border: 2px solid #ddd;
-    z-index: 1;
+    
 }
 
 .headertitulo {
@@ -32,7 +33,7 @@ body {
     margin-left: auto;
     width: 600px;
     height: 100px;
-    z-index: 2;
+   
    
 }
 
@@ -131,8 +132,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
     width: 360px;
     height: 100%;
     font-size: 1.2rem;
@@ -174,7 +173,7 @@ a div:hover {
 .container {
     background-color: rgb(210, 180, 140);
     width: 100%;
-    height: 80vh;
+    height: 80dvh;
     display: flex;
     align-items: start;
 }
@@ -199,4 +198,82 @@ a div:hover {
     width: 990px;
     height: 550px;
     border: solid 2px black;
+}
+
+#menuMobile{
+    display: none;
+}
+
+/*-------Diseño Responsive--------*/
+/*--Ordenador Pequeño - Tablet Grande----*/
+@media(max-width:1024px){
+    /*Re-Ajustamos Titulos*/
+    h1{
+        font-size: 1.5rem;
+    }
+    /*Quitamos imagen y titulo principal*/
+    .imagenheader,.headertitulo{
+        display: none;
+    }
+
+    /*Reducimos el container a una mida especifica*/
+    .container{
+         min-height: 740px;
+    }
+    
+    /*Reajustamos el menu de navegacion*/
+    .navMenu {
+        justify-content: start;
+        margin: 0px;
+    }
+    .navMenu div {
+        width: 230px;
+        justify-content: center;
+        
+    }
+
+    .navMenu a {
+        width: 230px;
+        
+    }
+
+    /*Modificamos elementos principales*/
+    #updates{
+        margin-left: 25px;
+    }
+
+    #screen {
+        margin-right: 70px;
+        width: 505px;
+    }
+}
+
+@media(max-width:770px){
+    h1{
+        font-size: 1.2rem;
+    }
+    .imagenheader,.headertitulo,.navMenu,#updates{
+        display: none;
+    }
+
+    .container{
+         min-height: 640px;
+    }
+    #menuMobile{
+        display: block!important;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(198, 148, 83);
+        cursor: pointer; /* Cambia a "mano/dedo" */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #screen {
+        margin-right: 70px;
+        width: 100%;
+        border:none;
+        
+    }
 }
