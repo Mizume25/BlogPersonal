@@ -284,7 +284,7 @@ article p {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url("Imagenes Blog/FotoArticle2.jpg");
                   background-size: cover;               /* La imagen cubre todo el espacio */
-    background-position: center;          /* Centra la imagen */
+    background-position: center 12%;          /* Centra la imagen */
     background-repeat: no-repeat;         /* Evita que la imagen se repita */
 }
 
@@ -472,7 +472,7 @@ a:-webkit-any-link{
 .social-links a {
     display: inline-block;
     padding: 8px 15px;
-    background-color: #2575fc;
+    background-color: rgb(118, 77, 35);  /*Mismo fondo */
     color: white;
     border-radius: 5px;
     text-decoration: none;
@@ -480,7 +480,7 @@ a:-webkit-any-link{
 }
 
 .social-links a:hover {
-    background-color: #1a5fd8;
+    background-color: rgb(129, 106, 84);  /*Mismo fondo */
 }
 
 /* Contenido principal */
@@ -550,7 +550,7 @@ a:-webkit-any-link{
 
 
 
-/*Borramos boton del escritorio*/
+/*Borramos id's del escritorio*/
 #MenuMobile {
     display: none;
 }
@@ -558,7 +558,9 @@ a:-webkit-any-link{
     display: none;
 }
 
-
+#NetWork{
+    display: none;
+}
 
 /*Escritorios pequeños*/
 @media(max-width:1024px){
@@ -583,6 +585,10 @@ a:-webkit-any-link{
 
 .left-sidebar{
     padding: 15px;
+}
+
+#NetWork{
+    display: block;
 }
 
 }
@@ -684,6 +690,10 @@ transform: translateX(100%);
 
 .left-sidebar.abierto {
 transform: translateX(0);
+}
+
+#NetWork{
+    display: block;
 }
 
 }
@@ -795,6 +805,10 @@ transform: translateX(100%);
 transform: translateX(0);
 }
 
+#NetWork{
+    display: block;
+}
+
 }
 
 /*RESPONSIVE DE TABLETS*/
@@ -901,6 +915,10 @@ transform: translateX(100%);
 
 .left-sidebar.abierto {
 transform: translateX(0);
+}
+
+#NetWork{
+    display: block;
 }
 
 }

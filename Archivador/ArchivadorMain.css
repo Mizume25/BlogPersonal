@@ -1,0 +1,45 @@
+/*Elementos Principales*/
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../Imagenes Blog/Fondo2.jpg");
+    font-family: 'Lexend', sans-serif;
+}
+
+/*Instalamos Fuente*/
+.lexend_font {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+/*Reutilizacion de la classe de articulos */
+.imagenheader {
+    height: 250px;
+    border: 2px solid #ddd;
+    
+    /*Elementos dinamicos*/
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("ImagenesArchivador/Fondo1.jpg");
+      /* Centra la imagen */
+      background-repeat: no-repeat;
+      background-position: center 11%;
+      background-size: cover;
+      width: 100%;
+}
+
+/*--------Fondos Determinados-------------*/
+/*----------------------------------------*/
+
+.navMenu{
+    width: 100%;
+    height: 50px;
+    border: solid 3px black;
+}
+
+
+
