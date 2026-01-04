@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archivador</title>
+    <link rel="icon" type="image/x-icon" href="../Imagenes Blog/Icon.png">
     <link rel="stylesheet" href="ArchivadorMain.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,15 +12,37 @@
 </head>
 <body>
  <!--Header Principal-->   
-<header class="imagenheader"></header>
+<header class="imagenheader" id="Fondo1"></header> <!--Imagen-->   
+
+    <div class="headertitulo"><!--Titulo-->  
+        <h1>Archivador</h1>
+    </div> 
 
  <!--Menu de Navegación-->   
 <nav class="navMenu">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+
+   <a href="#" id="section1"><div>
+     Filosofia y Ciencias
+   </div></a>
+
+   <a href="#" id="section2"><div>
+     Literatura
+   </div></a>
+
+   <a href="#" id="section3"><div>
+     AnimeManga
+   </div></a>
+
+   <a href="#" id="section4"><div>
+     Reflexiones
+   </div></a>
+
 </nav>
 
+<main class="container">
+  <div id="updates"></div>
+  <div id="screen"></div>
+</main>
+<script src="ArchivadorMain.js"></script>
 </body>
 </html>

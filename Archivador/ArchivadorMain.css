@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     background-image: url("../Imagenes Blog/Fondo2.jpg");
@@ -17,29 +17,186 @@ body{
     font-weight: 300;
     font-style: normal;
 }
+
 /*Reutilizacion de la classe de articulos */
 .imagenheader {
     height: 250px;
     border: 2px solid #ddd;
-    
-    /*Elementos dinamicos*/
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("ImagenesArchivador/Fondo1.jpg");
-      /* Centra la imagen */
-      background-repeat: no-repeat;
-      background-position: center 11%;
-      background-size: cover;
-      width: 100%;
+    z-index: 1;
+}
+
+.headertitulo {
+    margin-top: -40px;
+    /* EFECTO TITULO SEMI-PUESTO ENTRE LA IMAGEN DEL HEADER Y EL BODY*/
+    margin-right: auto;
+    margin-left: auto;
+    width: 600px;
+    height: 100px;
+    z-index: 2;
+   
 }
 
 /*--------Fondos Determinados-------------*/
+#Fondo1 {
+    /*Elementos dinamicos*/
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("ImagenesArchivador/Fondo1.jpg");
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    background-position: center 11%;
+    background-size: cover;
+    width: 100%;
+}
+
+#Fondo2{
+    /*Elementos dinamicos*/
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("ImagenesArchivador/Fondo2.jpg");
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    background-position: center 3%;
+    background-size: cover;
+    width: 100%;
+}
+
+#Fondo3 {
+    /*Elementos dinamicos*/
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("ImagenesArchivador/Fondo3.jpg");
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: cover;
+    width: 100%;
+}
+
+#Fondo4 {
+    /*Elementos dinamicos*/
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("ImagenesArchivador/Fondo4.jpg");
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    background-position: center 11%;
+    background-size: cover;
+    width: 100%;
+}
+
+
 /*----------------------------------------*/
 
-.navMenu{
+/*--------Redefinición de etiquetas html-------------*/
+h1 {
+
+    /*Estilos de h1 dentro del contenidor header*/
+    border-radius: 5px;
+    border: solid 1px rgb(210, 180, 140);
+    background-color: rgb(210, 180, 140);
+    text-align: center;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    /*Estilos de la fuente*/
+    margin-top: 0px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+
+}
+
+a {
+    all: unset;
+}
+
+/*-------------------------------------------*/
+/*---------------Configuracion de nav------------------*/
+.navMenu {
+    margin-top: -32px;
+    margin-bottom: 0px;
     width: 100%;
     height: 50px;
-    border: solid 3px black;
+    border: solid 1px rgb(210, 180, 140);
+    background-color: rgb(198, 148, 83);
+    cursor: pointer; /* Cambia a "mano/dedo" */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navMenu div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 360px;
+    height: 100%;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.navMenu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+
+.navMenu div+div {
+    border-left: solid 3px rgb(206, 189, 165);
+}
+
+a div:hover {
+    transform: scale(1.05);
+    /* Solo número, sin "em" */
+    transition: transform 0.3s ease;
+    /* Para que sea suave */
 }
 
 
 
+/*-------------------------------------------*/
+
+.sectionSelect{
+    background-color: rgb(210, 180, 140);
+}
+
+/*--------------Elemento contenedor-------------------*/
+.container {
+    background-color: rgb(210, 180, 140);
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: start;
+}
+
+.container div {
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+
+#updates {
+    margin-right: 100px;
+    margin-left: 80px;
+    width: 280px;
+    height: 550px;
+    border: solid 2px black;
+
+}
+
+#screen {
+
+    width: 990px;
+    height: 550px;
+    border: solid 2px black;
+}
