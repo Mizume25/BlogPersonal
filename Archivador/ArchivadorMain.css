@@ -257,7 +257,7 @@ a div:hover {
     }
 
     .container{
-         min-height: 640px;
+         min-height: 750px;
          display: flex;
          flex-direction: column; /* Elementos en columna */
     }
