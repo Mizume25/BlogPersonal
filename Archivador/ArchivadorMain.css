@@ -260,43 +260,49 @@ a div:hover {
 
 /*Tabletas medianas pequeñas*/
 @media (max-width: 770px){
+    /*Re-Ajustamos Titulos*/
     h1{
-        font-size: 1.9rem;
+        font-size: 1.3rem;
     }
-    .imagenheader,.headertitulo,.navMenu,#updates{
+    /*Quitamos imagen y titulo principal*/
+    .imagenheader,.headertitulo,#updates{
         display: none;
     }
 
-    .container{
-         
-         display: flex;
-         flex-direction: column; /* Elementos en columna */
+    /*Reducimos el container a una mida especifica*/
+    
+    
+    /*Reajustamos el menu de navegacion*/
+    .navMenu {
+        margin: 0px;
     }
-    #menuMobile{
-        display: block;
-        width: 100%;
-        height: 75px;
-        background-color: rgb(140, 88, 21);
-        cursor: pointer; /* Cambia a "mano/dedo" */
-        align-items: center;
+    .navMenu div {
+        width: 170px;
         justify-content: center;
-        /*Estilos de Fuente*/
-        color: #ffffff;
-        text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        0 0 10px rgba(0, 0, 0, 0.5);
-        font-weight: bold;
-        font-size: 1.3rem;
+        font-size: 0.8rem;
     }
 
-    #screen {
-        margin-top: 0px;
+    .container{
+        height: 100%;
         width: 100%;
-        border:none;
-        display: block;
-        min-height: 100%;
+    }
+
+    .navMenu a {
+        width: 170px;
+        
+    }
+
+    /*Modificamos elementos principales*/
+    
+
+    #screen {
+        margin: 30px 0px 0px 0px;
+        width: 100%;
+        height: 650px;
+        
     }
 }
+
 
 /*Moviles grandes - medianos*/
 @media (max-width: 512px){
@@ -309,8 +315,6 @@ a div:hover {
 
     .container{
          height: 100%;
-         min-height: 635px;
-         width: 100%;
          display: flex;
          flex-direction: column; /* Elementos en columna */
     }
