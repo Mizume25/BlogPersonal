@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "tituloObra": "Shiki",
+  "tipo": "articulo",
+  "titulo":"El vitalismo de Sotoba",
+  "categoria": ["Terror","Misterio","Sobrenatural"],
+  "autor": "Fuyumi Ono",
+  "fecha": "2025-04-09",
+  "archivo": "Articulos/Articulos_Destacados/Shiki.html",
+  "descripcion": "Recopilación de notas y observaciones de mi lectura con Shiki",
+  "destacado": true
+}
