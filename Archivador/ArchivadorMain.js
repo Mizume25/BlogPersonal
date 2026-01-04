@@ -17,7 +17,7 @@ function cargarSeccion(nombreCategoria,nombreArchivo) {
     fetch(`${nombreCategoria}/ArchivosHTML/${nombreArchivo}.html`)
         .then(response => response.text())
         .then(html => {
-            // 4. Insertar en el screen
+            //Insertar en la pantalla
             screen.innerHTML = html;
         })
         .catch(error => {
@@ -38,10 +38,9 @@ function cambiarFondoSuave(numero) {
 }
 
 //FUNCION DE CARGA DE IMAGEN
-
-
 //Seccion "default"
 cargarSeccion('FilosofiayCiencias','Escrutinios1');
+btnSectionOne.classList.toggle("sectionSelect");
 //Cargar secciones
 
 btnSectionOne.addEventListener('click', () => {
@@ -74,4 +73,35 @@ btnSectionFour.addEventListener('click', () => {
     btnSectionFour.classList.toggle("sectionSelect")
     cargarSeccion('Reflexiones','Escrutinios4');
     cambiarFondoSuave(4);
+});
+
+
+/*Cargar elementos con menu mobil*/
+const optionSelector = document.querySelector("#menuMobile");
+
+// Cuando cambie la selección
+optionSelector.addEventListener('change', function() {
+    const valorSeleccionado = this.value;
+    
+    // Dependiendo del valor seleccionado, ejecutar diferentes acciones
+    switch(valorSeleccionado) {
+        case '1':
+            cargarSeccion('FilosofiayCiencias', 'Escrutinios1');
+            cambiarFondoSuave(1);
+            break;
+        case '2':
+            cargarSeccion('Literatura', 'Escrutinios2');
+            cambiarFondoSuave(2);
+            break;
+        case '3':
+            cargarSeccion('AnimeManga', 'Escrutinios3');
+            cambiarFondoSuave(3);
+            break;
+        case '4':
+            cargarSeccion('Reflexiones', 'Escrutinios4');
+            cambiarFondoSuave(4);
+            break;
+        default:
+            console.log('Opción no válida');
+    }
 });

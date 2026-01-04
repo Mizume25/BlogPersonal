@@ -194,7 +194,6 @@ a div:hover {
 }
 
 #screen {
-
     width: 990px;
     height: 550px;
     border: solid 2px black;
@@ -218,12 +217,12 @@ a div:hover {
 
     /*Reducimos el container a una mida especifica*/
     .container{
-         min-height: 740px;
+         min-height: 640px;
+         
     }
     
     /*Reajustamos el menu de navegacion*/
     .navMenu {
-        justify-content: start;
         margin: 0px;
     }
     .navMenu div {
@@ -239,15 +238,16 @@ a div:hover {
 
     /*Modificamos elementos principales*/
     #updates{
-        margin-left: 25px;
+        margin-left: 5px;
     }
 
     #screen {
-        margin-right: 70px;
-        width: 505px;
+        margin-right: 30px;
+        width: 650px;
     }
 }
 
+/*Tabletas medianas pequeñas*/
 @media(max-width:770px){
     h1{
         font-size: 1.2rem;
@@ -258,22 +258,106 @@ a div:hover {
 
     .container{
          min-height: 640px;
+         display: flex;
+         flex-direction: column; /* Elementos en columna */
     }
     #menuMobile{
-        display: block!important;
+        display: block;
         width: 100%;
         height: 50px;
         background-color: rgb(140, 88, 21);
         cursor: pointer; /* Cambia a "mano/dedo" */
-        display: flex;
         align-items: center;
         justify-content: center;
+        /*Estilos de Fuente*/
+        color: #ffffff;
+        text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
     }
 
     #screen {
-        margin-right: 70px;
+        margin-top: 0px;
         width: 100%;
         border:none;
-        
+        display: block;
+    }
+}
+
+/*Moviles grandes - medianos*/
+@media(max-width:512px){
+    h1{
+        font-size: 1.2rem;
+    }
+    .imagenheader,.headertitulo,.navMenu,#updates{
+        display: none;
+    }
+
+    .container{
+         min-height: 640px;
+         display: flex;
+         flex-direction: column; /* Elementos en columna */
+    }
+    #menuMobile{
+        display: block;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(140, 88, 21);
+        cursor: pointer; /* Cambia a "mano/dedo" */
+        align-items: center;
+        justify-content: center;
+        /*Estilos de Fuente*/
+        color: #ffffff;
+        text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+    }
+
+    #screen {
+        margin-top: 0px;
+        width: 100%;
+        border:none;
+        display: block;
+    }
+}
+
+
+/*Moviles pequeños*/
+@media(max-width:412px){
+    h1{
+        font-size: 1.2rem;
+    }
+    .imagenheader,.headertitulo,.navMenu,#updates{
+        display: none;
+    }
+
+    .container{
+         min-height: 640px;
+         display: flex;
+         flex-direction: column; /* Elementos en columna */
+    }
+    #menuMobile{
+        display: block;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(140, 88, 21);
+        cursor: pointer; /* Cambia a "mano/dedo" */
+        align-items: center;
+        justify-content: center;
+        /*Estilos de Fuente*/
+        color: #ffffff;
+        text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+    }
+
+    #screen {
+        margin-top: 0px;
+        width: 100%;
+        border:none;
+        display: block;
     }
 }
