@@ -206,6 +206,31 @@ a div:hover {
     display: none;
 }
 
+/*-------Updates------*/
+#updates {
+    /* COLOR BASE CAFÉ CLARO */
+    background-color: rgb(180, 156, 125); /* Café claro como base */
+    
+    /* GRAN ÁREA CAFÉ CLARO CON BORDES CAFÉ OSCURO */
+    background-image: radial-gradient(
+        ellipse at center 50%,
+        rgba(200, 176, 145, 1) 0%,       /* CENTRO: CAFÉ MUY CLARO */
+        rgba(190, 166, 135, 0.95) 10%,   /* CAFÉ CLARO INTENSO */
+        rgba(180, 156, 125, 0.9) 20%,    /* CAFÉ CLARO PRINCIPAL */
+        rgba(170, 146, 115, 0.85) 30%,   /* CAFÉ CLARO-MEDIO */
+        rgba(160, 136, 105, 0.8) 40%,    /* CAFÉ MEDIO-CLARO */
+        rgba(150, 126, 95, 0.7) 50%,     /* CAFÉ MEDIO */
+        rgba(140, 116, 85, 0.6) 60%,     /* CAFÉ MEDIO-OSCURO */
+        rgba(130, 106, 75, 0.5) 70%,     /* CAFÉ OSCURO */
+        rgba(120, 96, 65, 0.4) 80%,      /* CAFÉ MUY OSCURO */
+        rgba(110, 86, 55, 0.3) 90%,      /* CAFÉ PROFUNDO */
+        rgba(100, 76, 45, 0.2) 95%,      /* CAFÉ CASI NEGRO */
+        rgba(90, 66, 35, 0.1) 100%       /* BORDE: CAFÉ NEGRO */
+    );
+    
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 
 /*----------------------------PROPIEDADES INTERNAS LA PANTALLA------------------------------------*/
 
@@ -213,31 +238,29 @@ a div:hover {
 /*Propiedades compartidas con html externos*/
 
 #screen {
-    background-color: #ffffff;
+    /* COLOR BASE CAFÉ CLARO */
+    background-color: rgb(180, 156, 125); /* Café claro como base */
+    
+    /* GRAN ÁREA CAFÉ CLARO CON BORDES CAFÉ OSCURO */
+    background-image: radial-gradient(
+        ellipse at center 50%,
+        rgba(200, 176, 145, 1) 0%,       /* CENTRO: CAFÉ MUY CLARO */
+        rgba(190, 166, 135, 0.95) 10%,   /* CAFÉ CLARO INTENSO */
+        rgba(180, 156, 125, 0.9) 20%,    /* CAFÉ CLARO PRINCIPAL */
+        rgba(170, 146, 115, 0.85) 30%,   /* CAFÉ CLARO-MEDIO */
+        rgba(160, 136, 105, 0.8) 40%,    /* CAFÉ MEDIO-CLARO */
+        rgba(150, 126, 95, 0.7) 50%,     /* CAFÉ MEDIO */
+        rgba(140, 116, 85, 0.6) 60%,     /* CAFÉ MEDIO-OSCURO */
+        rgba(130, 106, 75, 0.5) 70%,     /* CAFÉ OSCURO */
+        rgba(120, 96, 65, 0.4) 80%,      /* CAFÉ MUY OSCURO */
+        rgba(110, 86, 55, 0.3) 90%,      /* CAFÉ PROFUNDO */
+        rgba(100, 76, 45, 0.2) 95%,      /* CAFÉ CASI NEGRO */
+        rgba(90, 66, 35, 0.1) 100%       /* BORDE: CAFÉ NEGRO */
+    );
+    
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*------------------------------------------------------------------------------------------------*/
 /*-------Diseño Responsive--------*/
 /*--Ordenador Pequeño - Tablet Grande----*/
