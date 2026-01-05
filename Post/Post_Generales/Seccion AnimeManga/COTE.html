@@ -4,18 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plantilla</title>
-  <link rel="icon" type="image/x-icon" href="../../Imagenes Blog/Icon.png">
-  <link rel="stylesheet" href="../ArchivosCSS/Post.css">
+  <title>COTE</title>
+  <link rel="icon" type="image/x-icon" href="../../../Imagenes Blog/Icon.png">
+  <link rel="stylesheet" href="../../ArchivosCSS/Post.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/all.min.css">
+  <link rel="stylesheet" href="../../../css/all.min.css">
 
   <!--Estructuras Personales de cada Pagian
     - Cada Arituclo estara vinculado a Articulo.css pero dentro de cada Articulo hbara una personalizacion de contenido-->
   <style>
-
     /*Propiedades de las tablas*/
     table {
       color: black;
@@ -33,56 +32,11 @@
       background-color: white;
       padding: 5px;
     }
-
-  
   </style>
 </head>
 
 <body>
-  <!---Header con una imagen de fondo con propiedades-->
-  <!----------------------FORMULAS BASE DE EJEMPLO---------------------------->
-  <!--
-  Section: Seccion especifica de un articulo(puede haber varias estableci 6 como ejemplo)
-  h2: Titulo de un seccion especifica(1 por seccion)
-  h3: Titulo de un tema a tratar dentro de una seccion (puede haber varias)
-  article-image: Propiedades especficas de las secciones (agregar)
-  article-image: Propiedades espeficias de las imagenes y adaptaciones a responsive (agregar)
 
-  NUEVAS SECCIONES:
-  N: secciones que quieres agregar
-
-  - ESTRUCTURA BASE: Num.Secciones > Num h2 < Num h3 > num paragrafos
-  - (section#section$@4.article-section>h2+h3+p)* N
-  ----------------------------------------------------------------------
-
-  MULTIPLES SUBSECCIONES + NUEVA SECCION:
-  ESTRUCTURA BASE: SECCION > TITULO SECCION > SUBSECCIONES + PARAGRAFOS
-  SE : Secciones existentes
-
-  - section$@SE*1.article-section>h2+(h3+p)*numero de sub secciones
-
-  ----------------------------------------------------------------------
-  SECCION INDIVIDUAL + 1 SUBSECCION
-  ESTRUCTURA BASE > 1 H2 > 1 H3 > p> IMG
-  - section$@SE*1.article-section>h2+h3+p+img.article-image
-
-  ----------------------------------------------------------------------
-  1 SUBSECCION
-  (h3 > p) * cantidad sub secciones
-
-  1 SUBSECCION + IMAGEN
-  
-  h3 + p + img.article-image
-
-  1 SUBSECCION  + TABLA
-
-  h3+p+table>tr*filas>td*columnas
-
-  AVISO: DEBEN AGREGARSE LAS CLASSES E IDS CORRESPONDIENTES PARA NO COMRPOMETER EL RESPONSIVE
-
-                                                                            -->
-  <!--------------------------------------------------------------------------->
-  <!---TITULO PRINCIPAL--->
 
 
   <!---TITULO PRINCIPAL--->
@@ -91,13 +45,13 @@
     <aside class="sidebar-left"> <!-- Barra lateral izquierda - Índice -->
       <h3>Índice de Contenido</h3> <!-- INDICE CONTENIDO -->
       <ul class="index-list">
-        <li><a href="#section1">SECCION I</a></li>
+        <li><a href="#section1">Notas y Planteamientos</a></li>
         <li><a href="#section2">SECCION II</a></li>
         <li><a href="#section3">SECCION III</a></li>
         <li><a href="#">EJEMPLO</a></li>
       </ul>
       <ul class="index-home">
-      <li><a href="../../home.html">VOLVER A HOME</a></li>
+        <li><a href="../../home.html">VOLVER A HOME</a></li>
       </ul>
     </aside>
 
@@ -105,15 +59,14 @@
     <article class="main-article"> <!-- Cuerpo del articulo -->
 
       <div class="categories"><!-- Categorias iniciales -->
-        <span class="category">Ejemplo</span>
-        <span class="category">Ejemplo</span>
-        <span class="category">Ejemplo</span>
+        <span class="category">Slice Of Life</span>
+
       </div>
 
       <!-- Contenido del Articulo-->
-         <!---TITULO PRINCIPAL--->
+      <!---TITULO PRINCIPAL--->
       <header class="article-header">
-        <h1>TITULO EJEMPLO <br>ARTICULO</h1>
+        <h1>Classroom of the Elite</h1>
         <p class="meta">Publicado el X de ¿?, 20XX</p>
 
         <!-- Boton del responsive-->
@@ -123,209 +76,92 @@
 
       </header>
 
-      <!--SECCION DE EJEMPLO-->
       <section id="section1" class="article-section">
-        <h2>EJEMPLO</h2>
-
-        <p>En Sniki (me remito por entero a la novela) se puede identificar al
-          menos 3 puntos fundamentales de la obra que clarifican la dirección de
-          la historia y focalización de susfiguras:Estos puntos son:</p>
-
-        <ul>
-          <li>Ensayo de Seishin</li>
-          <li>El concepto de Sotoba</li>
-          <li>El Misterio principal de la casa Kanemasa</li>
-        </ul>
-
-        <p>El eje de Kanemasa no es más que el misterio en el que se desenvolverá
-          todas las subtramas abiertas en todas las familias por incidentes
-          ocurridos (las cabezas desprendidas, el camión de mudanzas, los
-          encuentros foráneos y finalmente los asesinatos más recientes )
-          poco o mucho el pueblo de Sotoba pone entre dicha a la casa de Kanemasa
-          como principal sospecha de ese desencadenamiento de acontecimientos completamentesorprendentes.</p>
-        <!--IMAGEN 1-->
-        <img src="ImagenesPost/imagenejemplo.png" class="article-image">
-
-        <p>Ensayo de Seishin & Concepto de Sotoba <br>
-
-          <br>
-          El Ensayo de Seishin traza el concepto capital en el que la que Sotoba se focaliza en la
-          medida en la que se desarrolla la tragedia "El pueblo está rodeado de muerte". El
-          concepto poético en relación con conflicto moral trascendente que presenta la psicología de
-          Seishin en relación con su hermano se transfigura en el escenario poético de las escrituras
-          citadas (Génesis 4).
-          Tras está contexto el Ensayo desenvuelve el concepto de Sotoba el pueblo rural fundado en
-          el periodo Edo cuya supervivencia desafía la razón dada su conveniente forma en la que
-          pudo sobrevivir tras los avances tecnológicos y científicos de las ciudades vecinas, y más
-          allá de eso es un pueblo dedicado a la muerte.
-          Allí la gente trabaja por la muerte y reza por los muertos, para eso fue fundado el pueblo
-          desde que nació.
+        <h2>Notas y pleanteamientos</h2>
+        <h3>Notas 01/2025 - Volumen Actual: Volumen 3 Y3</h3>
+        <h4>Agradecimientos</h4>
+        <p>Antes comenzar cualquier disertación, decir y dejar en claro mi mas grande y eterna gratitud al grupo
+          <a href="https://reversiblogscans.wixsite.com/website">ReversiBlog </a>. Por todas las traducciones de esta
+          obra que amo tanto, decir que aunque no todo el contenido de
+          este grupo es de mi agrado los sigo y los conozco por traducciones que también leeo como
+          <a href="https://myanimelist.net/manga/163630/Kuso_Onna_ni_Sachi_Are">Kuso onna ni
+            sachiare</a> o <a href="https://myanimelist.net/manga/153350/Boku_no_Suki_na_Hito_ga_Suki_na_Hito">Boku no
+            Suki na Hito ga Suki n</a>,
+          por ejemplo no soy muy fan de toda traduccion que ellos hacen,
+          pero en alguna ocasion como avido lector de romance me ha gustado alguna que otra aportación.
         </p>
 
-        <p>-El eje principal del "misterio de Kanemasa" <br>
-          <br>
-          La obra desarrolla dicha tesis en relación a las numerosas familias que desembocan
-          determinados papeles rudimentarios en los que haceres diarios. Pero en la medida en la
-          que presenta las diferentes familias focaliza estas 3 conexiones de forma efectiva, es decir
-          la narración centrada en los diferentes puntos de vista hablando de un mismo incidente solo
-          abre paso a seguir desenvolviendo el concepto en el que se puntualiza estás 3 ideas. <br>
-          <br>
-          Kanemasa - Sotoba - Misterio <br>
-          <br>
-          Las subtramas de las familias se reducen a las interacciones con el nódulo principal de la
-          obra, aunque quizás es muy pronto para dictaminar nada.
+        <h4>Notas Preliminares</h4>
+
+        <p>Soy lector de esta obra desde hace aproximadamente 5 años (contando el nuevo año vigente); leo COTE desde
+          hace aproximadamente, si no mal recuerdo, de entre finales de 2019 a principios de 2020.</p>
+
+        <p>En ese entonces avancé hasta el volumen 8, hice un parón y meses después retomé la obra. Entre 2021 y 2022
+          fue donde más consumí cote, hasta determinado punto de hacer una pausa de casi un año. Y tener que recuperar
+          el ritmo de la obra. Teniendo en cuenta el año de publicación de la obra, al menos dentro de la comunidad
+          hispanohablante (en la cual raramente se habla de novelas ligeras). Soy un lector relativamente viejo, tomando
+          en cuenta que leí la obra prácticamente cuando estaba terminando el primer año.</p>
+
+        <p>No fue sino cerca de estos últimos años que la popularidad de esta obra llegó a un punto de inflexión,
+          tomando en cuenta que actualmente se le están adaptando varios volúmenes a anime. Además, han remodelado su
+          versión manga; esto no es casualidad, y es que al menos cerca de entre 2022 a 2023 la obra fue tomando más
+          popularidad hasta el punto que en redes sociales había incluso personas hispanohablantes dando su opinión
+          sobre la novela ligera.</p>
+
+        <p>Como lector desde hace años, me he tomado el tiempo no solo de leer la obra, sino de analizarla volumen tras
+          volumen, sacando conclusiones nuevas por cada arco culminado. Sin embargo, el reciente auge ha expuesto una
+          preocupación que ya hace tiempo me tenía en ascuas. No solo tengo que soportar ver cómo los propios fanáticos
+          de la obra degradan dicha obra a monigotes genéricos y clichés literarios (memes, mofas, ridiculizaciones,
+          etc..) de, entre otras cosas, sobre los sucesos acontecidos desde el 1º volumen del 2º Año hasta la
+          actualidad.</p>
+
+        <p>Lo cierto es que esta amalgama incesante de lectores que poco o nada analizan hace rebajar a la obra a una
+          burla auto-insertiva morbosa y poco creativa.</p>
+
+        <p>Esto es únicamente culpa de los lectores, la cantidad de "opiniones" que solo se sustentan en querer de
+          manera acrítica rebajar toda la inteligencia en la cual se implica el autor. El maestro Shōgo Kinugasa, cuyo
+          talento admiro y respeto, por más que, a pesar de todo, no es COTE mi obra predilecta ni la considere una obra
+          magna, pero reducir todo este trabajo a una vil burla malintencionada sería de las cosas más ruines que
+          alguien puede hacer.</p>
+
+        <p>Sin más que decir, el propósito de este post es reunir mis notas y mis pensamientos completos de la obra en
+          general ahora que tengo todo fresco. Una vez todo escrito y fundamentado, iré dando actualizaciones sobre los
+          volúmenes siguientes: agregando, ajustando comentarios e incluso, cómo no, retractándome de posibles teorías.
         </p>
 
+        <p>Antes de continuar, dejar en claro que mi introducción tiene la única intención de dejar en claro que he
+          pasado años viendo a la comunidad de COTE (comunidad que no me simpatiza). Con la cual no solo es que tenga
+          mis diferencias, sino que incluso, con el pasar de los volúmenes, más se evidencia que desde el volumen de
+          segundo año los fanáticos comenzaron a perder el interés por la obra en el momento en el que el protagonista
+          dejó de ser esa figura de proyecciones psicológicas en las cuales muchos fanáticos se auto-insertaban.</p>
+
+        <p>Decir que la trayectoria actual de la obra es ambigua o que repite clichés muy clásicos de obras niponas
+          (harems, heroínas, etc...) es evidenciar que no se da una lectura atenta. Y la complejidad de Kinugasa no es
+          tanta; solo exige un poco de atención a los diálogos, una breve reflexión sobre los monólogos iniciales, sobre
+          las historias cortas, los detalles en las escenas, etc. Muchas veces la prospección de Kinugasa es tal, que es
+          hasta grosero declarar que al lector no se le otorgaron las piezas necesarias para saber cómo se iba a
+          desenvolver un evento en esta obra.</p>
+
+        <p>Dicho pues, toca redactar párrafos de argumentos y sustentos sólidos que prueben mi completo desdén por los
+          fanáticos, que plasmen mi amor por esta obra y que, a su vez, dejen en clara mi postura con respecto a esta.
+        </p>
       </section>
-      <!-- SECCION II-->
+
       <section id="section2" class="article-section">
-        <h2>Notas de Abril</h2>
+        <h2>Recopilacion de Planteamientos</h2>
+        <img src="IMG/COTE/Portada.jpg" alt="Portada" class="article-image">
+        <h3>Fundamentos</h3>
+        <p>Abordar lógicamente 25 volúmenes es una barbaridad, pero me siento capacitado. Entre otras cosas, porque
+          hablo con un amigo sobre COTE cada volumen nuevo. Gracias a estas últimas publicaciones, pude recordar varios
+          detalles, problemáticas, planteamientos, premisas e ideas generales que nos han llevado a los acontecimientos
+          que están ocurriendo hoy, a fecha en la que escribo esto: 01/2026, y cuyo último volumen salió el 25 de
+          noviembre de 2025, hace escasos meses.</p>
 
-        <h3>Las nociones de Sotoba</h3>
-
-        <p>La personalidad de Natsuno Koide no puede considerarse apático
-          en ciertos sentido especulativo adherido al sentido colectivista
-          que Sotoba siente hacia su gente, en primer lugar porque es
-          alguien foráneo que lo exime de cualquier fórmula
-          y en segundo lugar porque en el enfrentamiento con
-          Masao y el rechazo a Kaori no va implícita una mala fe (nose muestra despectivo,
-          si no individual frente a una narrativa de expectativas colectivas) en
-          la narración de Sotoba va implícito una construcción mecanicista del nacimiento y preservación
-          del pueblo y sus apellidos. Ahora los ejes en las estructuras metafóricas del
-          sentido de unidad del pueblo son:</p>
-
-       
+        <p>Para organizar toda esta temática, vamos a estructurar una tabla de contenido en la cual indexaremos punto
+          por punto todo el planteamiento que busco realizar con este post, a manera de reseña y crítica. Esto nos
+          permitirá, de manera paulatina y seria, abordar la mayor cantidad de puntos posibles en el menor y más conciso
+          número de párrafos que tendré que redactar.</p>
       </section>
-
-      <!-- SECCION III-->
-      <section id="section3" class="article-section">
-        <h2>Notas de Mayo</h2>
-        <h3>La psicología de Seishin </h3>
-        <ul>
-          <li>La psicología de Seishin </li>
-          <li>El sentido de trascendencia de Ozaki/Seishin </li>
-          <li>La muerte epidémica y el sentido de la unidad de Sotoba </li>
-        </ul>
-        <p class="cursiva">...A un hombre le creció un cuerno. De repente, un cuerno le creció, y temió que se había
-          vuelto diferente del hombre común. Debido a que sería discriminado sin razón, estaba desesperado por
-          ocultarlo. Pero, el hombre terminó siendo adorado como un Dios ¿no? Y se le exigió hacer milagros. Aunque no
-          tenía el poder de hacer milagros, solo tenía un cuerno. <br>
-          <br>
-          El hombre se sintió aliviado de que no fuera discriminado, pero no tenía el poder de hacer milagros. Temía que
-          otras personas supieran eso, que no era una señal de ser un Dios, que no era más que una prueba de que era un
-          hereje. Pero nadie podía culparlo por el hecho de que no ocurrió ningún milagro El hombre era un hereje
-          después de todo. Fue llamado un dios y excluido porque estaba consagrado. El cuerno era la marca de un hereje.
-          Como la marca puesta en Cain. Por eso fue negado y excluido injustificadamente de la sociedad. <br>
-          <br>
-          El minotauro mismo sabía que no era un dios, y temía que lo rechazaran, así que él mismo hizo un milagro, ¿no?
-          Al matar a un pecador nació una maldición. Los aldeanos le temieron y lo honraron, construyendo un muro. En
-          otras palabras, lo mantuvieron a distancia, ¿verdad? Y por cada uno de los que fueron asesinados se construyó
-          otro muro, hasta que se construyó un gran laberinto a su alrededor. Estaba escondido en lo
-          profundo del laberinto. Y para apaciguar su ira, presentaron sacrificios. Lo que quería era que se le
-          permitiera entrar en la sociedad como un dios, pero la sociedad lo rechazo constantemente... <span
-            class="subrayo">- Volumen 02 - Capitulo 7 </span>
-        </p>
-
-        <h3>El sentido de trascendencia de Ozaki/Seishin</h3>
-        <p>Tras lo acontecido con la previsión de la posibilidad de una enfermedad epidémica, Muroi junto a Ozaki se
-          reúnen y toman planes individuales para la recolección de datos sobre el pueblo y poder constatar una epidemia
-          y pedir ayudar a la administrativa vigente. Durante
-          ese periodo vemos la introspección que se hace en Seishin principalmente por sus 3 contados en encuentros con
-          Sunako que partiendo de su literatura revela facetas de Muroi no antes vistas o presentadas o bueno no todas
-          en su mayoría. <br>
-          <br>
-          Al principio la alegoría de Caín y Abel en el Ensayo e Seishin podría confesar la culpa vinculada a la moral
-          trascendente la cual mencioné en mis primeras notas. Sin embargo Sunako parece extender dicha acotación, en
-          los escritos de Seishin parece que el autor esboza un sentimiento llamado "abandonado por Dios" vinculado
-          lógicamente a lo antes expuesto pero ahora extrapolado a toda actividad rudimentaria que el
-          autor ejerce pues Sunako como bien menciona es un sentimiento contradictorio con las situacion que se
-          encuentra Muroi una persona apreciada llena de amistades con labores imprescindibles y aprecio mutuo por un
-          pueblo que en sus mismas palabras dice amar y dice considerar importante.
-          Seishin es de religion budista pero se muestra muy ávido en textos de otras mitologías y religiones, según
-          Sunako Seishin tiene una predilección por las figuras bíblicas. En la conversación final se ve como Seishin
-          describe dicho sentimiento en su texto absorbido por la vanidad de no ver nada hermoso en lo que llama mundo.
-          Atravesado por la indiferencia y
-          sus intentos suicidas de acabar con ese sufrimiento y destensar su emoción descrita por ser abandonado por
-          Dios. <br>
-          <br>
-          Establecí notas antes que el eje de la religión es el eje trascendente de Sotoba y vemos al catalizador de
-          esta idea entra en contradicción por Seishin pues recordemos que el personaje que redescubrió el sentido de la
-          unidad de Sotoba fue el en primer lugar es decir el mismo ya se considera foráneo o ajeno a esto a lo que
-          llama "unidad". <br>
-          <br>
-          Cual vanidad del Eclesiastés Muroi atisba bellos paisajes teñidos de indiferencia, su literatura revelas
-          facetas escondidas tras los intentos de suicidio por escapar de las jaulas nihilistas, cuando está triste
-          viaja a un templo sagrado abandonado por 2 razones.
-        </p>
-
-        <ol>
-          <li>Porque es sagrado incluso si ya no es objeto de adoración. </li><br>
-          <li>Porque no hay Dios adorado vigente, como una trascendencia sin cabeza una nada numinosa y estéril.</li>
-        </ol>
-        <p>Siente que en este vacío trascendente solo una nada transformada en religión abandonada como un Dios sin
-          luminosidad puede darle algún tipo de aliento.</p>
-      
-
-        <h3>Estructura metafórica</h3>
-
-        <h4>Estructura geológica - Contexto social y económico (Autosuficiencia de Sotorba)</h4>
-        <p>Sotoba como estructura geológica se presenta en su historia en un pueblo nacido de leñadores siglos atrás,
-          dicha estructura como pueblo sobrevive a pesar de su baja población siguiendo ciclos de muerte y natalidad
-          continuos y coordinados permitiendo su supervivencia en el devenir de los años, en la propia novela se resalta
-          la específica particularidad que brota el sitio como si fuese un ente autónomo y de autosuficiencia (Conatus
-          aah quote básicamente)
-        </p>
-
-        <h4>Estructura antropológica- Contexto sociopolítico y estructuras familiares <br> (Unidad y Metafísica de
-          Sotoba) </h4>
-        <p>Las personas perciben al pueblo como una unidad excluyente, suprimiendo cualquier instancia no relativa a la
-          aldea como foráneo así como la muerte "el pueblo está rodeado de muerte" es decir no está en el pueblo si no
-          fuera de el. La estructura estriba en lo ya explicada de los 3 ejes (Ozaki/ Kanemasa/Muroi
-        </p>
-        <!--1º TABLA DE INTERPRETACION-->
-        <table>
-          <tr>
-            <td>ENCABEZADO</td>
-            <td>ENCABEZADO</td>
-          </tr>
-          <tr>
-            <td>1º Cela</td>
-            <td>2º Cela</td>
-          </tr>
-          <tr>
-            <td>1º Cela </td>
-            <td>2º Cela</td>
-          </tr>
-          <tr>
-            <td>1º Cela </td>
-            <td>2º Cela</td>
-          </tr>
-        </table>
-
-        
-      </section>
-      <section id="NetWorks" class="article-section">
-    <h2>Redes Sociales
-        <div class="social-links">
-            <a href="https://www.instagram.com/_mi_zume_/">in</a>
-            <a href="https://x.com/Mizume230193">tw</a>
-            <a href="https://github.com/">gh</a>
-        </div>
-    </h2>
-    
-    <div class="profile">
-        <img src="../../Imagenes Blog/FotoPerfil.jpg" class="profile-img">
-        
-        <div class="info-box">
-            <h4>Artículos Destacados</h4>
-            <ul class="index-list2">
-                <li><a href="#">Shiki: Fuyumi Ono</a></li>
-                <li><a href="#">Notas de Antonio Machado</a></li>
-                <li><a href="#">Notas de Mallarmé</a></li>
-            </ul>
-        </div>
-    </div>
-</section>
 
 
     </article>
@@ -333,7 +169,7 @@
     <!-- Barra lateral derecha --->
     <aside class="sidebar-right">
       <div class="profile">
-        <img src="../../Imagenes Blog/FotoPerfil.jpg" class="profile-img">
+        <img src="../../../Imagenes Blog/FotoPerfil.jpg" class="profile-img">
         <h3>Gabriel</h3>
         <p>Blog de Lecturas</p>
         <div class="social-links">
@@ -355,7 +191,7 @@
   </div>
   </aside>
   </div>
-  <script src="../ArchivosJS/Post.js"></script>
+  <script src="../../ArchivosJS/Post.js"></script>
 </body>
 
 </html>
