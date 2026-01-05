@@ -212,6 +212,32 @@ h4 {
     transition: all 0.3s;
 }
 
+
+/*INDEX DE LA HOME*/
+.index-home {
+    list-style-type: "🐢";
+}
+
+.index-home li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.index-home a {
+    text-decoration: none;
+    color: #9b9a9a;
+    transition: color 0.3s;
+    display: block;
+    padding: 5px 0;
+}
+
+.index-home a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+    transition: all 0.3s;
+}
+
 /* --------------------------------------------*/
 
 /*INDEX DE LA DERECHA*/
