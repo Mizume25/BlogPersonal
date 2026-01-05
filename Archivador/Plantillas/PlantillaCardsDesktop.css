@@ -1,3 +1,5 @@
+/* ====== ESTILOS ORIGINALES ====== */
+
 /* ENLACE QUE CONTIENE LA CARD */
 a.card-link {
     display: block;
@@ -25,10 +27,7 @@ a.card-link {
 /* AGARRAR Y ESCALA AL HOVER */
 a.card-link:hover #card {
     transform: scale(1.03);
-
 }
-
-
 
 /* HEADER (sin cambios) */
 .headCard {
@@ -129,7 +128,7 @@ a.card-link:hover #card {
     flex-direction: column;
     overflow-y: auto;
     max-height: 100%;
-    background-color: rgb(210, 180, 140);;
+    background-color: rgb(210, 180, 140);
 }
 
 .bodytxt h3 {
@@ -147,6 +146,41 @@ a.card-link:hover #card {
     font-size: 0.85rem;
     line-height: 1.4;
 }
+
+/* ====== NUEVO: SISTEMA GRID PARA MÚLTIPLES CARDS ====== */
+
+/* Contenedor principal del grid */
+.cards-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px; /* Espacio generoso para prevenir solapamiento */
+    padding: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Cada card dentro del grid mantiene sus estilos originales */
+.cards-grid-container .card-link {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* El #card dentro del grid se adapta automáticamente */
+.cards-grid-container #card {
+    width: 100%;
+    max-width: 100%; /* Se adapta al ancho de la columna del grid */
+    margin: 0 auto; /* Centrado dentro de su celda */
+}
+
+/* Ajuste del hover para el grid - prevención de solapamiento */
+.cards-grid-container .card-link:hover #card {
+    transform: scale(1.03);
+    z-index: 10; /* Se eleva por encima de cards vecinas */
+    position: relative;
+}
+
+/* ====== MEDIA QUERIES ====== */
 
 /* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
@@ -172,8 +206,17 @@ a.card-link:hover #card {
     a.card-link:hover #card {
         transform: scale(1.01);
     }
-
-
+    
+    /* Ajustes del grid para tablet */
+    .cards-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        padding: 30px;
+    }
+    
+    .cards-grid-container .card-link:hover #card {
+        transform: scale(1.02);
+    }
 }
 
 @media (max-width: 480px) {
@@ -196,5 +239,28 @@ a.card-link:hover #card {
     .bodytxt {
         width: 100%;
         height: auto;
+    }
+    
+    /* Ajustes del grid para móvil */
+    .cards-grid-container {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .cards-grid-container .card-link:hover #card {
+        transform: scale(1.005);
+    }
+}
+
+/* Móvil pequeño */
+@media (max-width: 360px) {
+    .cards-grid-container {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .cards-grid-container .card-link:hover #card {
+        transform: none;
     }
 }

@@ -1,9 +1,13 @@
-/*Elementos Principales*/
+/* ============================================================================
+   RESET & ELEMENTOS PRINCIPALES
+   ============================================================================ */
+
+/* Reset universal - Control de box model */
 * {
     box-sizing: border-box;
-
 }
 
+/* Body principal - Fondo y tipografía base */
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +15,11 @@ body {
     font-family: 'Lexend', sans-serif;
 }
 
-/*Instalamos Fuente*/
+/* ----------------------------------------------------------------------------
+   TIPOGRAFÍA
+   ---------------------------------------------------------------------------- */
+
+/* Fuente Lexend - Configuración específica */
 .lexend_font {
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
@@ -19,113 +27,60 @@ body {
     font-style: normal;
 }
 
-/*Reutilizacion de la classe de articulos */
-.imagenheader {
-    height: 250px;
-    border: 2px solid #ddd;
-    
-}
-
-.headertitulo {
-    margin-top: -40px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 600px;
-    height: 100px;
-}
-
-/*--------Fondos Determinados-------------*/
-/*Manipulados con Java Script*/
-#Fondo1 {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("ImagenesArchivador/Fondo1.jpg");
-    
-    background-repeat: no-repeat;
-    background-position: center 11%;
-    background-size: cover;
-    width: 100%;
-}
-
-#Fondo2{
-    
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("ImagenesArchivador/Fondo2.jpg");
-   
-    background-repeat: no-repeat;
-    background-position: center 3%;
-    background-size: cover;
-    width: 100%;
-}
-
-#Fondo3 {
-   
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("ImagenesArchivador/Fondo3.jpg");
-    
-    background-repeat: no-repeat;
-    background-position: center 40%;
-    background-size: cover;
-    width: 100%;
-}
-
-#Fondo4 {
- 
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("ImagenesArchivador/Fondo4.jpg");
-
-    background-repeat: no-repeat;
-    background-position: center 11%;
-    background-size: cover;
-    width: 100%;
-}
-
-
-/*----------------------------------------*/
-
-/*--------Redefinición de etiquetas html-------------*/
+/* Títulos h1 - Estilo principal */
 h1 {
-
-
     border-radius: 5px;
     border: solid 1px rgb(210, 180, 140);
     background-color: rgb(210, 180, 140);
     text-align: center;
-    padding-left: 120px;
-    padding-right: 120px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    /*Estilos de la fuente*/
+    padding: 10px 120px;
     margin-top: 0px;
     font-size: 2.5rem;
     color: #ffffff;
-    text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
     font-weight: bold;
-
 }
 
-/*Reinicio de los estilos por defecto de los links*/
+/* Reset de enlaces - Elimina estilos por defecto */
 a {
     all: unset;
 }
 
-/*-------------------------------------------*/
-/*---------------Configuracion de Nav------------------*/
+/* ============================================================================
+   HEADER & NAVEGACIÓN
+   ============================================================================ */
+
+/* Header con imagen - Reutilizable */
+.imagenheader {
+    height: 250px;
+    border: 2px solid #ddd;
+}
+
+/* Título del header - Posicionamiento */
+.headertitulo {
+    margin: -40px auto 0 auto;
+    width: 600px;
+    height: 100px;
+}
+
+/* ----------------------------------------------------------------------------
+   MENÚ DE NAVEGACIÓN
+   ---------------------------------------------------------------------------- */
+
+/* Nav principal - Barra de navegación */
 .navMenu {
-    margin-top: -32px;
-    margin-bottom: 0px;
+    margin: -32px 0 0 0;
     width: 100%;
     height: 50px;
     border: solid 1px rgb(210, 180, 140);
     background-color: rgb(198, 148, 83);
-    cursor: pointer; /* Cambia a "mano/dedo" */
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Elementos del nav - Items individuales */
 .navMenu div {
     display: flex;
     align-items: center;
@@ -134,12 +89,11 @@ a {
     height: 100%;
     font-size: 1.2rem;
     color: #ffffff;
-    text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
     font-weight: bold;
 }
 
+/* Enlaces del nav - Comportamiento */
 .navMenu a {
     display: flex;
     justify-content: center;
@@ -148,289 +102,546 @@ a {
     width: 100%;
 }
 
+/* Separadores entre items - Líneas verticales */
 .navMenu div + div {
     border-left: solid 3px rgb(206, 189, 165);
 }
 
+/* Efecto hover - Animación sutil */
 a div:hover {
     transform: scale(1.05);
-    
     transition: transform 0.3s ease;
-    
 }
 
+/* ============================================================================
+   FONDOS DINÁMICOS (Controlados por JS)
+   ============================================================================ */
 
-
-/*-------------------------------------------*/
-/*Propiedad solo manipulada con Java Script*/
-.sectionSelect{
-    background-color: rgb(210, 180, 140);
+/* Fondo 1 - Gradiente con imagen */
+#Fondo1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                url("ImagenesArchivador/Fondo1.jpg");
+    background-repeat: no-repeat;
+    background-position: center 11%;
+    background-size: cover;
+    width: 100%;
 }
 
-/*--------------Elemento contenedor-------------------*/
+/* Fondo 2 - Variante */
+#Fondo2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                url("ImagenesArchivador/Fondo2.jpg");
+    background-repeat: no-repeat;
+    background-position: center 3%;
+    background-size: cover;
+    width: 100%;
+}
+
+/* Fondo 3 - Variante */
+#Fondo3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                url("ImagenesArchivador/Fondo3.jpg");
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: cover;
+    width: 100%;
+}
+
+/* Fondo 4 - Variante */
+#Fondo4 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                url("ImagenesArchivador/Fondo4.jpg");
+    background-repeat: no-repeat;
+    background-position: center 11%;
+    background-size: cover;
+    width: 100%;
+}
+
+/* ============================================================================
+   LAYOUT PRINCIPAL - CONTENEDOR & PANTALLA
+   ============================================================================ */
+
+/* Contenedor principal - Layout de dos columnas */
 .container {
     background-color: rgb(210, 180, 140);
     width: 100%;
-    min-height: 620px; /* Cambiado a min-height */
-    height: auto; /* Altura automática */
+    /* FIX 1: Altura controlada con scroll interno */
+    height: calc(100vh - 250px); /* Altura basada en viewport */
+    min-height: 500px;
+    max-height: 90vh;
     display: flex;
-    align-items: start;
-    
+    /* FIX 2: Estirar elementos hijos */
+    align-items: stretch; /* Cambiado de 'start' */
+    overflow: hidden; /* Previene crecimiento externo */
 }
 
+/* Elementos hijos directos - Margen y bordes */
 .container > div {
     margin-top: 30px;
     border-radius: 10px;
 }
 
-/*Recuadro lateral derecho*/
-#updates {
-    margin-right: 100px;
-    margin-left: 80px;
-    width: 340px;
-    min-height: 570px;
-    height: auto;
-    border: solid 2px black;
+/* ============================================================================
+   PANEL LATERAL (UPDATES)
+   ============================================================================ */
 
-}
-/*Recuadro lateral izquierdo*/
-#screen {
-    width: 1400px;
-    min-height: 570px;
-    height: auto;
+/* Panel derecho - Información lateral */
+#updates {
+    margin: 30px 100px 0 80px;
+    width: 340px;
+    /* FIX 3: Altura relativa al contenedor */
+    height: calc(100% - 30px);
     border: solid 2px black;
-    margin-right: 20px;
+    
+    /* Gradiente café - Fondo decorativo */
+    background-color: rgb(180, 156, 125);
+    background-image: radial-gradient(
+        ellipse at center 50%,
+        rgba(200, 176, 145, 1) 0%,
+        rgba(190, 166, 135, 0.95) 10%,
+        rgba(180, 156, 125, 0.9) 20%,
+        rgba(170, 146, 115, 0.85) 30%,
+        rgba(160, 136, 105, 0.8) 40%,
+        rgba(150, 126, 95, 0.7) 50%,
+        rgba(140, 116, 85, 0.6) 60%,
+        rgba(130, 106, 75, 0.5) 70%,
+        rgba(120, 96, 65, 0.4) 80%,
+        rgba(110, 86, 55, 0.3) 90%,
+        rgba(100, 76, 45, 0.2) 95%,
+        rgba(90, 66, 35, 0.1) 100%
+    );
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
-/*Desplagable mobil*/
-#menuMobile{
+
+/* ============================================================================
+   PANTALLA PRINCIPAL (SCREEN) - CONTENEDOR DE CARDS
+   ============================================================================ */
+
+/* Pantalla principal - Área de contenido */
+#screen {
+    /* FIX 4: Tamaño controlado con scroll interno */
+    flex: 1; /* Ocupa espacio restante */
+    margin: 30px 20px 0 0;
+    border: solid 2px black;
+    
+    /* Scroll controlado internamente */
+    overflow-y: auto;
+    height: calc(100% - 30px);
+    max-height: 100%;
+    
+    /* Layout interno flexible */
+    display: flex;
+    flex-direction: column;
+    
+    /* Gradiente café - Mismo que #updates */
+    background-color: rgb(180, 156, 125);
+    background-image: radial-gradient(
+        ellipse at center 50%,
+        rgba(200, 176, 145, 1) 0%,
+        rgba(190, 166, 135, 0.95) 10%,
+        rgba(180, 156, 125, 0.9) 20%,
+        rgba(170, 146, 115, 0.85) 30%,
+        rgba(160, 136, 105, 0.8) 40%,
+        rgba(150, 126, 95, 0.7) 50%,
+        rgba(140, 116, 85, 0.6) 60%,
+        rgba(130, 106, 75, 0.5) 70%,
+        rgba(120, 96, 65, 0.4) 80%,
+        rgba(110, 86, 55, 0.3) 90%,
+        rgba(100, 76, 45, 0.2) 95%,
+        rgba(90, 66, 35, 0.1) 100%
+    );
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Menú móvil - Oculto por defecto */
+#menuMobile {
     display: none;
 }
 
-/*-------Updates------*/
-#updates {
-    /* COLOR BASE CAFÉ CLARO */
-    background-color: rgb(180, 156, 125); /* Café claro como base */
-    
-    /* GRAN ÁREA CAFÉ CLARO CON BORDES CAFÉ OSCURO */
-    background-image: radial-gradient(
-        ellipse at center 50%,
-        rgba(200, 176, 145, 1) 0%,       /* CENTRO: CAFÉ MUY CLARO */
-        rgba(190, 166, 135, 0.95) 10%,   /* CAFÉ CLARO INTENSO */
-        rgba(180, 156, 125, 0.9) 20%,    /* CAFÉ CLARO PRINCIPAL */
-        rgba(170, 146, 115, 0.85) 30%,   /* CAFÉ CLARO-MEDIO */
-        rgba(160, 136, 105, 0.8) 40%,    /* CAFÉ MEDIO-CLARO */
-        rgba(150, 126, 95, 0.7) 50%,     /* CAFÉ MEDIO */
-        rgba(140, 116, 85, 0.6) 60%,     /* CAFÉ MEDIO-OSCURO */
-        rgba(130, 106, 75, 0.5) 70%,     /* CAFÉ OSCURO */
-        rgba(120, 96, 65, 0.4) 80%,      /* CAFÉ MUY OSCURO */
-        rgba(110, 86, 55, 0.3) 90%,      /* CAFÉ PROFUNDO */
-        rgba(100, 76, 45, 0.2) 95%,      /* CAFÉ CASI NEGRO */
-        rgba(90, 66, 35, 0.1) 100%       /* BORDE: CAFÉ NEGRO */
-    );
-    
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+/* ============================================================================
+   COMPONENTE: SISTEMA DE CARDS (Importado/Integrado)
+   ============================================================================ */
+
+/* NOTA: Los estilos de cards se importan desde archivo separado */
+/* Se mantiene la modularidad pero con altura controlada */
+
+/* Contenedor grid dentro de #screen - Control de scroll interno */
+#screen .cards-grid-container {
+    flex: 1; /* Toma espacio disponible */
+    min-height: 0; /* CRUCIAL: Permite scroll interno */
+    /* El resto de estilos vienen del archivo de cards */
 }
 
-/*----------------------------PROPIEDADES INTERNAS LA PANTALLA------------------------------------*/
+/* ============================================================================
+   PLANTILLA DE CARDS - ESTILOS BASE
+   ============================================================================ */
 
-
-/*Propiedades compartidas con html externos*/
-
-#screen {
-    /* COLOR BASE CAFÉ CLARO */
-    background-color: rgb(180, 156, 125); /* Café claro como base */
-    
-    /* GRAN ÁREA CAFÉ CLARO CON BORDES CAFÉ OSCURO */
-    background-image: radial-gradient(
-        ellipse at center 50%,
-        rgba(200, 176, 145, 1) 0%,       /* CENTRO: CAFÉ MUY CLARO */
-        rgba(190, 166, 135, 0.95) 10%,   /* CAFÉ CLARO INTENSO */
-        rgba(180, 156, 125, 0.9) 20%,    /* CAFÉ CLARO PRINCIPAL */
-        rgba(170, 146, 115, 0.85) 30%,   /* CAFÉ CLARO-MEDIO */
-        rgba(160, 136, 105, 0.8) 40%,    /* CAFÉ MEDIO-CLARO */
-        rgba(150, 126, 95, 0.7) 50%,     /* CAFÉ MEDIO */
-        rgba(140, 116, 85, 0.6) 60%,     /* CAFÉ MEDIO-OSCURO */
-        rgba(130, 106, 75, 0.5) 70%,     /* CAFÉ OSCURO */
-        rgba(120, 96, 65, 0.4) 80%,      /* CAFÉ MUY OSCURO */
-        rgba(110, 86, 55, 0.3) 90%,      /* CAFÉ PROFUNDO */
-        rgba(100, 76, 45, 0.2) 95%,      /* CAFÉ CASI NEGRO */
-        rgba(90, 66, 35, 0.1) 100%       /* BORDE: CAFÉ NEGRO */
-    );
-    
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+/* ----------------------------------------------------------------------------
+   ENLACE CONTENEDOR
+   ---------------------------------------------------------------------------- */
+/* Envuelve cada card - Hace toda la card clickeable */
+a.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
-/*------------------------------------------------------------------------------------------------*/
-/*-------Diseño Responsive--------*/
-/*--Ordenador Pequeño - Tablet Grande----*/
-@media (max-width: 1024px){
-    /*Re-Ajustamos Titulos*/
-    h1{
-        font-size: 1.3rem;
-    }
-    /*Quitamos imagen y titulo principal*/
-    .imagenheader,.headertitulo{
-        display: none;
-    }
 
-    /*Reducimos el container a una mida especifica*/
+/* ----------------------------------------------------------------------------
+   CARD BASE
+   ---------------------------------------------------------------------------- */
+/* Estructura principal de cada card */
+#card {
+    max-width: 400px;
+    max-height: 500px;
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    border: solid 4px black;
+    border-radius: 20px;
+    background: white;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    margin-left: 10px;
+}
+
+/* Efecto hover - Escala sutil */
+a.card-link:hover #card {
+    transform: scale(1.03);
+}
+
+/* ----------------------------------------------------------------------------
+   HEADER DE LA CARD
+   ---------------------------------------------------------------------------- */
+/* Cabecera con título y tags */
+.headCard {
+    height: 60px;
+    min-height: 60px;
+    max-height: 60px;
+    border-bottom: solid 4px black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    flex-shrink: 0;
+    background-color: rgb(198, 148, 83);
+}
+
+/* Título principal */
+.headCard h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+/* Contenedor de tags */
+.tagContent {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    min-width: 120px;
+    max-width: 150px;
+}
+
+/* Tags individuales */
+.tag {
+    height: 24px;
+    min-width: 60px;
+    max-width: 80px;
+    background-color: grey;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0 8px;
+}
+
+/* ----------------------------------------------------------------------------
+   CUERPO DE LA CARD
+   ---------------------------------------------------------------------------- */
+/* Contenedor principal del contenido */
+.bodyCard {
+    display: flex;
+    height: calc(100% - 60px);
+    max-height: 440px;
+    min-height: 240px;
+}
+
+/* Sección de imagen (40%) */
+.bodyimg {
+    width: 40%;
+    display: flex;
+    padding: 0;
+    border-right: solid 2px #eee;
+    background: #f0f0f0;
     
+}
+
+/* Contenedor de imagen */
+.imagen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+/* Imagen real */
+.imagen img {
+    width: 100%;
     
-    /*Reajustamos el menu de navegacion*/
-    .navMenu {
-        margin: 0px;
-    }
-    .navMenu div {
-        width: 170px;
-        justify-content: center;
-        font-size: 0.8rem;
-    }
+    object-fit: cover;
+    display: block;
+}
 
-    .container{
-        min-height: 100dvh;
-        width: 100%;
-    }
+/* Placeholder cuando no hay imagen */
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-    .navMenu a {
-        width: 170px;
-        
-    }
+/* Sección de texto (60%) */
+.bodytxt {
+    width: 60%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 100%;
+    background-color: rgb(210, 180, 140);
+}
 
-    /*Modificamos elementos principales*/
-    #updates{
+/* Título del artículo */
+.bodytxt h3 {
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Párrafos de descripción */
+.bodytxt p {
+    margin: 0 0 10px 0;
+    padding: 0;
+    text-align: left;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* ============================================================================
+   SISTEMA GRID PARA MÚLTIPLES CARDS
+   ============================================================================ */
+
+/* Contenedor grid principal */
+.cards-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px;
+    padding: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Cards dentro del grid */
+.cards-grid-container .card-link {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Ajuste de card en grid */
+.cards-grid-container #card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Hover con prevención de solapamiento */
+.cards-grid-container .card-link:hover #card {
+    transform: scale(1.03);
+    z-index: 10;
+    position: relative;
+}
+
+/* ============================================================================
+   RESPONSIVE PARA CARDS
+   ============================================================================ */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+    #card { max-width: 350px; }
+    .headCard { padding: 0 10px; }
+    .headCard h2 { max-width: 150px; font-size: 1.1rem; }
+    .tag { min-width: 50px; font-size: 0.65rem; }
+    
+    /* Hover reducido */
+    a.card-link:hover #card { transform: scale(1.01); }
+    
+    /* Grid ajustado */
+    .cards-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        padding: 30px;
+    }
+    .cards-grid-container .card-link:hover #card { transform: scale(1.02); }
+}
+
+/* Móvil (≤480px) */
+@media (max-width: 480px) {
+    #card { max-width: 300px; }
+    .bodyCard { flex-direction: column; height: auto; }
+    .bodyimg { width: 100%; height: 200px; border-right: none; border-bottom: solid 2px #eee; }
+    .bodytxt { width: 100%; height: auto; }
+    
+    /* Grid de una columna */
+    .cards-grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    .cards-grid-container .card-link:hover #card { transform: scale(1.005); }
+}
+
+/* Móvil pequeño (≤360px) */
+@media (max-width: 360px) {
+    .cards-grid-container {
+        padding: 15px;
+        gap: 15px;
+    }
+    .cards-grid-container .card-link:hover #card { transform: none; }
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   TABLET GRANDE (≤1024px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    /* Títulos más pequeños */
+    h1 { font-size: 1.3rem; }
+    
+    /* Ocultar elementos de desktop */
+    .imagenheader, .headertitulo { display: none; }
+    
+    /* Nav ajustado */
+    .navMenu { margin: 0; }
+    .navMenu div { width: 170px; font-size: 0.8rem; }
+    .navMenu a { width: 170px; }
+    
+    /* Layout ajustado */
+    .container { 
+        height: calc(100vh - 200px); /* Altura reducida */
+        width: 100%; 
+    }
+    
+    /* Panel lateral más estrecho */
+    #updates {
         margin-left: 25px;
-        min-height: calc(100dvh - 50px);
         width: 240px;
+        height: calc(100vh - 80px);
     }
-
+    
+    /* Pantalla más estrecha */
     #screen {
         margin-right: 30px;
-        width: 650px;
-        min-height: calc(100dvh - 50px);
+        width: calc(100% - 290px); /* Ancho dinámico */
     }
 }
 
-/*Tabletas medianas pequeñas*/
-/*Moviles grandes - medianos*/
-@media (max-width: 770px){
-    h1{
-        font-size: 1.2rem;
+/* ----------------------------------------------------------------------------
+   TABLET/MÓVIL GRANDE (≤770px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 770px) {
+    h1 { font-size: 1.2rem; }
+    
+    /* Ocultar elementos de desktop */
+    .imagenheader, .headertitulo, .navMenu, #updates { display: none; }
+    
+    /* Layout en columna */
+    .container {
+        min-height: 100dvh;
+        height: auto;
+        flex-direction: column;
     }
-    .imagenheader,.headertitulo,.navMenu,#updates{
-        display: none;
-    }
-
-    .container{
-         min-height: 100dvh;
-         display: flex;
-         flex-direction: column; /* Elementos en columna */
-    }
-    #menuMobile{
+    
+    /* Menú móvil visible */
+    #menuMobile {
         display: block;
         width: 100%;
         height: 50px;
         background-color: rgb(140, 88, 21);
-        cursor: pointer; /* Cambia a "mano/dedo" */
+        cursor: pointer;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+        display: flex;
         align-items: center;
         justify-content: center;
-        /*Estilos de Fuente*/
-        color: #ffffff;
-        text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        0 0 10px rgba(0, 0, 0, 0.5);
-        font-weight: bold;
     }
-
+    
+    /* Pantalla ocupa todo el ancho */
     #screen {
-        margin-top: 0px;
+        margin: 0;
         width: 100%;
-        border:none;
-        display: block;
-        min-height: calc(100dvh - 50px);
-        
+        border: none;
+        height: calc(100dvh - 50px);
     }
 }
 
-
-/*Moviles grandes - medianos*/
-@media (max-width: 512px){
-    h1{
-        font-size: 1.2rem;
+/* ----------------------------------------------------------------------------
+   MÓVIL MEDIANO/PEQUEÑO (≤512px)
+   ---------------------------------------------------------------------------- */
+@media (max-width: 512px) {
+    /* Mismos ajustes que 770px para consistencia */
+    h1 { font-size: 1.2rem; }
+    .imagenheader, .headertitulo, .navMenu, #updates { display: none; }
+    
+    .container {
+        min-height: 100dvh;
+        height: auto;
+        flex-direction: column;
     }
-    .imagenheader,.headertitulo,.navMenu,#updates{
-        display: none;
-    }
-
-    .container{
-         min-height: 100dvh;
-         display: flex;
-         flex-direction: column; /* Elementos en columna */
-    }
-    #menuMobile{
+    
+    #menuMobile {
         display: block;
         width: 100%;
         height: 50px;
         background-color: rgb(140, 88, 21);
-        cursor: pointer; /* Cambia a "mano/dedo" */
+        cursor: pointer;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+        display: flex;
         align-items: center;
         justify-content: center;
-        /*Estilos de Fuente*/
-        color: #ffffff;
-        text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        0 0 10px rgba(0, 0, 0, 0.5);
-        font-weight: bold;
     }
-
+    
     #screen {
-        margin-top: 0px;
+        margin: 0;
         width: 100%;
-        border:none;
-        display: block;
-        min-height: calc(100dvh - 50px);
-        
-    }
-}
-
-
-/*Moviles pequeños*/
-/*Moviles grandes - medianos*/
-@media (max-width: 512px){
-    h1{
-        font-size: 1.2rem;
-    }
-    .imagenheader,.headertitulo,.navMenu,#updates{
-        display: none;
-    }
-
-    .container{
-         min-height: 100dvh;
-         display: flex;
-         flex-direction: column; /* Elementos en columna */
-    }
-    #menuMobile{
-        display: block;
-        width: 100%;
-        height: 50px;
-        background-color: rgb(140, 88, 21);
-        cursor: pointer; /* Cambia a "mano/dedo" */
-        align-items: center;
-        justify-content: center;
-        /*Estilos de Fuente*/
-        color: #ffffff;
-        text-shadow:
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        0 0 10px rgba(0, 0, 0, 0.5);
-        font-weight: bold;
-    }
-
-    #screen {
-        margin-top: 0px;
-        width: 100%;
-        border:none;
-        display: block;
-        min-height: calc(100dvh - 50px);
-        
+        border: none;
+        height: calc(100dvh - 50px);
     }
 }
