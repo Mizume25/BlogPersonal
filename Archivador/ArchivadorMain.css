@@ -28,21 +28,18 @@ body {
 
 .headertitulo {
     margin-top: -40px;
-    /* EFECTO TITULO SEMI-PUESTO ENTRE LA IMAGEN DEL HEADER Y EL BODY*/
     margin-right: auto;
     margin-left: auto;
     width: 600px;
     height: 100px;
-   
-   
 }
 
 /*--------Fondos Determinados-------------*/
+/*Manipulados con Java Script*/
 #Fondo1 {
-    /*Elementos dinamicos*/
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url("ImagenesArchivador/Fondo1.jpg");
-    /* Centra la imagen */
+    
     background-repeat: no-repeat;
     background-position: center 11%;
     background-size: cover;
@@ -50,10 +47,10 @@ body {
 }
 
 #Fondo2{
-    /*Elementos dinamicos*/
+    
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url("ImagenesArchivador/Fondo2.jpg");
-    /* Centra la imagen */
+   
     background-repeat: no-repeat;
     background-position: center 3%;
     background-size: cover;
@@ -61,10 +58,10 @@ body {
 }
 
 #Fondo3 {
-    /*Elementos dinamicos*/
+   
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url("ImagenesArchivador/Fondo3.jpg");
-    /* Centra la imagen */
+    
     background-repeat: no-repeat;
     background-position: center 40%;
     background-size: cover;
@@ -72,10 +69,10 @@ body {
 }
 
 #Fondo4 {
-    /*Elementos dinamicos*/
+ 
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url("ImagenesArchivador/Fondo4.jpg");
-    /* Centra la imagen */
+
     background-repeat: no-repeat;
     background-position: center 11%;
     background-size: cover;
@@ -88,7 +85,7 @@ body {
 /*--------Redefinición de etiquetas html-------------*/
 h1 {
 
-    /*Estilos de h1 dentro del contenidor header*/
+
     border-radius: 5px;
     border: solid 1px rgb(210, 180, 140);
     background-color: rgb(210, 180, 140);
@@ -109,12 +106,13 @@ h1 {
 
 }
 
+/*Reinicio de los estilos por defecto de los links*/
 a {
     all: unset;
 }
 
 /*-------------------------------------------*/
-/*---------------Configuracion de nav------------------*/
+/*---------------Configuracion de Nav------------------*/
 .navMenu {
     margin-top: -32px;
     margin-bottom: 0px;
@@ -150,28 +148,28 @@ a {
     width: 100%;
 }
 
-.navMenu div+div {
+.navMenu div + div {
     border-left: solid 3px rgb(206, 189, 165);
 }
 
 a div:hover {
     transform: scale(1.05);
-    /* Solo número, sin "em" */
+    
     transition: transform 0.3s ease;
-    /* Para que sea suave */
+    
 }
 
 
 
 /*-------------------------------------------*/
-
+/*Propiedad solo manipulada con Java Script*/
 .sectionSelect{
     background-color: rgb(210, 180, 140);
 }
 
 /*--------------Elemento contenedor-------------------*/
 .container {
-     background-color: rgb(210, 180, 140);
+    background-color: rgb(210, 180, 140);
     width: 100%;
     min-height: 620px; /* Cambiado a min-height */
     height: auto; /* Altura automática */
@@ -180,13 +178,12 @@ a div:hover {
     
 }
 
-.container div {
+.container > div {
     margin-top: 30px;
     border-radius: 10px;
-    
 }
 
-
+/*Recuadro lateral derecho*/
 #updates {
     margin-right: 100px;
     margin-left: 80px;
@@ -196,7 +193,7 @@ a div:hover {
     border: solid 2px black;
 
 }
-
+/*Recuadro lateral izquierdo*/
 #screen {
     width: 1400px;
     min-height: 570px;
@@ -204,11 +201,44 @@ a div:hover {
     border: solid 2px black;
     margin-right: 20px;
 }
-
+/*Desplagable mobil*/
 #menuMobile{
     display: none;
 }
 
+
+/*----------------------------PROPIEDADES INTERNAS LA PANTALLA------------------------------------*/
+
+
+/*Propiedades compartidas con html externos*/
+
+#screen {
+    background-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
 /*-------Diseño Responsive--------*/
 /*--Ordenador Pequeño - Tablet Grande----*/
 @media (max-width: 1024px){
@@ -235,7 +265,7 @@ a div:hover {
     }
 
     .container{
-        height: 100%;
+        min-height: 100dvh;
         width: 100%;
     }
 
@@ -247,14 +277,14 @@ a div:hover {
     /*Modificamos elementos principales*/
     #updates{
         margin-left: 25px;
-        height: 550px;
+        min-height: calc(100dvh - 50px);
         width: 240px;
     }
 
     #screen {
         margin-right: 30px;
         width: 650px;
-        height: 550px;
+        min-height: calc(100dvh - 50px);
     }
 }
 
