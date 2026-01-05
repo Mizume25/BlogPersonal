@@ -351,17 +351,34 @@ a.card-link:hover #card {
 }
 
 /* Tags individuales */
-.tag {
-    height: 24px;
+.tagArticulo {
+    height: 34px;
     min-width: 60px;
     max-width: 80px;
-    background-color: grey;
+    background-color: rgb(210, 212, 57);
     border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 0.7rem;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+/* Tags individuales */
+.tagPost {
+    height: 34px;
+    min-width: 60px;
+    max-width: 80px;
+    background-color: rgb(212, 132, 57);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
     padding: 0 8px;
 }
 
