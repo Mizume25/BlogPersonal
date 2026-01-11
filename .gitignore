@@ -15,3 +15,8 @@ sftp.json
 Docs/*
 !Docs/README.md
 !Docs/LICENSE
+
+# Archivos de Prueba
+Prueba.html
+Prueba.css
+Prueba.js
