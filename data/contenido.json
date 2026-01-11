@@ -30,12 +30,24 @@
       {
         "id": "LT1",
         "tipo": "post",
-        "titulo": "Antología",
+        "titulo": "Antología Mallarmé",
         "categoria": ["Poesía", "Simbolismo"],
         "autor": "Stéphane Mallarmé",
         "fecha": "2024-03-15",
         "archivo": "Post/Post_Destacados/TextosMallarme.html",
         "descripcion": "Análisis de la obra poética de Mallarmé...",
+        "destacado": true
+      },
+
+       {
+        "id": "LT2",
+        "tipo": "post",
+        "titulo": "Antología Machado",
+        "categoria": ["Poesía", "Modernismo"],
+        "autor": "Antonio Machado",
+        "fecha": "2026-01-12",
+        "archivo": "Post/Post_Destacados/TextosAntonioMachado.html",
+        "descripcion": "Análisis de la obra poética de Machado...",
         "destacado": true
       }
     ],
