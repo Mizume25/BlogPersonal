@@ -29,6 +29,7 @@
     "literatura": [
       {
         "id": "LT1",
+        "tituloObra": "Textos de Stéphane Mallarmé",
         "tipo": "post",
         "titulo": "Antología Mallarmé",
         "categoria": ["Poesía", "Simbolismo"],
@@ -41,10 +42,11 @@
 
        {
         "id": "LT2",
+        "tituloObra": "Textos de Antonio Machado",
         "tipo": "post",
         "titulo": "Antología Machado",
         "categoria": ["Poesía", "Modernismo"],
-        "autor": "Antonio Machado",
+        "autor": "Antonio Machado Ruiz",
         "fecha": "2026-01-12",
         "archivo": "Post/Post_Destacados/TextosAntonioMachado.html",
         "descripcion": "Análisis de la obra poética de Machado...",
