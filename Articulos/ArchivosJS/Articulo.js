@@ -23,10 +23,13 @@ const mediaQueryTablet = window.matchMedia('(max-width: 1024px)');   //MEDI_QUER
 
 // CSS inicial
 //ESTO MODIFICA EL CSS INCIAL
-sideBarMobile.style.cssText = `
+if (!mediaQueryTablet.matches){
+    sideBarMobile.style.cssText = `
     transform: translateX(0);
     transition: none;
 `;
+}
+
 
 menuMobile.addEventListener("click", function () {
     if (mediaQueryTablet.matches) {
