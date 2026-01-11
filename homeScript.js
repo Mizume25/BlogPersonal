@@ -40,13 +40,13 @@ menuMobile.addEventListener("click", function () {
              opacity: 0.9;
              filter: blur(1px);
              transition: all 0.9s ease-in-out;
-             filter: brightness(0.8); 
+              filter: brightness(0.95) contrast(1.1); 
              `
              bodyPage.style.cssText = `
              opacity: 0.9;
              filter: blur(1px);
              transition: all 0.9s ease-in-out;
-             filter: brightness(0.8); 
+              filter: brightness(0.95) contrast(1.1);
              `
 
         } else {

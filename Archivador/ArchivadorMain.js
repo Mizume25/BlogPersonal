@@ -105,3 +105,6 @@ optionSelector.addEventListener('change', function() {
             console.log('Opción no válida');
     }
 });
+
+
+
