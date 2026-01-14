@@ -1,49 +1,34 @@
 <?php
+// 1. CONFIGURACIÓN DE ERRORES Y CABECERAS
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-// components/api/generar_ultimo_card_corregido.php
-// VERSIÓN CORREGIDA PARA TU ESTRUCTURA BD
-
 header('Content-Type: text/html; charset=utf-8');
 
-// 1. INCLUIR CONEXIÓN
+// 2. INCLUIR CONEXIÓN
 require_once 'database.php';
 
-// 2. FUNCIÓN PARA GENERAR HTML DE CARD (CORREGIDA)
+// 3. FUNCIÓN PARA GENERAR HTML DE CARD
 function generarCardHTML($publicacion) {
-    // Destacado
-    $destacadoHTML = ($publicacion['Destacado'] == 1) ? '<div class="tagDestacado">⭐ Destacado</div>' : '';
+    // Limpiamos posibles comillas accidentales de la BD en cada campo
+    $idCard            = $publicacion['Id_publicacion'];
+    $tituloObra        = htmlspecialchars(trim($publicacion['Titulo_obra'], "' "));
+    $tituloPublicacion = htmlspecialchars(trim($publicacion['Titulo_publicacion'], "' "));
+    $descripcion       = trim($publicacion['Descripcion'], "' ");
+    $descripcionCorta  = htmlspecialchars(substr($descripcion, 0, 150)) . '...';
+    $autor             = htmlspecialchars(trim($publicacion['Autor'], "' "));
+    $rutaArchivo       = htmlspecialchars(trim($publicacion['ruta_archivo'], "' "));
+    $rutaImagen        = htmlspecialchars(trim($publicacion['ruta_imagen'], "' "));
+    $categoriaBD       = strtolower(trim($publicacion['Categoria'], "' "));
+    $tipoTag           = trim($publicacion['Tipo'], "' ");
     
-    // Descripción corta
-    $descripcionCorta = substr($publicacion['Descripcion'], 0, 150) . '...';
-    
-    // Fecha
+    // Formateo de fecha y tags
     $fechaFormateada = date('d/m/Y', strtotime($publicacion['Fecha_publicacion']));
-    
-    // ID
-    $idCard = $publicacion['Id_publicacion'];
-    
-    // CORRECCIÓN 1: Categoría en minúsculas (como en tu HTML)
-    // En generar_ultimo_card.php
-    $categoriaBD = strtolower(trim($publicacion['Categoria'])); 
-// Esto convierte 'AnimeManga' en 'animemanga' y quita espacios extra.  
-    
-    // CORRECCIÓN 2: Tipo de tag (Articulo vs Post)
-    $tipoTag = $publicacion['Tipo'];
-    $claseTag = ($tipoTag == 'Articulo') ? 'tagArticulo' : 'tagPost';
-    $textoTag = ($tipoTag == 'Articulo') ? 'Artículo' : 'Post';
-    
-    // Escapar datos
-    $tituloObra = htmlspecialchars($publicacion['Titulo_obra']);
-    $rutaArchivo = htmlspecialchars($publicacion['ruta_archivo']);
-    $tipo = htmlspecialchars($tipoTag);
-    $rutaImagen = htmlspecialchars($publicacion['ruta_imagen']);
-    $tituloPublicacion = htmlspecialchars($publicacion['Titulo_publicacion']);
-    $autor = htmlspecialchars($publicacion['Autor']);
-    
-// Modificación en generar_ultimo_card.php
-return <<<HTML
+    $destacadoHTML   = ($publicacion['Destacado'] == 1) ? '<div class="tagDestacado">⭐ Destacado</div>' : '';
+    $claseTag        = ($tipoTag == 'Articulo') ? 'tagArticulo' : 'tagPost';
+    $textoTag        = ($tipoTag == 'Articulo') ? 'Artículo' : 'Post';
+
+    return <<<HTML
 <a href="$rutaArchivo" class="card-link" data-id="$idCard" data-categoria="$categoriaBD">
     <div class="card">
         <header class="headCard">
@@ -68,117 +53,88 @@ return <<<HTML
 HTML;
 }
 
-// 3. OBTENER ÚLTIMA PUBLICACIÓN DE BD
+// 4. OBTENER ÚLTIMA PUBLICACIÓN DE LA TABLA 'Contenido'
 $sql = "SELECT * FROM Contenido ORDER BY Id_publicacion DESC LIMIT 1";
 $result = $conexion->query($sql);
 
 if (!$result) {
-    echo "<h2>❌ Error en consulta SQL</h2>";
-    echo "<p><strong>Error:</strong> " . $conexion->error . "</p>";
-    exit;
+    die("<h2>❌ Error en consulta SQL:</h2><p>" . $conexion->error . "</p>");
 }
 
 if ($result->num_rows === 0) {
-    echo "<h2>📭 No hay publicaciones en la BD</h2>";
-    echo "<p>Añade una publicación en phpMyAdmin primero.</p>";
-    exit;
+    die("<h2>📭 La tabla 'Contenido' está vacía.</h2>");
 }
 
 $ultimaPublicacion = $result->fetch_assoc();
+$idActual = $ultimaPublicacion['Id_publicacion'];
+$categoriaFinal = strtolower(trim($ultimaPublicacion['Categoria'], "' "));
 
-// DEBUG: Mostrar datos recibidos (opcional)
-echo "<!-- DEBUG: ";
-print_r($ultimaPublicacion);
-echo " -->";
-
-// 4. GENERAR HTML DEL CARD
+// 5. GENERAR HTML Y DEFINIR RUTA DE ARCHIVO (CORREGIDA)
 $cardHTML = generarCardHTML($ultimaPublicacion);
-
-// 5. ARCHIVO DONDE SE GUARDARÁ
-$archivoCards = '../Archivador/container/cards_generados.html';
+$archivoCards = __DIR__ . '/../../../Archivador/container/cards_generados.html';
 
 // 6. GUARDAR O AGREGAR AL ARCHIVO
+$modo = "";
 if (file_exists($archivoCards)) {
-    // Verificar si el card ya existe
     $contenidoActual = file_get_contents($archivoCards);
-    $idBuscado = 'data-id="' . $ultimaPublicacion['Id_publicacion'] . '"';
+    $idBuscado = 'data-id="' . $idActual . '"';
     
     if (strpos($contenidoActual, $idBuscado) !== false) {
-        echo "<h2>⚠️ Este card ya existe</h2>";
-        echo "<p>El card con ID <strong>{$ultimaPublicacion['Id_publicacion']}</strong> ya está en el archivo.</p>";
-        echo "<p><a href='generar_ultimo_card_corregido.php'>🔄 Intentar con otra publicación</a></p>";
-        exit;
+        $errorYaExiste = true;
+    } else {
+        file_put_contents($archivoCards, $cardHTML . "\n", FILE_APPEND);
+        $modo = "agregado a";
     }
-    
-    // AGREGAR al final
-    file_put_contents($archivoCards, $cardHTML . "\n", FILE_APPEND);
-    $modo = "agregado a";
 } else {
-    // CREAR nuevo archivo
-    $cabecera = "<!-- Cards generados desde BD - " . date('Y-m-d H:i:s') . " -->\n";
+    // Si no existe, lo creamos
+    $cabecera = "\n";
     file_put_contents($archivoCards, $cabecera . $cardHTML . "\n");
     $modo = "creado";
 }
 
-// 7. MOSTRAR RESULTADO
-echo <<<HTML
+// 7. MOSTRAR RESULTADO AL USUARIO
+?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>✅ Card Generado</title>
+    <meta charset="UTF-8">
+    <title>Gestor de Cards</title>
     <style>
-        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .success { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .info-box { background: #e8f4f8; padding: 15px; border-radius: 5px; margin: 15px 0; }
-        .card-preview { border: 2px dashed #ccc; padding: 20px; margin: 20px 0; background: #fafafa; }
-        .btn { display: inline-block; padding: 10px 20px; margin: 5px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
-        .btn:hover { background: #0056b3; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 40px; background: #f0f2f5; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .success-header { color: #28a745; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .error-header { color: #dc3545; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .card-preview { border: 2px dashed #007bff; padding: 20px; border-radius: 8px; margin: 20px 0; background: #fff; }
+        .btn { display: inline-block; padding: 12px 24px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        .btn-alt { background: #6c757d; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="success">
-            <h1 style="color: #28a745;">✅ ¡Card Generado con Éxito!</h1>
-            
-            <div class="info-box">
-                <h3>📋 Información del Card:</h3>
-                <p><strong>📁 Archivo:</strong> <code>Archivador/container/cards_generados.html</code></p>
-                <p><strong>📊 Estado:</strong> {$modo} el archivo</p>
-                <p><strong>🆔 ID:</strong> {$ultimaPublicacion['Id_publicacion']}</p>
-                <p><strong>📚 Título obra:</strong> {$ultimaPublicacion['Titulo_obra']}</p>
-                <p><strong>📝 Título publicación:</strong> {$ultimaPublicacion['Titulo_publicacion']}</p>
-                <p><strong>🏷️ Categoría BD:</strong> {$ultimaPublicacion['Categoria']} → <strong>HTML:</strong> {$categoriaBD}</p>
-                <p><strong>🔖 Tipo:</strong> {$ultimaPublicacion['Tipo']}</p>
-                <p><strong>👤 Autor:</strong> {$ultimaPublicacion['Autor']}</p>
-                <p><strong>📅 Fecha:</strong> {$ultimaPublicacion['Fecha_publicacion']}</p>
+        <?php if (isset($errorYaExiste)): ?>
+            <h1 class="error-header">⚠️ El Card ya existe</h1>
+            <p>La publicación con ID <strong><?php echo $idActual; ?></strong> ya ha sido sincronizada anteriormente.</p>
+        <?php else: ?>
+            <h1 class="success-header">✅ Sincronización Exitosa</h1>
+            <div class="info-grid">
+                <div><strong>🆔 ID:</strong> <?php echo $idActual; ?></div>
+                <div><strong>📂 Archivo:</strong> cards_generados.html</div>
+                <div><strong>📚 Obra:</strong> <?php echo htmlspecialchars($ultimaPublicacion['Titulo_obra']); ?></div>
+                <div><strong>🏷️ Categoría:</strong> <?php echo $categoriaFinal; ?></div>
+                <div><strong>📊 Estado:</strong> Archivo <?php echo $modo; ?> con éxito</div>
             </div>
-            
+            <h3>👁️ Vista Previa del Card:</h3>
             <div class="card-preview">
-                <h3>👁️ Vista previa:</h3>
-                {$cardHTML}
+                <?php echo $cardHTML; ?>
             </div>
-            
-            <div style="margin-top: 25px; text-align: center;">
-                <a href="../../Archivador/ArchivadorMain.html" target="_blank" class="btn">
-                    🔗 Ver en Archivador
-                </a>
-                <a href="generar_ultimo_card_corregido.php" class="btn" style="background: #6c757d;">
-                    🔄 Generar otro
-                </a>
-                <a href="../Archivador/container/cards_generados.html" target="_blank" class="btn" style="background: #17a2b8;">
-                    📄 Ver archivo generado
-                </a>
-            </div>
-            
-            <p style="margin-top: 20px; color: #666; font-size: 0.9em;">
-                <strong>Nota:</strong> Los cards generados se guardan en <code>cards_generados.html</code> y se mostrarán en Pagina1.html
-            </p>
+        <?php endif; ?>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="../../Archivador/ArchivadorMain.html" class="btn">🔗 Ir al Archivador</a>
+            <a href="https://mizumeblog.com/index/components/api/generar_ultimo_card_corregido.php" class="btn btn-alt">🔄 Actualizar de nuevo</a>
         </div>
     </div>
 </body>
 </html>
-HTML;
-
-$conexion->close();
-?>
+<?php $conexion->close(); ?>
