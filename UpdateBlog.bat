@@ -1,20 +1,35 @@
 @echo off
-title Actualizador de Cards - MizumeBlog
-echo Enviando peticion de sincronizacion...
+title Sincronizador Maestro - MizumeBlog
+echo 1. Enviando peticion de sincronizacion al servidor...
 echo.
 
-:: La URL de tu script PHP
-set "URL=https://mizumeblog.com/index/components/api/generar_ultimo_card.php"
-
-:: Usuario y Contrasena
+:: --- CONFIGURACION ---
 set "USER=Admin"
 set "PASS=@Blog_Mizume67/89"
 
-:: Ejecucion de cURL con autenticacion basica
-curl --user "%USER%:%PASS%" "%URL%"
+:: URL que ejecuta la lógica de base de datos a HTML
+set "URL_PHP=https://mizumeblog.com/index/components/api/generar_ultimo_card.php"
+
+:: URL donde reside el archivo HTML ya generado
+set "URL_HTML=https://mizumeblog.com/index/Archivador/container/cards_generados.html"
+
+:: Ruta local donde quieres guardar el archivo (ajustala si es necesario)
+set "RUTA_LOCAL=Archivador/container/cards_generados.html"
+
+:: --- PROCESO ---
+
+:: A. Ejecutamos el PHP para que el servidor cree el card internamente
+curl --user "%USER%:%PASS%" -s "%URL_PHP%"
 
 echo.
+echo 2. Descargando el archivo actualizado para sobrescribir local...
+
+:: B. Descargamos el archivo HTML del servidor y lo guardamos en tu PC
+:: El parametro -o (minuscula) sirve para definir el archivo de salida
+curl --user "%USER%:%PASS%" -s "%URL_HTML%" -o "%RUTA_LOCAL%"
+
 echo.
 echo --------------------------------------------------
-echo Proceso finalizado.
+echo [EXITO] Servidor actualizado y copia local sincronizada.
+echo --------------------------------------------------
 pause
