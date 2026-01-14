@@ -135,7 +135,7 @@
                 </main>
             </div>
         </a>
-        <a href="../Articulos/Articulos_Destacados/ParasiteInLove.html"
+        <a href="#"
             class="card-link"
             data-id="6"
             data-categoria="animemanga"
@@ -159,7 +159,7 @@
             </div>
         </a>
 
-        <a href="../Articulos/Articulos_Destacados/SSY.html"
+        <a href="#"
             class="card-link"
             data-id="7"
             data-categoria="animemanga"
