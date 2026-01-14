@@ -21,5 +21,6 @@ Pruebas.html
 Prueba.css
 Prueba.js
 
-#
-components/api/*.php
+#BD
+components/api/database.php
+components/api/generar_ultimo_card.php
