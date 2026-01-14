@@ -56,6 +56,8 @@ function cargarPaginaInicial() {
         .then(html => {
             screen.innerHTML = html;
             console.log("✅ página1.php cargada");
+
+            
             
             
         })
