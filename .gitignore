@@ -24,3 +24,6 @@ Prueba.js
 #BD
 components/api/database.php
 components/api/generar_ultimo_card.php
+
+#HTML DINAMICO
+Archivador/container/cards_generados.html
