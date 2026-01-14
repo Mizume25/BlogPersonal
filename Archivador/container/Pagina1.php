@@ -16,12 +16,18 @@
 
     <div class="cards-grid-container">
 
-        <a href="../Articulos/Articulos_Destacados/Shiki.html" class="card-link" data-id="1" data-categoria="animemanga">
+        <a href="../Articulos/Articulos_Destacados/Shiki.html"
+            class="card-link"
+            data-id="1"
+            data-categoria="animemanga"
+            data-autor="Fuyumi Ono"
+            data-fecha="2025-04-09"
+            data-destacado="1">
             <div class="card">
                 <header class="headCard">
                     <h2>Shiki</h2>
                     <div class="tagContent">
-                        <div class="tagArticulo">Articulo</div>
+                        <div class="tagArticulo">Artículo</div>
                     </div>
                 </header>
                 <main class="bodyCard">
@@ -34,7 +40,13 @@
             </div>
         </a>
 
-        <a href="../Post/Post_Generales/Seccion AnimeManga/COTE.html" class="card-link" data-id="2" data-categoria="animemanga">
+        <a href="../Post/Post_Generales/Seccion AnimeManga/COTE.html"
+            class="card-link"
+            data-id="2"
+            data-categoria="animemanga"
+            data-autor="Shōgo Kinugasa"
+            data-fecha="2026-01-10"
+            data-destacado="0">
             <div class="card">
                 <header class="headCard">
                     <h2>COTE</h2>
@@ -52,7 +64,13 @@
             </div>
         </a>
 
-        <a href="../Post/Post_Destacados/TextosAntonioMachado.html" class="card-link" data-id="3" data-categoria="literatura">
+        <a href="../Post/Post_Destacados/TextosAntonioMachado.html"
+            class="card-link"
+            data-id="3"
+            data-categoria="literatura"
+            data-autor="Antonio Machado Ruiz"
+            data-fecha="2026-01-11"
+            data-destacado="1">
             <div class="card">
                 <header class="headCard">
                     <h2>Textos de Machado</h2>
@@ -70,7 +88,13 @@
             </div>
         </a>
 
-        <a href="../Post/Post_Destacados/TextosMallarme.html" class="card-link" data-id="4" data-categoria="literatura">
+        <a href="../Post/Post_Destacados/TextosMallarme.html"
+            class="card-link"
+            data-id="4"
+            data-categoria="literatura"
+            data-autor="Stéphane Mallarmé"
+            data-fecha="2026-01-02"
+            data-destacado="1">
             <div class="card">
                 <header class="headCard">
                     <h2>Textos de Mallarmé</h2>
@@ -88,7 +112,13 @@
             </div>
         </a>
 
-        <a href="../Post/Post_Destacados/TextosStendhal.html" class="card-link" data-id="5" data-categoria="literatura">
+        <a href="../Post/Post_Destacados/TextosStendhal.html"
+            class="card-link"
+            data-id="5"
+            data-categoria="literatura"
+            data-autor="Henri Beyle"
+            data-fecha="2026-01-12"
+            data-destacado="1">
             <div class="card">
                 <header class="headCard">
                     <h2>Textos de Stendhal</h2>
@@ -105,7 +135,29 @@
                 </main>
             </div>
         </a>
-
+        <a href="../Articulos/Articulos_Destacados/ParasiteInLove.html"
+            class="card-link"
+            data-id="6"
+            data-categoria="animemanga"
+            data-autor="Miaki Sugaru"
+            data-fecha="2026-01-15"
+            data-destacado="1">
+            <div class="card">
+                <header class="headCard">
+                    <h2>Parasite in Love</h2>
+                    <div class="tagContent">
+                        <div class="tagArticulo">Artículo</div>
+                    </div>
+                </header>
+                <main class="bodyCard">
+                    <section class="bodyimg" style="background-image: url('IMG/Cards/AnimeManga/Sanagi.jpg')"></section>
+                    <section class="bodytxt">
+                        <h3>Todos los organismos deben avanzar</h3>
+                        <p>Analisis de la obra Parasite in love, conjunto de reflexiones primeras....</p>
+                    </section>
+                </main>
+            </div>
+        </a>
         <?php
         $archivoGenerados = 'cards_generados.html';
         if (file_exists($archivoGenerados)) {
@@ -113,5 +165,7 @@
         }
         ?>
 
-    </div> </body>
+    </div>
+</body>
+
 </html>
