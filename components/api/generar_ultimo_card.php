@@ -71,8 +71,7 @@ $categoriaFinal = strtolower(trim($ultimaPublicacion['Categoria'], "' "));
 
 // 5. GENERAR HTML Y DEFINIR RUTA DE ARCHIVO (CORREGIDA)
 $cardHTML = generarCardHTML($ultimaPublicacion);
-$archivoCards = __DIR__ . '/home/u298137555/domains/mizumeblog.com/public_html/Archivador/container/cards_generados.html';
-
+$archivoCards = $_SERVER['DOCUMENT_ROOT'] . '/index/Archivador/container/cards_generados.html';
 // 6. GUARDAR O AGREGAR AL ARCHIVO
 $modo = "";
 if (file_exists($archivoCards)) {
