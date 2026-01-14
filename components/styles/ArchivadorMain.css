@@ -488,6 +488,19 @@ a.card-link:hover .card {
     position: relative;
 }
 
+/* Clase que aplicamos dinámicamente */
+.link-disabled {
+    pointer-events: none; /* Evita que se pueda hacer clic */
+    cursor: default;
+    user-select: none;    /* Evita que se pueda seleccionar texto oculto */
+}
+
+/* Opcional: Para asegurar que el grid no deje huecos vacíos */
+.cards-grid-container {
+    display: grid;
+    /* Tu configuración de grid actual */
+}
+
 /* ============================================================================
    RESPONSIVE PARA CARDS
    ============================================================================ */

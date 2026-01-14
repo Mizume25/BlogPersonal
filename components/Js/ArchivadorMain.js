@@ -64,25 +64,47 @@ function cargarPaginaInicial() {
 // --- SISTEMA DE FILTRADO ---
 function filtrarPorCategoria(categoria) {
     console.log(`🎯 Filtrando: ${categoria}`);
-    const cards = document.querySelectorAll('[data-categoria]');
     
-    cards.forEach(card => {
-        card.style.display = (card.getAttribute('data-categoria') === categoria) ? 'block' : 'none';
+    // Seleccionamos todos los enlaces que contienen cards
+    const links = document.querySelectorAll('.card-link');
+    let contador = 0;
+
+    links.forEach(link => {
+        const card = link.querySelector('.card');
+        const categoriaCard = card.getAttribute('data-categoria');
+
+        if (categoriaCard === categoria) {
+            // MOSTRAR: Quitamos clase de deshabilitado y mostramos
+            link.style.display = 'block';
+            link.classList.remove('link-disabled');
+            contador++;
+        } else {
+            // OCULTAR: Añadimos clase de deshabilitado y ocultamos
+            link.style.display = 'none';
+            link.classList.add('link-disabled');
+        }
     });
-    
+
+    // Actualización de títulos
     const titulo = document.querySelector('#titulo-seccion');
     if (titulo) {
-        const nombres = { 'academico': 'Académico', 'literatura': 'Literatura', 'animemanga': 'Anime y Manga', 'reflexiones': 'Reflexiones' };
+        const nombres = { 
+            'academico': 'Académico', 
+            'literatura': 'Literatura', 
+            'animemanga': 'Anime y Manga', 
+            'reflexiones': 'Reflexiones' 
+        };
         titulo.textContent = nombres[categoria] || 'Archivador';
     }
-    
-    if (document.querySelectorAll(`[data-categoria="${categoria}"]`).length === 0) {
+
+    // Manejo de mensaje de vacío
+    if (contador === 0) {
         mostrarMensaje(`No hay contenido en ${categoria}`);
     } else {
         ocultarMensaje();
     }
     
-    console.log(`📊 Mostrando ${document.querySelectorAll(`[data-categoria="${categoria}"]:not([style*="display: none"])`).length} cards de ${categoria}`);
+    console.log(`📊 Mostrando ${contador} cards de ${categoria}`);
 }
 
 function mostrarMensaje(texto) {
