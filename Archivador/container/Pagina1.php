@@ -158,6 +158,30 @@
                 </main>
             </div>
         </a>
+
+        <a href="../Articulos/Articulos_Destacados/SSY.html"
+            class="card-link"
+            data-id="7"
+            data-categoria="animemanga"
+            data-autor="Yusuke Kishi"
+            data-fecha="2026-01-15"
+            data-destacado="1">
+            <div class="card">
+                <header class="headCard">
+                    <h2>Shin Sekai Yori</h2>
+                    <div class="tagContent">
+                        <div class="tagArticulo">Artículo</div>
+                    </div>
+                </header>
+                <main class="bodyCard">
+                    <section class="bodyimg" style="background-image: url('IMG/Cards/AnimeManga/SSY.jpg')"></section>
+                    <section class="bodytxt">
+                        <h3>La Sinfonía Nº 9 &quot;Del Nuevo Mundo&quot; suena</h3>
+                        <p>Analisis y comentarios generales sobre la obra de Shin Sekai Yori....</p>
+                    </section>
+                </main>
+            </div>
+        </a>
         <?php
         $archivoGenerados = 'cards_generados.html';
         if (file_exists($archivoGenerados)) {
