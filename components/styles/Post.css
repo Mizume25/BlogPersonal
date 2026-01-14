@@ -5,9 +5,9 @@
 
 /*FUENTE NUEVA*/
 body {
-    background-image: url("../../Imagenes Blog/Fondo2.jpg");
+    background-image: url("../../Home/IMG/Fondo2.jpg");
     font-family: 'Lexend', sans-serif;
-    margin: -18px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 
@@ -17,30 +17,6 @@ body {
     font-weight: 300;
     font-style: normal;
 }
-
-/*ESTILO HEADER DEL ARTICULO*/
-.imagenheader {
-    height: 250px;
-    border: 2px solid #ddd;
-    background-repeat: no-repeat;
-    background-position: center 22%;
-    background-size: cover;
-}
-
-.headertitulo {
-    margin-top: -40px;
-    /* EFECTO TITULO SEMI-PUESTO ENTRE LA IMAGEN DEL HEADER Y EL BODY*/
-    margin-bottom: 0px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 600px;
-    height: 100px;
-
-
-}
-
-
-
 
 /*ESTILOS DE LOS TAGS Y CATEGORIAS*/
 .post-header {
@@ -143,6 +119,24 @@ h4 {
     padding-bottom: 10px;
 }
 
+h5 {
+    color: #e6e6e6;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+h6 {
+    color: #e6e6e6;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
 /*CONTENEDOR PRINCIPAL DE LA PAGINA*/
 .container {
     max-width: 2000px;
@@ -211,7 +205,6 @@ h4 {
     transform: translateX(5px);
     transition: all 0.3s;
 }
-
 
 /*INDEX DE LA HOME*/
 .index-home {
@@ -417,7 +410,7 @@ h4 {
 /*Material para destacar*/
 .subrayo {
     background-color: yellow;
-    color: black;
+    color: black!important;
     border-radius: 8px;
     padding: 2px;
 }
@@ -427,7 +420,13 @@ h4 {
     font-style: italic;
 }
 
+a {
+color: rgb(187, 120, 49);
+}
 
+.main-article li + li{
+margin-top: 25px;
+}
 
 
 /*BOTON DEL RESPONSIVE*/
@@ -897,7 +896,7 @@ h4 {
 
 
     .article-image {
-        max-width: 350px;
+        max-width: 300px;
         border-radius: 8px;
         margin-left: auto;
         margin-right: auto;
@@ -1240,4 +1239,3 @@ h4 {
 
 
 }
-

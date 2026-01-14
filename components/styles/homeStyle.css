@@ -11,7 +11,7 @@ body {
     color: black;
     line-height: 1.6;
     font-family: 'Lexend', sans-serif;
-    background-image: url("Imagenes Blog/Fondo2.jpg");
+    background-image: url("../../Home/IMG/Fondo2.jpg");
 }
 /*Font*/
 .lexend_font {
@@ -268,12 +268,12 @@ article p {
     z-index: 1;                          /* Asegura que esté por encima del ::before */
 }
 /*--------------------------------------------------------------------------------------------*/
-/*MODIFICACION DE LAS CLASSES*/
+/*MODIFICACION DE LOS ARTICULOS DESCADOS*/
 /*--------------------------------------------------------------------------------------------*/
 /*IMAGEN DE ARTICULO DESTACADO 1*/
 .blog-post.featured-post.fondo-articulo1::before {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                url("Imagenes Blog/FotoArticle1.jpg");
+                url("../../Home/IMG/FotoArticle1.jpg");
                   background-size: cover;               /* La imagen cubre todo el espacio */
     background-position: center;          /* Centra la imagen */
     background-repeat: no-repeat;         /* Evita que la imagen se repita */
@@ -282,7 +282,7 @@ article p {
 /*IMAGEN DE ARTICULO DESTACADO 2*/
 .blog-post.featured-post.fondo-articulo2::before {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url("Imagenes Blog/FotoArticle2.jpg");
+                url("../../Home/IMG/FotoArticle2.jpg");
                   background-size: cover;               /* La imagen cubre todo el espacio */
     background-position: center 12%;          /* Centra la imagen */
     background-repeat: no-repeat;         /* Evita que la imagen se repita */
@@ -291,7 +291,7 @@ article p {
 /*IMAGEN DE ARTICULO DESTACADO 3*/
 .blog-post.featured-post.fondo-articulo3::before {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url("Imagenes Blog/FotoArticle3.jpg");
+                url("../../Home/IMG/FotoArticle3.jpg");
                   background-size: cover;               /* La imagen cubre todo el espacio */
     background-position: center;          /* Centra la imagen */
     background-repeat: no-repeat;         /* Evita que la imagen se repita */
