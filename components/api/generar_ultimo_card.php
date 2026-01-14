@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 // components/api/generar_ultimo_card_corregido.php
 // VERSIÓN CORREGIDA PARA TU ESTRUCTURA BD
 
