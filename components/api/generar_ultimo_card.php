@@ -22,7 +22,9 @@ function generarCardHTML($publicacion) {
     $idCard = $publicacion['Id_publicacion'];
     
     // CORRECCIÓN 1: Categoría en minúsculas (como en tu HTML)
-    $categoriaBD = strtolower($publicacion['Categoria']); // 'AnimeManga' → 'animemanga'
+    // En generar_ultimo_card.php
+    $categoriaBD = strtolower(trim($publicacion['Categoria'])); 
+// Esto convierte 'AnimeManga' en 'animemanga' y quita espacios extra.  
     
     // CORRECCIÓN 2: Tipo de tag (Articulo vs Post)
     $tipoTag = $publicacion['Tipo'];
@@ -37,30 +39,29 @@ function generarCardHTML($publicacion) {
     $tituloPublicacion = htmlspecialchars($publicacion['Titulo_publicacion']);
     $autor = htmlspecialchars($publicacion['Autor']);
     
-    return <<<HTML
-<div class="card-container" data-id="$idCard" data-categoria="$categoriaBD">
-    <a href="$rutaArchivo" class="card-link">
-        <div class="card">
-            <header class="headCard">
-                <h2>$tituloObra</h2>
-                <div class="tagContent">
-                    <div class="$claseTag">$textoTag</div>
-                    $destacadoHTML
-                </div>
-            </header>
-            <main class="bodyCard">
-                <section class="bodyimg" style="background-image: url('$rutaImagen')"></section>
-                <section class="bodytxt">
-                    <h3>$tituloPublicacion</h3>
-                    <p>$descripcionCorta</p>
-                    <p class="autor-fecha">
-                        <small>$autor • $fechaFormateada</small>
-                    </p>
-                </section>
-            </main>
-        </div>
-    </a>
-</div>
+// Modificación en generar_ultimo_card.php
+return <<<HTML
+<a href="$rutaArchivo" class="card-link" data-id="$idCard" data-categoria="$categoriaBD">
+    <div class="card">
+        <header class="headCard">
+            <h2>$tituloObra</h2>
+            <div class="tagContent">
+                <div class="$claseTag">$textoTag</div>
+                $destacadoHTML
+            </div>
+        </header>
+        <main class="bodyCard">
+            <section class="bodyimg" style="background-image: url('$rutaImagen')"></section>
+            <section class="bodytxt">
+                <h3>$tituloPublicacion</h3>
+                <p>$descripcionCorta</p>
+                <p class="autor-fecha">
+                    <small>$autor • $fechaFormateada</small>
+                </p>
+            </section>
+        </main>
+    </div>
+</a>
 HTML;
 }
 

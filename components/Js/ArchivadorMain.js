@@ -65,21 +65,19 @@ function cargarPaginaInicial() {
 function filtrarPorCategoria(categoria) {
     console.log(`🎯 Filtrando: ${categoria}`);
     
-    // Seleccionamos todos los enlaces que contienen cards
-    const links = document.querySelectorAll('.card-link');
+    // Seleccionamos todos los enlaces (manuales y dinámicos)
+    const allLinks = document.querySelectorAll('.card-link');
     let contador = 0;
 
-    links.forEach(link => {
-        const card = link.querySelector('.card');
-        const categoriaCard = card.getAttribute('data-categoria');
-
-        if (categoriaCard === categoria) {
-            // MOSTRAR: Quitamos clase de deshabilitado y mostramos
+    allLinks.forEach(link => {
+        // Buscamos la categoría en el link o en el card interno
+        const cat = link.getAttribute('data-categoria') || link.querySelector('.card').getAttribute('data-categoria');
+        
+        if (cat === categoria) {
             link.style.display = 'block';
             link.classList.remove('link-disabled');
             contador++;
         } else {
-            // OCULTAR: Añadimos clase de deshabilitado y ocultamos
             link.style.display = 'none';
             link.classList.add('link-disabled');
         }
