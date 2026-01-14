@@ -69,7 +69,7 @@ HTML;
 }
 
 // 3. OBTENER ÚLTIMA PUBLICACIÓN DE BD
-$sql = "SELECT * FROM publicaciones ORDER BY Id_publicacion DESC LIMIT 1";
+$sql = "SELECT * FROM Contenido ORDER BY Id_publicacion DESC LIMIT 1";
 $result = $conexion->query($sql);
 
 if (!$result) {
