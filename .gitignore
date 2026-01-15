@@ -15,7 +15,7 @@ sftp.json
 Docs/*
 !Docs/README.md
 !Docs/LICENSE
-
+!Docs/Diseño de BD.png
 # Archivos de Prueba
 Pruebas.html
 Prueba.css

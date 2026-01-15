@@ -74,6 +74,7 @@ de datos, gracias a la orientacion de mi profesor de DAW realice un diseño
 "Base" que luego modifique posteriormente segun convenga.
 
 
+
 Con el servicio por defecto que ofrece Hostinger con PHPMyAdmin cree una base de datos de una unica entidad la cual almacenara todo los datos generales sobre los pos realizados, y yo obtendre dinamicamente esos datos
 para generar cards automaticos que se almacenaran en:
 
@@ -82,9 +83,14 @@ cards de manera automatica en el momento en el que de forma local yo ejecute un 
 se ecuentran en mi Hostinger protegidos por un usuario y contraseña, para
 evitar peligrosamente accesos accidentales o intencionados.
 
-La unica forma de genrar cards y acceder a mi base de datos sera con mis archivos php que unicamente tengo configurado en local y en remoto y este 
+La unica forma de generar cards y acceder a mi base de datos sera con mis archivos php que unicamente tengo configurado en local y en remoto y este 
 ultimo protegido con contraseña.
 
 Cuando tenga todo el post configurado (el archivo html, con una imagen,
 y el resto de requisitos que pide) ejecuto un boton (no disponible en github) que realiza tanto la creacion e implemntacion dinamica del nuevo card como la copia en tiempo real de la actualizacion mas reciente de la version remota y la sobre escribira a mi local  (por si me interesa hacer ligeras modificaciones).
 
+### Frontend
+#### Diseño Figma
+[Diseño web en Figma](https://www.figma.com/design/5uXMY6rJbF9OqUG0j12IFw/MIBlogPersonal?node-id=0-1&t=BpOrSO7w9mK5uCtn-1)
+
+Plantillas, vistas generales, botones y todo estructura frontend en figma
