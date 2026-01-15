@@ -9,63 +9,63 @@ Esta implementación web fue pensada neta y exclusivamente para familiarizarme c
 
 
 -.github           *<-- Workflow de mi Github con mi Host Remoto*
-    -workflows
+- Archivador        *<-- Carpeta Principal donde se movera el Usuario*
+  - container
+    - Pagina1.php    *<-- Pagina de Cards Filtrados por seccion*
+  - IMG           *<-- Carpeta que contiene Imagenes de los Cards*
+    - Cards
+      - Academica
+      - AnimeManga
+      - Literatura
+      - Reflexiones
 
--Archivador        *<-- Carpeta Principal donde se movera el Usuario*
-    -container
-        -Pagina1.php    *<-- Pagina de Cards Filtrados por seccion*
-    - IMG           *<-- Pagina que contiene Imagenes de los Cards*
-      - Cards
-            - Academica
-            - AnimeManga
-            - Literatura
-            - Reflexiones
+- Articulos                 *<-- Carpeta que contiene todos los Articulos*
+  - Articulos_Destacados     *<-- Destacados*
+    - IMG
+      - ImagenesShiki
+  - Articulos_Generales      *<-- Generales*
+    - Seccion_AnimeManga
+      - Articulos
+        - Anime
+        - Manga
+        - Novela
+      - IMG
+    - Seccion_Didactica
+      - Articulos
+      - IMG
+    - Seccion_Literatura
+      - Articulos
+      - IMG
+    - Seccion_Reflexiones
+      - Articulos
+      - IMG
 
--Articulos                 *<-- Carpeta que contiene todos los Articulos*
-    -Articulos_Destacados     *<-- Destacados*
-    -IMG
-        -ImagenesShiki
--Articulos_Generales      *<-- Generales*
-    -Seccion_AnimeManga
-        -Articulos
-        -Anime
-        -Manga
-        -Novela
-        -IMG
-    -Seccion_Didactica
-        -Articulos
-        -IMG
-    -Seccion_Literatura
-        -Articulos
-        -IMG
-    -Seccion_Reflexiones
-        -Articulos
-        -IMG
+- components        *<-- Archivador de archivos CSS, JS, y plantillas HTML*
+  - Js
+  - styles
+  - templates
 
--components        *<-- Archivador de archivos CSS, JS, y plantillas HTML*
-    -Js
-    -styles
-    -templates
+- css                *<-- Lista de codigo de iconos FontAwesome Icons*
 
--css                *<-- Lista de codigo de iconos FontAwesome Icons*
+- Docs                *<-- Documentacion*
 
--Docs                *<-- Documentacion*
+- Home
+  - home.html        **<-- Pagina Inicial**
+  - IMG
+    - Icons
 
--Home
-    -home.html        **<-- Pagina Inicial**
-    -IMG
-        -Icons
+- Post                 *<-- Carpeta que contiene todos los Post*
+  - Post_Destacados
+  - Post_Generales
+    - Seccion Academico
+    - Seccion AnimeManga
+      - IMG
+        - COTE
+        - ej
+    - Seccion Literatura
+    - Seccion Reflexiones
 
--Post                 *<-- Carpeta que contiene todos los Post*
-    -Post_Destacados
-    -Post_Generales
-        -Seccion Academico
-        -Seccion AnimeManga
-            -IMG
-        -Seccion Literatura
-        -Seccion Reflexiones
-
--webfonts            *<-- Fuentes de Font Awesome*
+- webfonts            *<-- Fuentes de Font Awesome*
 
 
 ### Backend 
