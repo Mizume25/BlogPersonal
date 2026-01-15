@@ -5,6 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plantilla</title>
+    <!--RUTAS -  ESTILOS E ICONOS
+
+  # Iconos Mobill
+  'Articulo General: ../../../../css/all.min.css'
+  'Articulo Destacada: ../../css/all.min.css'
+
+  # Icono Pagina
+  'Articulo General: ../../../../Home/IMG/Icon.png'
+  'Articulo Destacada: ../../Home/IMG/Icon.png'
+
+  # Estilos CSS
+  'Articulo General: ../../../../components/style/Articulo.css'
+  'Articulo Destacado: ../../components/style/Articulo.css'
+
+  # Sript JavaScript
+  'Post General: ../../../../components/Js/Articulo.js'
+  'Post Destacado: ../../components/Js/Articulo.js'
+
+  # Perfil
+  'Articulos generales: ../../../../Home/IMG/FotoPerfil.j¡'
+  'Articulos Destacados: ../../Home/IMG/FotoPerfil.jpg'
+
+  #Imagen fondo
+  'Post Generales: ../../IMG/'
+  'Post Destacados: IMG'
+  -->
+  <!--UPDATE 1-->
   <link rel="icon" type="image/x-icon" href="../../Imagenes Blog/Icon.png">
   <link rel="stylesheet" href="../../css/all.min.css">
   <link rel="stylesheet" href="../styles/Articulo.css">
@@ -15,9 +42,10 @@
   <!--Estructuras Personales de cada Pagian
     - Cada Arituclo estara vinculado a Articulo.css pero dentro de cada Articulo hbara una personalizacion de contenido-->
   <style>
+      /*UPDATE 6*/
     .imagenheader {
       background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("../ArchivosHTMl/ImagenesArticulos/imagenejemplo.png");
+        url("#");
       background-repeat: no-repeat;
       background-position: center 18%;
       background-size: cover;
@@ -444,6 +472,7 @@
     </h2>
     
     <div class="profile">
+        <!--UPDATE 4-->
         <img src="../../Imagenes Blog/FotoPerfil.jpg" class="profile-img">
         
         <div class="info-box">
@@ -463,6 +492,7 @@
     <!-- Barra lateral derecha --->
     <aside class="sidebar-right">
       <div class="profile">
+          <!--UPDATE 3-->
         <img src="../../Imagenes Blog/FotoPerfil.jpg" class="profile-img">
         <h3>Gabriel</h3>
         <p>Blog de Lecturas</p>
@@ -476,15 +506,14 @@
       <div class="info-box">
         <h4>Artículos Destacados</h4>
         <ul class="index-list2">
-          <li><a href="#">Shiki: Fuyumi Ono</a></li>
-          <li><a href="#">Notas de Antonio Machado</a></li>
-          <li><a href="#">Notas de Mallarmé</a></li>
+          <?php include 'RandRutas.php'; ?>
         </ul>
       </div>
 
   </div>
   </aside>
   </div>
+    <!--UPDATE 2-->
   <script src="../Js/Articulo.js"></script>
 </body>
 
