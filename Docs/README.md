@@ -79,7 +79,7 @@ Con el servicio por defecto que ofrece Hostinger con PHPMyAdmin cree una base de
 para generar cards automaticos que se almacenaran en:
 
 **"cards_generados.html"** de esta forma en un elemento vacio se van creando
-cards de manera automatica en el momento en el que de forma local yo ejecute un peticiona mi base de datos mediante archivos php que unicamente
+cards de manera automatica en el momento en el que de forma local yo ejecute un peticiona a mi base de datos mediante archivos php que unicamente
 se ecuentran en mi Hostinger protegidos por un usuario y contraseña, para
 evitar peligrosamente accesos accidentales o intencionados.
 
@@ -93,4 +93,7 @@ y el resto de requisitos que pide) ejecuto un boton (no disponible en github) qu
 #### Diseño Figma
 [Diseño web en Figma](https://www.figma.com/design/5uXMY6rJbF9OqUG0j12IFw/MIBlogPersonal?node-id=0-1&t=BpOrSO7w9mK5uCtn-1)
 
-Plantillas, vistas generales, botones y todo estructura frontend en figma
+Plantillas, vistas generales, botones y todo estructura frontend en figma. Principalmente diseño de Responsive de todas las paginas.
+
+
+

@@ -33,8 +33,7 @@ function cambiarFondoSuave(numero) {
     }, 800);
 }
 
-// --- LÓGICA DE CARGA ASÍNCRONA ---
-// Ahora devuelve una Promesa para que podamos esperar a que termine
+//Carga de la "pantalla"
 function cargarPaginaInicial() {
     return new Promise((resolve, reject) => {
         if (!screen) {
@@ -61,7 +60,7 @@ function cargarPaginaInicial() {
     });
 }
 
-// --- SISTEMA DE FILTRADO ---
+//Sistema de Filtrado de cards
 function filtrarPorCategoria(categoria) {
     console.log(`🎯 Filtrando: ${categoria}`);
     
@@ -166,3 +165,4 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(err => console.error("La inicialización falló:", err));
 });
+
