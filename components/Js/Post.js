@@ -58,8 +58,53 @@ mediaQueryTablet.addEventListener('change', function(e) {
     }
 });
 
-// RUTAS DESTACADAS CON FILTRADO DE PÁGINA ACTUAL
-fetch('/components/json/rutasDestacadas.json')
+// RUTAS DESTACADAS RESPONSIVE
+fetch('/index/components/json/rutasDestacadas.json')
+    .then(respuesta => {
+        if (!respuesta.ok) throw new Error('Error al cargar el archivo JSON');
+        return respuesta.json();
+    })
+    .then(datos => {
+        const zona = document.querySelector(".index-list2");
+        if (!zona) return;
+
+        // VALIDACIÓN: Comprobar que 'datos' sea un array
+        if (!Array.isArray(datos)) {
+            console.error('Estructura de JSON incorrecta: Se esperaba un array.');
+            zona.innerHTML = '<p>Formato de datos no válido</p>';
+            return;
+        }
+
+        // Tomamos solo los primeros 3 elementos del array
+        const destacados = datos.slice(0, 3);
+
+        if (destacados.length === 0) {
+            zona.innerHTML = '<p>No hay rutas disponibles</p>';
+            return;
+        }
+
+        let html = '<ul>';
+        destacados.forEach(item => {
+            // Nota: Usamos item.title para coincidir con tu JSON
+            const titulo = item.title || 'Sin título';
+            const enlace = item.ruta || '#';
+            
+            html += `<li><a href="${enlace}">${titulo}</a></li>`;
+        });
+        html += '</ul>';
+
+        zona.innerHTML = html;
+    })
+    .catch(error => {
+        console.error('Error cargando JSON:', error);
+        const zona = document.querySelector(".index-list2");
+        if (zona) zona.innerHTML = '<p>Error cargando rutas</p>';
+    });
+
+
+
+// RUTAS DESTACADAS DESKTOP
+fetch('/index/components/json/rutasDestacadas.json')
     .then(respuesta => {
         if (!respuesta.ok) throw new Error('No se pudo cargar el JSON');
         return respuesta.json();

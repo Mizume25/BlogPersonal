@@ -61,7 +61,7 @@ mediaQueryTablet.addEventListener('change', function(e) {
     }
 });
 
-// RUTAS DESTACADAS (Carga limitada a 3 elementos)
+// RUTAS DESTACADAS RESPONSIVE
 fetch('/index/components/json/rutasDestacadas.json')
     .then(respuesta => {
         if (!respuesta.ok) throw new Error('Error al cargar el archivo JSON');
@@ -106,7 +106,7 @@ fetch('/index/components/json/rutasDestacadas.json')
 
 
 
-// RUTAS DESTACADAS CON FILTRADO DE PÁGINA ACTUAL
+// RUTAS DESTACADAS DESKTOP
 fetch('/index/components/json/rutasDestacadas.json')
     .then(respuesta => {
         if (!respuesta.ok) throw new Error('No se pudo cargar el JSON');
