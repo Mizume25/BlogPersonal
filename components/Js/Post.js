@@ -57,3 +57,39 @@ mediaQueryTablet.addEventListener('change', function(e) {
         sideBarMobile.classList.remove('abierto');
     }
 });
+
+// RUTAS DESTACADAS CON FILTRADO DE PÁGINA ACTUAL
+fetch('/components/json/rutasDestacadas.json')
+    .then(respuesta => {
+        if (!respuesta.ok) throw new Error('No se pudo cargar el JSON');
+        return respuesta.json();
+    })
+    .then(datos => {
+        const zonas = document.querySelectorAll(".index-list2");
+        if (zonas.length === 0) return;
+
+        // 1. Obtener la ruta actual del navegador (ej: /Articulos/Articulos_Destacados/Shiki.html)
+        const rutaActual = window.location.pathname;
+
+        // 2. Filtrar: Solo incluimos elementos cuya ruta NO sea la actual
+        let filtrados = datos.filter(item => item.ruta !== rutaActual);
+
+        // 3. Seleccionar los primeros 3 (si la ruta no coincidía con ninguna, filtrados tendrá todos los items)
+        const destacados = filtrados.slice(0, 3);
+
+        // 4. Generar el HTML (Solo li > a)
+        let htmlContenido = "";
+        destacados.forEach(item => {
+            const titulo = item.title || "Sin título";
+            const enlace = item.ruta || "#";
+            htmlContenido += `<li><a href="${enlace}">${titulo}</a></li>`;
+        });
+
+        // 5. Inyectar en todas las listas detectadas
+        zonas.forEach(zona => {
+            zona.innerHTML = htmlContenido;
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });

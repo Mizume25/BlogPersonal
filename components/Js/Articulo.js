@@ -61,46 +61,84 @@ mediaQueryTablet.addEventListener('change', function(e) {
     }
 });
 
-//RUTAS DESTACADAS RANDOM
-// datos.js
-async function cargarJSON() {
-    try {
-        // Ruta relativa al archivo JSON
-        const respuesta = await fetch('/components/json/rutasDestacadas.json');
-        
-        if (!respuesta.ok) {
-            throw new Error(`Error HTTP: ${respuesta.status}`);
+// RUTAS DESTACADAS (Carga limitada a 3 elementos)
+fetch('/components/json/rutasDestacadas.json')
+    .then(respuesta => {
+        if (!respuesta.ok) throw new Error('Error al cargar el archivo JSON');
+        return respuesta.json();
+    })
+    .then(datos => {
+        const zona = document.querySelector(".index-list2");
+        if (!zona) return;
+
+        // VALIDACIÓN: Comprobar que 'datos' sea un array
+        if (!Array.isArray(datos)) {
+            console.error('Estructura de JSON incorrecta: Se esperaba un array.');
+            zona.innerHTML = '<p>Formato de datos no válido</p>';
+            return;
         }
-        
-        const datos = await respuesta.json();
-        console.log('Datos cargados:', datos);
-        
-        
-    } catch (error) {
+
+        // Tomamos solo los primeros 3 elementos del array
+        const destacados = datos.slice(0, 3);
+
+        if (destacados.length === 0) {
+            zona.innerHTML = '<p>No hay rutas disponibles</p>';
+            return;
+        }
+
+        let html = '<ul>';
+        destacados.forEach(item => {
+            // Nota: Usamos item.title para coincidir con tu JSON
+            const titulo = item.title || 'Sin título';
+            const enlace = item.ruta || '#';
+            
+            html += `<li><a href="${enlace}">${titulo}</a></li>`;
+        });
+        html += '</ul>';
+
+        zona.innerHTML = html;
+    })
+    .catch(error => {
         console.error('Error cargando JSON:', error);
-    }
-}
+        const zona = document.querySelector(".index-list2");
+        if (zona) zona.innerHTML = '<p>Error cargando rutas</p>';
+    });
 
 
 
-function mostrarRutas() {
-    // 1. Seleccionar el elemento EXACTO
-    const zona = document.getElementById(".index-list2");
-    
-    // 2. Verificar que existe
-    if (!zona) {
-        console.log('No se encontró .index-list2');
-        return;
-    }
-    console.log("Se han cargado los datos json")
-    // 3. Insertar contenido
-    zona.innerHTML = `
-    <ul>
-        ${datos.destacados.map(item => `
-            <li><a href="${item.ruta}">${item.titulo}</a></li>
-        `).join('')}
-    </ul>
-`;
-}
+// RUTAS DESTACADAS CON FILTRADO DE PÁGINA ACTUAL
+fetch('/components/json/rutasDestacadas.json')
+    .then(respuesta => {
+        if (!respuesta.ok) throw new Error('No se pudo cargar el JSON');
+        return respuesta.json();
+    })
+    .then(datos => {
+        const zonas = document.querySelectorAll(".index-list2");
+        if (zonas.length === 0) return;
 
+        // 1. Obtener la ruta actual del navegador (ej: /Articulos/Articulos_Destacados/Shiki.html)
+        const rutaActual = window.location.pathname;
+
+        // 2. Filtrar: Solo incluimos elementos cuya ruta NO sea la actual
+        let filtrados = datos.filter(item => item.ruta !== rutaActual);
+
+        // 3. Seleccionar los primeros 3 (si la ruta no coincidía con ninguna, filtrados tendrá todos los items)
+        const destacados = filtrados.slice(0, 3);
+
+        // 4. Generar el HTML (Solo li > a)
+        let htmlContenido = "";
+        destacados.forEach(item => {
+            const titulo = item.title || "Sin título";
+            const enlace = item.ruta || "#";
+            htmlContenido += `<li><a href="${enlace}">${titulo}</a></li>`;
+        });
+
+        // 5. Inyectar en todas las listas detectadas
+        zonas.forEach(zona => {
+            zona.innerHTML = htmlContenido;
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
