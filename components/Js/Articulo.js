@@ -60,3 +60,49 @@ mediaQueryTablet.addEventListener('change', function(e) {
         sideBarMobile.classList.remove('abierto');
     }
 });
+
+//RUTAS DESTACADAS RANDOM
+// datos.js
+async function cargarJSON() {
+    try {
+        // Ruta relativa al archivo JSON
+        const respuesta = await fetch('/components/json/rutasDestacadas.json');
+        
+        if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+        }
+        
+        const datos = await respuesta.json();
+        console.log('Datos cargados:', datos);
+        usarDatos(datos);
+        
+    } catch (error) {
+        console.error('Error cargando JSON:', error);
+    }
+}
+
+
+
+function mostrarRutas() {
+    // 1. Seleccionar el elemento EXACTO
+    const zona = document.getElementById(".index-list2");
+    
+    // 2. Verificar que existe
+    if (!zona) {
+        console.log('No se encontró .index-list2');
+        return;
+    }
+    console.log("Se han cargado los datos json")
+    // 3. Insertar contenido
+    zona.innerHTML = `
+    <ul>
+        ${datos.destacados.map(item => `
+            <li><a href="${item.ruta}">${item.titulo}</a></li>
+        `).join('')}
+    </ul>
+`;
+}
+
+
+cargarJSON();
+mostrarRutas();
