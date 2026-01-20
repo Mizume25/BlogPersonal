@@ -2,29 +2,29 @@
     {
         "id":1,
         "title":"Shiki",
-        "ruta":"/Articulos/Articulos_Destacados/Shiki.html"
+        "ruta":"index/Articulos/Articulos_Destacados/Shiki.html"
     },
 
     {
         "id": 2,
         "title":"Notas de Antonio Machado",
-        "ruta":"/Post/Post_Destacados/TextosAntonioMachado.html"
+        "ruta":"index/Post/Post_Destacados/TextosAntonioMachado.html"
     },
     {
         "id": 3,
         "title":"Notas de Mallarme",
-        "ruta":"/Post/Post_Destacados/TextosMallarme.html"
+        "ruta":"index/Post/Post_Destacados/TextosMallarme.html"
     },
 
     {
         "id": 4,
         "title":"Notas de Stendhal",
-        "ruta":"/Post/Post_Destacados/TextosStendhal.html"
+        "ruta":"index/Post/Post_Destacados/TextosStendhal.html"
     },
 
     {
         "id": 5,
         "title":"Notas de Stendhal",
-        "ruta":"/Post/Post_Destacados/TextosStendhal.html"
+        "ruta":"index/Post/Post_Destacados/TextosStendhal.html"
     }
 ]
