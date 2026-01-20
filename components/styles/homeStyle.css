@@ -1,9 +1,10 @@
 /* Estilos generales */
 /*Division de los elemntos de mi pàgina web*/
+
 /*ELEMNTOS BASE: FUENTES, BODY, BOXSIZING*/
 /*Body i contingut*/
 
-* {               /*Centramos contenido*/
+* {                             /*Centramos contenido*/
     box-sizing: border-box;  /*Contenido a nuestra medida*/
 }
 
@@ -28,7 +29,7 @@ body {
 h1 {                             /*ESTILO H1*/
     margin-bottom: 10px;
     font-size: 3.2rem;
-    color: #ffffff; 
+    
     text-shadow: 
         2px 2px 4px rgba(0, 0, 0, 0.8),  
         0 0 10px rgba(0, 0, 0, 0.5);
@@ -36,12 +37,12 @@ h1 {                             /*ESTILO H1*/
 }
 
 p {                          /*ESTILO P*/
-    color: white;
+    
     font-size: 1.1rem;
 }
 
 h3 {                         /*ESTILO h3*/
-    color: #ffffff; 
+    
     text-shadow: 
         2px 2px 4px rgba(0, 0, 0, 0.8),  
         0 0 10px rgba(0, 0, 0, 0.5);
@@ -55,6 +56,9 @@ h3 {                         /*ESTILO h3*/
 /*ELEMENTOS DE REDEFINICION DE ETIQUETAS COMPARTIDAS*/
 
 /* ESTOS 4 COMPARTEN LOS MISMOS ESTILOS */
+h1,p,h3{
+    color: white;
+}
 header, .content,.left-sidebar,.right-sidebar {
     background-color: rgb(45, 29, 13);  /*Mismo fondo */
     border-radius: 5px; /* Mismo radio */
@@ -64,11 +68,11 @@ header, .content,.left-sidebar,.right-sidebar {
 
 /*CONTAINER PRINCIAPL DE EL INDICE DE LA PAGINA WEB*/
 .container {
-    max-width: 1300px;      /*Ancho de la pàgina web*/
-    margin: 0 auto;      /*Centrado general del contenido*/
-    display: grid;              /*Columnas para la estructura del Indice */
+    max-width: 1300px;                       /*Ancho de la pàgina web*/
+    margin: 0 auto;                         /*Centrado general del contenido*/
+    display: grid;                          /*Columnas para la estructura del Indice */
     grid-template-columns: 1fr 3fr 1fr;     /*· Columnas con diferentes midas*/
-    gap: 22px;                  /*Espacio entre las brechas */
+    gap: 22px;                               /*Espacio entre las brechas */
     
 }
 
@@ -106,18 +110,6 @@ section + section {
 .widget + .widget {         /*Espacios entre los widget*/
     margin-bottom: 30px;
 }
-section #footer_profile{
-margin-top: 0px;
-}
-/*Propiedad de el Widget Autobiografico*/
-#footer_profile h3{
-text-align: left;
-border-bottom: none;
-margin-left: 35px;
-font-size: 20px;
-padding-bottom: 0px;
-text-decoration: underline;
-}
 
 
 .profile img {
@@ -130,17 +122,7 @@ text-decoration: underline;
     border: 3px solid #C4A484;
     padding-top: 0px;
 }
-/*PARRAFO DE TEXTO AUTOBIOGRAFICO*/
-.text_me {
-margin-top: 0px;
-padding-top: 0px;
-margin-left: 50px;
-background-color: burlywood;
-border-radius: 8px;
-border: solid 1px black;
-height: 300px;
-width: 1000px;
-}
+
 /*ESTILOS DE LAS LISTAS*/
 /*Widget de los sidebars*/
 .widget ul {
