@@ -74,7 +74,7 @@ async function cargarJSON() {
         
         const datos = await respuesta.json();
         console.log('Datos cargados:', datos);
-        usarDatos(datos);
+        
         
     } catch (error) {
         console.error('Error cargando JSON:', error);
@@ -104,5 +104,3 @@ function mostrarRutas() {
 }
 
 
-cargarJSON();
-mostrarRutas();
